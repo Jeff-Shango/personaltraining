@@ -1,0 +1,9 @@
+.outerContainer {
+    border: 2px solid red;
+    margin-left: 10rem;
+}
+
+.bellIcon {
+    font-size: larger;
+    color: white;
+}
