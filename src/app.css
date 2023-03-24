@@ -8,7 +8,12 @@
 }
 
 .App {
-    height: 80vh;
-    margin-top: 20vh;
+    /* height: 80vh; */
+    /* margin-top: 20vh; */
     background-color: var(--color-bg-variant);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }

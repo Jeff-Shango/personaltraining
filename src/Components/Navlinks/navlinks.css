@@ -4,9 +4,9 @@
 }
 
 @media only screen and (max-width: 428px){
-    .navbarContainer {
+    /* .navbarContainer {
         height: 20vh;
-    }
+    } */
     .outerContainer {
         position: absolute;
         left: 0;
