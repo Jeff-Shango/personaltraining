@@ -1,9 +1,29 @@
-.outerContainer {
-    border: 2px solid red;
-    margin-left: 10rem;
-}
 
 .bellIcon {
-    font-size: larger;
     color: white;
+}
+
+@media only screen and (max-width: 428px){
+    .navbarContainer {
+        height: 20vh;
+    }
+    .outerContainer {
+        position: absolute;
+        left: 0;
+    }
+
+    .bellIcon {
+        width: max-content;
+        margin-bottom: 2rem;
+    }
+
+    .bellIcon, .joinButton {
+        height: 3rem;
+    }
+
+    .navItems {
+        font-size: 7;
+        float: right;
+        font-weight: bolder;
+    }
 }
