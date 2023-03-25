@@ -26,4 +26,8 @@
         float: right;
         font-weight: bolder;
     }
+
+    .navbarContainer {
+        background-color: black;
+    }
 }
