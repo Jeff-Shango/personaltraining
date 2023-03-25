@@ -1,6 +1,32 @@
-.test {
-    border: 2px solid red;
-    height: 10rem;
-    z-index: 2;
-    color: black;
+@media screen and (max-width: 600px) {
+
+#sectionTitle {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.sectionText {
+    color: white;
+    border: 1px solid white;
+    /*display: inline-block;
+    */padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: large;
+}
+
+.breakdownButton {
+    height: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: relative;
+    left: 25%;
+    background-color: var(--primary-color-variant);
+    color: white;
+    font-weight: bold;
+}
 }

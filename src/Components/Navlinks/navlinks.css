@@ -7,6 +7,19 @@
     /* .navbarContainer {
         height: 20vh;
     } */
+
+    html {
+        background-color: var(--color-bg);
+    }
+
+    .App {
+        background-color: var(--color-bg);
+    }
+
+    #navLink {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
     .outerContainer {
         position: absolute;
         left: 0;
@@ -29,5 +42,9 @@
 
     .navbarContainer {
         background-color: black;
+    }
+
+    .container {
+        border: 2px solid white;
     }
 }

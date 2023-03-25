@@ -3,8 +3,10 @@ import "./breakdown.css";
 
 const Breakdown = () => {
   return (
-    <div className='test'>
-        Breakdown
+    <div id='breakdownContainer'>
+      <h2 id='sectionTitle'>What I Do!</h2>
+      <p className="sectionText">Working with you wherever you are at, creating personalized plans for your budget and your experience. You are working within a space that is welcoming and has a growth-mindset.</p>
+      <button className='breakdownButton'>View Programs</button>
     </div>
   )
 }
