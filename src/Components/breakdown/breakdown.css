@@ -29,4 +29,28 @@
     color: white;
     font-weight: bold;
 }
+
+.picContainer {
+    background-image: url(../assets/breakdownImgA.jpg);
+    height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.picInnerContainer {
+    background-image: url("../assets/imageB.jpg");
+    height: 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
 }
