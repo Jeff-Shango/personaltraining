@@ -2,21 +2,30 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
-import "./app.css";
 import Breakdown from "./Components/breakdown/Breakdown";
+import Sessions from "./Components/sessions/Sessions.jsx"
+import "./app.css";
 
 function App() {
   return (
     <div className="App">
       <Navlinks/>
-      <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard/>}/>
+          <Route path="/" element={
+          <div className="container">
+            <Dashboard/>
+            <Breakdown/>
+          </div>
+        }/>    
+
+          <Route path="/sessions" element={
+          <div className="sessions">
+            <Sessions/>
+          </div>
+}/>
         </Routes>
       </BrowserRouter>
-      <Breakdown/>
-    </div>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import {AiOutlineHome, AiOutlineUser, AiFillDatabase} from 'react-icons/ai';
 import {BiBook, BiMessageSquareDetail} from 'react-icons/bi';
 import {RiServiceLine} from 'react-icons/ri'
 import {MdEmojiPeople} from 'react-icons/md'
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 const Navlinks = () => {
     const [activeNav, setActiveNav] = useState('#')

@@ -2,7 +2,6 @@ import React from 'react'
 import "./dashboard.css";
 import Carousel from 'react-bootstrap/Carousel';
 import slideA from "../assets/logoSolo.png";
-import bottomDash from "../assets/bottomDashImg.jpg"
 
 const Dashboard = () => {
   return (

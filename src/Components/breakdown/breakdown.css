@@ -36,6 +36,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
+    border: 5px solid black;
 }
 
 .picInnerContainer {
@@ -52,5 +54,7 @@
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border: 5px solid black;
 }
 }
