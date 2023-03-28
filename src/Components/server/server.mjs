@@ -21,6 +21,23 @@ app.get('/list', (req, res) => {
     })
 })
 
+app.post('/add', (req, res) => {
+    const q = "INSERT INTO calendarapi.scheduler (`Name`, `Event`, `Type`, `notes`, `time`, `date`) VALUES (?)"
+    const values = [
+        req.body.Name,
+        req.body.Event,
+        req.body.Type,
+        req.body.notes,
+        req.body.time,
+        req.body.date,
+    ]
+
+    db.query(q, [values], (err, data) => {
+        if(err) return res.json(err)
+        return res.json("Shit has been posted")
+    })
+});
+
 const PORT = 7500;
 
 app.listen(

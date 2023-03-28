@@ -1,0 +1,92 @@
+/* Media Queries (Small Devices) */
+@media screen and (max-width: 600px) {
+    .calendarShit, .fc-toolbar, .fc-start {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .calendarShit, .fc-toolbar, .fc-next-button {
+        margin: 0;
+      }
+      
+    #addButton {
+        color: var(--primary-color-variant);
+        background-color: var(--color-bg);
+        margin: 1rem;
+        outline: black 2px double;
+        outline-offset: 10px;
+        border: 2px solid white;
+        position: relative;
+    }
+
+    #addButton:active {
+        background-color: var(--primary-color-variant);
+        color: var(--color-bg);
+    }
+
+    #eventContainer {
+        text-align: center;
+        border: 2px solid black;
+        margin: 10px;
+        height: 25rem;
+        overflow-y: scroll;
+    }
+
+    #eventTitle {
+        position: relative;
+        margin-top: 10px;
+    }
+    #eventTitle::after {
+        content: "";
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        right: 120px;
+        width: 60px;
+    }
+
+    .eventID {
+        border: 1px solid black;
+        width: fit-content;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        padding: 5px;
+        margin-bottom: 7px;
+        text-align: center;
+        font-size: 18px;
+        margin-right: 25px;
+}
+
+    .eventID > div {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .eventID > div > h1 {
+        font-weight: bolder;
+    }
+    .eventID > div > p {
+        position: relative;
+        border: 2px solid black;
+        width: fit-content;
+        display: inline-block;
+        margin: 5px;
+        padding: 2.5px;
+    }
+
+    #explainTextContainer {
+        border: 2px solid black;
+        margin: 10px;
+    }
+
+    #explainText {
+        margin: 10px;
+        padding: 20px;
+    }
+}

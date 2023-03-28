@@ -4,6 +4,8 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
 import Breakdown from "./Components/breakdown/Breakdown";
 import Sessions from "./Components/sessions/Sessions.jsx"
+import Add from "./Components/add/Add"
+
 import "./app.css";
 
 function App() {
@@ -24,6 +26,12 @@ function App() {
             <Sessions/>
           </div>
 }/>
+
+          <Route path="/add" element={
+            <div className="add">
+              <Add/>
+            </div>
+          } />
         </Routes>
       </BrowserRouter>
     </div>

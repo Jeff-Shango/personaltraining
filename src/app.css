@@ -49,14 +49,11 @@ body {
 
 html {
     scroll-behavior: smooth;
+    height: 125rem;
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-.container {
-    width: var();
 }
 
 h1, 
@@ -118,8 +115,8 @@ a:hover {
 /* Media Queries (Small Devices) */
 @media screen and (max-width: 600px) {
 
-    .container {
-        width: var(--container-width-sm)
+    #container {
+        width: var(--container-width-sm);
     }
 
     section > h2 {

@@ -1,44 +1,71 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import axios from "axios";
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import axios from 'axios';
+import { Link, Navigate, useNavigate } from "react-router-dom"
+import "./sessions.css"
 
 const Sessions = () => {
   const [events, setEvents] = useState([]);
+  const [showData, setShowData] = useState();
+
   useEffect(() => {
     const fetchEvents = async () => {
-      try{
-        const res = await axios.get("http://localhost:7500/list")
+      try {
+        const res = await axios.get('http://localhost:7500/list');
         setEvents(res.data);
         console.log(res.data);
-      }catch(err){
-        console.log(err)
+      } catch (err) {
+        console.log(err);
       }
-    }
-    fetchEvents()
+    };
+    fetchEvents();
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div>
-      <FullCalendar
+      <FullCalendar 
+        className="calendarShit"
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView={"dayGridMonth"}
+        initialView={'dayGridMonth'}
         headerToolbar={{
-          start: "today prev,next",
-          center: "title",
-          end: "dayGridMonth,timeGridWeek,timeGridDay",
+          start: 'today prev,next',
+          center: 'title',
+          end: 'dayGridMonth,timeGridWeek,timeGridDay',
         }}
       />
+              {/* add button */}
+        <Link id='addText' to="/add" target='_self'>
+          <button id='addButton'>
+            Add New Event
+          </button>
+        </Link>
+        <ul id='eventContainer'>
+          <h1 id='eventTitle'>Events</h1>
+          {events.map((event) => (
+            <li key={event.id} className="eventID">
+              <div>
+                <h1>{event.Name}</h1>
+                <p>{event.Event}</p>
+                <p>Date: {event.date}</p>
+                <p>Time: {event.time}</p>
+                <p>Type: {event.Type}</p>
+                <p>Notes: {event.notes}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
 
-      <div className="container">
-        <h1>Events</h1>
-        <h3>List of events</h3>
-        <p></p>
-      </div>
+        <div id="explainTextContainer">
+          <p id="explainText">"Scheduling your appointments in advance secures your spot and ensures that you have the time and resources you need. You can also cancel your appointments if needed. Make the most of your time by scheduling with us today!"</p>
+        </div>
+
     </div>
-  )
-}
+  );
+};
 
-export default Sessions
+export default Sessions;
