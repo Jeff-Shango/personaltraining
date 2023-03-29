@@ -61,7 +61,11 @@ const Sessions = () => {
         </ul>
 
         <div id="explainTextContainer">
-          <p id="explainText">"Scheduling your appointments in advance secures your spot and ensures that you have the time and resources you need. You can also cancel your appointments if needed. Make the most of your time by scheduling with us today!"</p>
+          <p id="explainText">
+            Scheduling your appointments in advance secures your spot and ensures that you have the time and resources you need. You can also cancel your appointments if needed. Make the most of your time by scheduling with us today!
+            <br/>
+            <a href="/termscondition">Terms and Condition</a>
+          </p>
         </div>
 
     </div>

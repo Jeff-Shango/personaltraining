@@ -49,7 +49,7 @@ body {
 
 html {
     scroll-behavior: smooth;
-    height: 125rem;
+    height: 500rem;
 }
 
 ::-webkit-scrollbar {

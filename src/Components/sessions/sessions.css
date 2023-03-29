@@ -5,6 +5,10 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .fc {
+        background-color: var(--primary-color-variant);
+      }
       
       .calendarShit, .fc-toolbar, .fc-next-button {
         margin: 0;
@@ -31,6 +35,7 @@
         margin: 10px;
         height: 25rem;
         overflow-y: scroll;
+        background-color: var(--primary-color-variant);
     }
 
     #eventTitle {
@@ -61,6 +66,8 @@
         text-align: center;
         font-size: 18px;
         margin-right: 25px;
+        background-color: var(--color-bg-variant);
+        color: var(--light);
 }
 
     .eventID > div {
@@ -73,7 +80,7 @@
     }
     .eventID > div > p {
         position: relative;
-        border: 2px solid black;
+        border: 2px solid var(--primary-color-variant);
         width: fit-content;
         display: inline-block;
         margin: 5px;

@@ -5,6 +5,8 @@ import Navlinks from "./Components/Navlinks/Navlinks";
 import Breakdown from "./Components/breakdown/Breakdown";
 import Sessions from "./Components/sessions/Sessions.jsx"
 import Add from "./Components/add/Add"
+import Terms from "./Components/terms/TermsCondition"
+import ParQForm from "./Components/parq/ParQForm";
 
 import "./app.css";
 
@@ -25,15 +27,19 @@ function App() {
           <div className="sessions">
             <Sessions/>
           </div>
-}/>
+          
+        }/>
 
           <Route path="/add" element={
             <div className="add">
               <Add/>
             </div>
           } />
+          <Route path="/termscondition" element={<Terms/>}/>
+          <Route path="/parq" element={<ParQForm/>}/>
         </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }
