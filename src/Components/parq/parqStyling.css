@@ -1,26 +1,65 @@
 /* Media Queries (Small Devices) */
 @media screen and (max-width: 600px) {
 #parQContainer {
-    max-width: 600px;
+    width: var(--container-width-sm);
     margin: auto;
 }
 
-/* .parqSection {
+.parqSection {
     border: 2px solid red;
     height: fit-content;
     margin-bottom: 20px;
     padding: 20px;
     color: white;
-} */
+}
+
+.innerInput {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.innerInput input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: #1d2b3a;
+        border-radius: 5px;
+        outline: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+}
+
+.innerInput input:focus ~ span,
+.innerInput input:valid ~ span {
+    color: var(--primary-color);
+    transform: translateX(10px) translateY(-12px);
+    -webkit-transform: translateX(10px) translateY(-12px);
+    -moz-transform: translateX(10px) translateY(-12px);
+    -ms-transform: translateX(10px) translateY(-12px);
+    -o-transform: translateX(10px) translateY(-12px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+    letter-spacing: 0.2em;
+}
+
+
 
 .inputContainer {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
 
 .inputContainer input {
-    width: 100%;
+        width: 100%;
         padding: 10px;
         border: 1px solid rgba(255, 255, 255, 0.25);
         background: #1d2b3a;
@@ -49,19 +88,19 @@
     -o-transition: 0.5s;
 }
 
-.inputContainer input:valid ~ span,
-.inputContainer input:focus ~ span {
-    color: #00dfc4;
-    transform: translateX(10px) translateY(-7px);
-    -webkit-transform: translateX(10px) translateY(-7px);
-    -moz-transform: translateX(10px) translateY(-7px);
-    -ms-transform: translateX(10px) translateY(-7px);
-    -o-transform: translateX(10px) translateY(-7px);
-    font-size: 0.65em;
+.inputContainer input:focus ~ span,
+.inputContainer input:valid ~ span {
+    color: var(--primary-color);
+    transform: translateX(10px) translateY(-12px);
+    -webkit-transform: translateX(10px) translateY(-12px);
+    -moz-transform: translateX(10px) translateY(-12px);
+    -ms-transform: translateX(10px) translateY(-12px);
+    -o-transform: translateX(10px) translateY(-12px);
+    font-size: 1em;
     padding: 0 10px;
     background: #1d2b3a;
-    border-left: 1px solid #00dfc4;
-    border-right: 1px solid #00dfc4;
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
     letter-spacing: 0.2em;
 }
 
@@ -80,6 +119,7 @@ aside {
     display: flex;
     flex-direction: column;
 }
+
 /* 
 .personDetailsContainer {
     padding: 20px;
