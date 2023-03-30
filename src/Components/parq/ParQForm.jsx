@@ -9,47 +9,60 @@ const ParQForm = () => {
         <section className="parqSection personDetailsContainer">
             <h2 id='sectionTitle'>Personal Details</h2>
 
-            <label id='parqLabel' htmlFor="">Title</label>
+          <div className="inputContainer">
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="firstName">First Name</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Middle Name</label>
+          <div className="inputContainer">
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="middleName">Middle Name</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Last Name</label>
+          <div className="inputContainer">
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="lastName">Last Name</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Date of Birth</label>
+          <div className="inputContainer">
             <input id='parqInput' type="date" />
+            <span aria-required="true" id='parqLabel' name="dob">Date of Birth</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Age</label>
+          <div className="inputContainer">
             <input id='parqInput' type="number" />
+            <span aria-required="true" id='parqLabel' name="age">Age</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Gender</label>
+          <div className="inputContainer">
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="gender">Gender</span>
+          </div>
 
-            <label id='parqLabel' htmlFor="">Address</label>
+
             <input id='parqInput' type="text" />            
+            <span aria-required="true" id='parqLabel' name="address">Address</span>
 
-            <label id='parqLabel' htmlFor="">Town</label>
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="town">Town</span>
 
-            <label id='parqLabel' htmlFor="">County</label>
             <input id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="county">County</span>
 
-            <label id='parqLabel' htmlFor="">Zip Code</label>
             <input id='parqInput' type="number" />
+            <span aria-required="true" id='parqLabel' name="zipCode">Zip Code</span>
 
-            <label id='parqLabel' htmlFor="">Email</label>
             <input id='parqInput' type="email" />
+            <span aria-required="true" id='parqLabel' name="email">Email</span>
 
-            <label id='parqLabel' htmlFor="">Contact Number</label>
             <input id='parqInput' type="tel" />
+            <span aria-required="true" id='parqLabel' name="contactNumber">Contact Number</span>
 
         <div className="emergencyContact">
-            <label id='parqLabel' htmlFor="">Emergency Contact</label>
             <input id='parqInput' type="text" />
-            <label id='parqLabel' htmlFor="">telephone</label>
+            <span aria-required="true" id='parqLabel' name="emergencyContact">Emergency Contact</span>
             <input id='parqInput' type="tel" />
+            <span aria-required="true" id='parqLabel' name="emergencyContactTel">telephone</span>
         </div>
         </section>    
 
@@ -62,7 +75,7 @@ const ParQForm = () => {
             <ol type='I' className="medicalChecklist">
                 <li>
                     <div class="question">
-                      <label for="heart-problems">Heart Problems</label>
+                      <label htmlFor="heart-problems">Heart Problems</label>
                     </div>
                     <div class="checkboxes">
                       <label><input type="checkbox" name="heart-problems" value="yes"/> Yes</label>
