@@ -5,78 +5,73 @@ const ParQForm = () => {
   return (
     <div id='parQContainer'>
         <h1 id="parQTitle">Pre-Activity Readiness Questionnaire Form (PAR-Q-Form)</h1>
-        <form action="" id='parqForm'>
+        <form action="https://formsubmit.co/jeff.bozierjr@gmail.com" id='parqForm' method='POST' encType='multipart/form-data'>
         <section className="parqSection personDetailsContainer">
             <h2 id='sectionTitle'>Personal Details</h2>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
+            <input name='First Name' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="firstName">First Name</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
-            <span aria-required="true" id='parqLabel' name="middleName">Middle Name</span>
+            <input name='Middle Name' id='parqInput' type="text" />
+            <span  id='parqLabel' name="middleName">Middle Name</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
+            <input name='Last Name' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="lastName">Last Name</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="date" />
+            <input name='birthdate' id='parqInput' type="date" />
             <span aria-required="true" id='parqLabel' name="dob">Date of Birth</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="number" />
+            <input name='Age' id='parqInput' type="number" />
             <span aria-required="true" id='parqLabel' name="age">Age</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
+            <input name='gender' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="gender">Gender</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />            
-            <span aria-required="true" id='parqLabel' name="address">Address</span>
+            <input name='address' id='parqInput' type="text" />            
+            <span id='parqLabel' name="address">Address</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
-            <span aria-required="true" id='parqLabel' name="town">Town</span>
+            <input name='city' id='parqInput' type="text" />
+            <span aria-required="true" id='parqLabel' name="city">City</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="text" />
-            <span aria-required="true" id='parqLabel' name="county">County</span>
-          </div>
-
-          <div className="inputContainer">
-            <input id='parqInput' type="number" />
+            <input name='zip code' id='parqInput' type="number" />
             <span aria-required="true" id='parqLabel' name="zipCode">Zip Code</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="email" />
+            <input name='email' id='parqInput' type="email" />
             <span aria-required="true" id='parqLabel' name="email">Email</span>
           </div>
 
           <div className="inputContainer">
-            <input id='parqInput' type="tel" />
+            <input name='Contact Number' id='parqInput' type="tel" />
             <span aria-required="true" id='parqLabel' name="contactNumber">Contact Number</span>
           </div>
 
         <div className="emergencyContact">
         <div className="inputContainer">
-            <input id='parqInput' type="text" />
+            <input name='Emergency Contact' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="emergencyContact">Emergency Contact</span>
         </div>
 
         <div className="inputContainer">
-            <input id='parqInput' type="tel" />
+            <input name='Emergency Contact Number' id='parqInput' type="tel" />
             <span aria-required="true" id='parqLabel' name="emergencyContactTel">telephone</span>
         </div>
         </div>
@@ -94,8 +89,12 @@ const ParQForm = () => {
                       <label htmlFor="heart-problems">Heart Problems</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="heart-problems" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="heart-problems" value="no"/> No</label>
+                      <label>
+                        <input type="checkbox" className='checkbox' name="heart-problems" value="yes"/> Yes
+                      </label>
+                      <label>
+                        <input type="checkbox" className='checkbox' name="heart-problems" value="no"/> No
+                      </label>
                     </div>
                 </li>
                 
@@ -104,8 +103,8 @@ const ParQForm = () => {
                       <label for="heart-problems">Heart Problems</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="heart-problems" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="heart-problems" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="heart-problems" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="heart-problems" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -114,8 +113,8 @@ const ParQForm = () => {
                       <label for="circulatory-problems">Circulatory problems</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="circulatory-problems" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="circulatory-problems" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="circulatory-problems" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="circulatory-problems" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -124,8 +123,8 @@ const ParQForm = () => {
                       <label for="blood-pressure">Blood pressure problems?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="blood-pressure" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="blood-pressure" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="blood-pressure" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="blood-pressure" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -134,8 +133,8 @@ const ParQForm = () => {
                       <label for="mobility">Joint, movement problems?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="mobility" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="mobility" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="mobility" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="mobility" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -144,22 +143,22 @@ const ParQForm = () => {
                       <label for="pregnant">Currently pregnant or recently given birth?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="pregnant" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="pregnant" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="pregnant" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="pregnant" value="no"/> No</label>
                     </div>
                 </li>
             </ol>
 
         {/* health checklist */}
-            <aside>if <strong>Yes</strong>, please provide details below <input type="text" placeholder='enter Here'/></aside>
+            <aside className='innerInput'>if <strong>Yes</strong>, please provide details below <input type="text" placeholder='enter Here'/></aside>
             <ol type='I' className="healthChecklist">
                 <li>
                     <div class="question">
                       <label for="spine">Back/spinal pain?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="spine" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="spine" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="spine" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="spine" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -168,8 +167,8 @@ const ParQForm = () => {
                       <label for="headaches">Headaches or migraines?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="headaches" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="headaches" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="headaches" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="headaches" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -178,8 +177,8 @@ const ParQForm = () => {
                       <label for="past-injury">Have you recently had surgery?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="past-injury" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="past-injury" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="past-injury" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="past-injury" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -188,8 +187,8 @@ const ParQForm = () => {
                       <label for="medication">Currently being prescribed medication?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="medication" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="medication" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="medication" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="medication" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -198,8 +197,8 @@ const ParQForm = () => {
                       <label for="finished-medication">Recently finished a course of medication?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="finished-medication" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="finished-medication" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="finished-medication" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="finished-medication" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -208,8 +207,8 @@ const ParQForm = () => {
                       <label for="diabetes">Diabetes?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="diabetes" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="diabetes" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="diabetes" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="diabetes" value="no"/> No</label>
                     </div>
                 </li>
 
@@ -218,12 +217,12 @@ const ParQForm = () => {
                       <label for="asthma">Asthma or breathing problems?</label>
                     </div>
                     <div class="checkboxes">
-                      <label><input type="checkbox" name="asthma" value="yes"/> Yes</label>
-                      <label><input type="checkbox" name="asthma" value="no"/> No</label>
+                      <label><input type="checkbox" className='checkbox' name="asthma" value="yes"/> Yes</label>
+                      <label><input type="checkbox" className='checkbox' name="asthma" value="no"/> No</label>
                     </div>
                 </li>
             </ol>
-        <input type="text" />
+        <input placeholder='enter' type="text" />
         <label htmlFor="">Is there any other reason that you believe may prevent you from participating</label>
         </section>
 
@@ -231,25 +230,40 @@ const ParQForm = () => {
             <h2 id='sectionTitle'>Declaration</h2>
             <p>I have answered all questions in this form honestly and I am aware that if I have answered <strong>yes</strong> to any of the questions, I will need to consult my PCP before commencing an exercise program if I am affected by any of the questions mentioned in this form or at a later date I agree to inform my personal trainer on any changes in health or fitness.</p>
             <div id="signing">
+
+            <div className="inputContainer">
                 <label htmlFor="">Signed:</label>
-                <input type="text" />
-
+                <input name='signed' type="text"/>
+            </div>
+            
+            <div className="inputContainer">
                 <label htmlFor="">Print Name:</label>
-                <input type="text" />
+                <input name='print Name' type="text" />
+            </div>
 
+            <div className="inputContainer">
                 <label htmlFor="">Date:</label>
-                <input type="date" />
+                <input name='date' type="date" />
+            </div>
 
+            <div className="inputContainer">
                 <label htmlFor="">Instructor:</label>
-                <input type="text" />
+                <input name='instructor' type="text" />
+            </div>
 
+            <div className="inputContainer">
                 <label htmlFor="">Print Name:</label>
-                <input type="text" />
+                <input name='namePrint' type="text" />
+            </div>
 
+            <div className="inputContainer">
                 <label htmlFor="">Date</label>
-                <input type="date" />
+                <input name='signed date' type="date" />
+            </div>
             </div>
         </section>
+
+        <button type="submit" id="submitButton">Send</button> 
         </form>
     </div>
   )

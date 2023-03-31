@@ -8,6 +8,10 @@
         height: 20vh;
     } */
 
+    nav {
+        display: flex;
+    }
+
     html {
         background-color: var(--color-bg);
     }
@@ -17,9 +21,16 @@
     }
 
     #navLink {
-        font-size: 2rem;
-        margin-left: 1rem;
-    }
+        font-size: 18px;
+        padding: 8px;
+        color: var(--primary-color);
+        background-color: ;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+}
     .outerContainer {
         position: absolute;
         left: 0;

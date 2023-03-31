@@ -6,11 +6,17 @@
 }
 
 .parqSection {
+    border-radius: 12px;
+    background-color: var(--color-bg-variant);
     border: 2px solid red;
     height: fit-content;
     margin-bottom: 20px;
     padding: 20px;
     color: white;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .innerInput {
@@ -26,11 +32,11 @@
         background: #1d2b3a;
         border-radius: 5px;
         outline: none;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        color: #fff;
+        -webkit-border-radius:;
+        -moz-border-radius:;
+        -ms-border-radius:;
+        -o-border-radius:;
+        color: var(--light);
         font-size: 1em;
 }
 
@@ -112,7 +118,8 @@
 }
 
 aside {
-    border: 2px solid green;
+    padding-bottom: 5px;
+    border-bottom: 2px solid green;
 }
 
 #parqForm {
@@ -130,6 +137,36 @@ aside {
     margin-top: 0;
 }
 
+#declaration > p {
+    border-bottom: var(--color-bg-variant) 2px solid;
+    padding-bottom: 5px;
+}
+
+.checkboxes > label{
+    margin-right: 10px;
+    font-size: 3rem;
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+ /* submit Button */
+
+ #submitButton {
+    margin-top: 5vh;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: #1d2b3a;
+    color: white;
+    padding: 5vh;
+    font-size: 5vh;
+}
 /* #parqLabel {
     display: block;
     margin-bottom: 5px;
