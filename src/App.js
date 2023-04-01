@@ -7,7 +7,7 @@ import Sessions from "./Components/sessions/Sessions.jsx"
 import Add from "./Components/add/Add"
 import Terms from "./Components/terms/TermsCondition"
 import ParQForm from "./Components/parq/ParQForm";
-
+import Programs from "./Components/programs/Programs";
 import "./app.css";
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
           } />
           <Route path="/termscondition" element={<Terms/>}/>
           <Route path="/parq" element={<ParQForm/>}/>
+          <Route path="/programs" element={<Programs/>}/>
         </Routes>
       </BrowserRouter>
       

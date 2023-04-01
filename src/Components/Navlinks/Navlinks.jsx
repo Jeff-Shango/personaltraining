@@ -7,7 +7,7 @@ import {FaFileMedical} from 'react-icons/fa'
 import {RiBoxingFill} from 'react-icons/ri'
 import {BsPersonFillAdd} from 'react-icons/bs'
 import {GiPapers} from 'react-icons/gi'
-
+import {BsFillCalendarRangeFill} from "react-icons/bs"
 const Navlinks = () => {
     const [activeNav, setActiveNav] = useState('#')
   return (
@@ -25,8 +25,13 @@ const Navlinks = () => {
         </a>
 
         <a id='navLink' href="/sessions" onClick={() => setActiveNav('/')} className={activeNav === '/' ? 'active' : ''}>
-            <RiBoxingFill/>
+            <BsFillCalendarRangeFill/>
             <p>sessions</p>
+        </a>
+
+        <a id='navLink' href="/programs" onClick={() => setActiveNav('/programs')} className={activeNav === '/programs' ? 'active' : ''}>
+            <RiBoxingFill/>
+            <p>programs</p>
         </a>
 
         <a id='navLink' href="/add"  onClick={() => setActiveNav('add')} className={activeNav === 'add' ? 'active' : ''}>
