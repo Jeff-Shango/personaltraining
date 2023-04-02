@@ -1,0 +1,41 @@
+.programsContainer {
+    position: relative;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
+
+#programsTitle {
+    border: 2px solid blue;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+#programPicContainer {
+    height: 24rem;
+}
+
+.navDropdown {
+    border: 2px solid white;
+}
+.programPicContainerA {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../assets/programSCImg.jpg");
+    clip-path: circle(44.6% at 45% 45%);
+
+
+}
+
+.programPicContainerB {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../assets/programStrikingImg.jpg");
+    clip-path: circle(44.6% at 45% 45%);
+}
+
+.programDescription {
+    color: white;
+    padding: 15px;
+    font-size: 17px;
+}
