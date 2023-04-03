@@ -47,9 +47,9 @@ const Dashboard = () => {
     </Carousel>
     <p id='dashboardText'>Get in fighting shape with my personalized coaching and training for boxing and Muay Thai. I offer customized packages to work on technique, strength, and conditioning. Contact me now to get started!</p>
     <div className="bottomDashboard">
-      <button className="sessions striking">Striking Sessions</button>
-      <button className="sessions scSessions">Strength & Conditioning Sessions</button>
-      <button className="sessions packages">Packages</button>
+      <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions striking">Striking Sessions</button>
+      <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions scSessions">Strength & Conditioning Sessions</button>
+      <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions packages">Packages</button>
     </div>
     </>
   );

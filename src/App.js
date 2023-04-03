@@ -8,6 +8,7 @@ import Add from "./Components/add/Add"
 import Terms from "./Components/terms/TermsCondition"
 import ParQForm from "./Components/parq/ParQForm";
 import Programs from "./Components/programs/Programs";
+import Striking from "./Components/striking/Striking";
 import "./app.css";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/termscondition" element={<Terms/>}/>
           <Route path="/parq" element={<ParQForm/>}/>
           <Route path="/programs" element={<Programs/>}/>
+          <Route path="/striking" element={<Striking/>}/>
         </Routes>
       </BrowserRouter>
       

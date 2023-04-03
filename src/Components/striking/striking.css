@@ -1,0 +1,38 @@
+/* Media Queries (Small Devices) */
+@media screen and (max-width: 600px) {
+    #strikingContainer, #weightLiftingContainer, #mixedProgramContainer {
+    border: 2px solid white;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+#strikingContainer > h1, #weightLiftingContainer > h1, #mixedProgramContainer > h1 {
+    text-align: center;
+} 
+
+#strikingContainer > h3, #weightLiftingContainer > h3, #mixedProgramContainer > h3 {
+    border: 2px solid red;
+    height: 10rem;
+    overflow-y: scroll;
+    animation: boxHeight 1s ease-in-out;
+    -webkit-animation: boxHeight 1s ease-in-out;
+}
+
+#strikingContainer.animate-height > h3,
+#weightLiftingContainer.animate-height > h3,
+#mixedProgramContainer.animate-height > h3 {
+  animation: boxHeight 1s ease-in-out infinite;
+  -webkit-animation: boxHeight 1s ease-in-out infinite;
+}
+
+@keyframes boxHeight {
+  50% {
+    height: 10rem;
+  }
+  100% {
+    height: fit-content;
+  }
+}
+
+}
