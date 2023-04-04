@@ -4,12 +4,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import axios from 'axios';
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./sessions.css"
 
 const Sessions = () => {
   const [events, setEvents] = useState([]);
-  const [showData, setShowData] = useState();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -23,8 +22,6 @@ const Sessions = () => {
     };
     fetchEvents();
   }, []);
-
-  const navigate = useNavigate();
 
   return (
     <div>

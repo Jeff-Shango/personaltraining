@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavDropdown } from 'react-bootstrap';
+import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
 
 const Striking = () => {
@@ -50,34 +51,41 @@ const Striking = () => {
         Whether you're a seasoned athlete or a beginner, I have programs tailored to meet your goals. With my guidance, you'll learn to strike with precision and efficiency, all while having fun and staying motivated. So let's get started on your journey to mastering the art of striking!
         </NavDropdown>
 
-        <ul id="strikingPrograms">
+        <ul id="programs">
             <h3 id="strikingProgramTitle">Striking Programs</h3>
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
@@ -90,34 +98,41 @@ const Striking = () => {
         Are you looking to build muscle, tone your body, trim down fat, and improve your mobility and flexibility? Let me help you achieve your fitness goals with a personalized workout plan tailored to your specific needs. With my expertise, I can introduce new exercises and techniques to keep your workouts fresh and effective, while also providing you with a clear understanding of the purpose behind each exercise. Whether you're a beginner or an experienced athlete, I can work with you to develop a plan that helps you achieve your fitness dreams. Let's work together to transform your body and improve your overall health and wellness.   
         </NavDropdown>
 
-        <ul id="strikingPrograms">
-            <h3 id="weightLiftingProgramTitle">Striking Programs</h3>
+        <ul id="programs">
+            <h3 id="weightLiftingProgramTitle">Weight Lifting Programs</h3>
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
@@ -132,18 +147,21 @@ const Striking = () => {
             So, whether you want to improve your striking skills, build muscle and tone your body, or just get in shape, my program can help you achieve your goals. Contact me now to get started on your personalized workout plan.
         </NavDropdown>
 
-        <ul id="mixedPrograms">
+        <ul id="programs">
             <h3 id="mixedProgramTitle">Mixed Programs</h3>
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $700 per month (Savings of $80)
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $1,050per month (savings of $100) 
+            <button onClick={() => {window.location.href='http://localhost:3000/programs';}}><MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
