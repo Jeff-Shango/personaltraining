@@ -12,9 +12,20 @@
     text-align: center;
 } 
 
-#readMore {
+
+.dropdown-menu.show {
+    background-color: black;
+    color: white;
     border: 2px solid white;
-}
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    font-size: large;
+    height: 25rem;
+    overflow-y: scroll;
+}   
 
 }
 /* 
