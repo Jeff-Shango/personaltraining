@@ -56,9 +56,9 @@ const PaymentForm = () => {
     }
 }
   return (
-    <StripeProvider apiKey="pk_live_51MtGJLBsGKDDlKM9WhKAIMEJhlElBL2PeT297ZL1oLzVH6Ivzpc41jpYo9MHn6c7RurxBds06rcUCENpSctnZNGJ00prHakZA6">
+    <>
         {!success ?
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="formContainer">
             <fieldset className="FormGroup">
                 <div className="FormRow">
                     <CardElement options={CARD_OPTIONS}/>
@@ -71,7 +71,7 @@ const PaymentForm = () => {
             <h2>Thanks for buying a session, See you soon!</h2>
         </div>
         }
-    </StripeProvider>
+    </>
   )
 }
 

@@ -3,16 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
-import { Elements } from "@stripe/react-stripe-js";
-import PaymentForm from '../paymentForm/PaymentForm';
+import StripeContainer from './StripeContainer';
+import imageB from "../assets/imageB.jpg";
 
-const PUBLIC_KEY = "pk_live_51MtGJLBsGKDDlKM9WhKAIMEJhlElBL2PeT297ZL1oLzVH6Ivzpc41jpYo9MHn6c7RurxBds06rcUCENpSctnZNGJ00prHakZA6"
-
-const stripeTestPromise = loadStripe(PUBLIC_KEY);
 
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
-    const dropdownTextStriking = showFullText ? (
+    const [showItem, setShowItem] = useState(false)
+    const dropdownTextStriking = showFullText ? (    
       <>
         Click here to close!
       </>
@@ -47,31 +45,7 @@ const Striking = () => {
         </>
     )
 
-useEffect(() => {
-    const checkout = document.getElementById("checkoutButton");
-        checkout.addEventListener("click", () => {
-            fetch('/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    items: [
-                        { id: 1, quantity: 3 },
-                        { id: 2, quantity: 1}
-                    ]
-                })
-            }).then(res => {
-                if (res.ok) return res.json()
-                return res.json().then(json => Promise.reject(json))
-            }).then(({ url }) => {
-                console.log(url)
-                // window.location = url
-            }).catch(e => {
-                console.error(e.error)
-            })
-        });
-}, []);
+
   
   return (
 <>
@@ -88,58 +62,51 @@ useEffect(() => {
             <h3 id="strikingProgramTitle">Striking Programs</h3>
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
         </ul>
     </div>
@@ -156,58 +123,51 @@ useEffect(() => {
             <h3 id="weightLiftingProgramTitle">Weight Lifting Programs</h3>
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
         </ul>
     </div>
@@ -226,26 +186,23 @@ useEffect(() => {
             <h3 id="mixedProgramTitle">Mixed Programs</h3>
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $700 per month (Savings of $80)
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $1,050per month (savings of $100) 
-            <Elements stripe={stripeTestPromise}>
-                <PaymentForm/>
-                <button onClick={() => {}}><MdShoppingCartCheckout/></button>
-            </Elements>
+                <a href="http://localhost:3000/payment" id="paymentLink">
+                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                </a>
             </li>
         </ul>
     </div>

@@ -43,7 +43,7 @@ function App() {
           <Route path="/programs" element={<Programs/>}/>
           <Route path="/striking" element={<Striking/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/payout" element={<PaymentForm/>}/>
+          <Route path="/payment" element={<PaymentForm/>}/>
         </Routes>
       </BrowserRouter>
       
