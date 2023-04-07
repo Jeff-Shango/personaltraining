@@ -8,9 +8,9 @@ import Add from "./Components/add/Add"
 import Terms from "./Components/terms/TermsCondition"
 import ParQForm from "./Components/parq/ParQForm";
 import Programs from "./Components/programs/Programs";
-import Striking from "./server/public/Striking";
+import Striking from "./Components/striking/Striking";
 import Checkout from "./Components/checkout/Checkout";
-
+import PaymentForm from "./Components/paymentForm/PaymentForm";
 import "./app.css";
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
           <Route path="/programs" element={<Programs/>}/>
           <Route path="/striking" element={<Striking/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/payout" element={<PaymentForm/>}/>
         </Routes>
       </BrowserRouter>
       
