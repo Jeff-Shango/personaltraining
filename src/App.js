@@ -10,7 +10,8 @@ import ParQForm from "./Components/parq/ParQForm";
 import Programs from "./Components/programs/Programs";
 import Striking from "./Components/striking/Striking";
 import Checkout from "./Components/checkout/Checkout";
-import PaymentForm from "./Components/paymentForm/PaymentForm";
+import StripeContainer from "./Components/striking/StripeContainer";
+
 import "./app.css";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
           <Route path="/programs" element={<Programs/>}/>
           <Route path="/striking" element={<Striking/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/payment" element={<PaymentForm/>}/>
+          <Route path="/payment" element={<StripeContainer/>}/>
         </Routes>
       </BrowserRouter>
       

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CardElement, useElements, useStripe, StripeProvider } from '@stripe/react-stripe-js';
+import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import axios from 'axios';
 import "./paymentForm.css"
 
@@ -39,7 +39,7 @@ const PaymentForm = () => {
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:5500/payment", {
+            const response = await axios.post("http://localhost:3000/payment", {
                 amount: 1000,
                 id
             })

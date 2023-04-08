@@ -1,15 +1,11 @@
-import { loadStripe } from '@stripe/stripe-js';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
-import StripeContainer from './StripeContainer';
-import imageB from "../assets/imageB.jpg";
 
 
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
-    const [showItem, setShowItem] = useState(false)
     const dropdownTextStriking = showFullText ? (    
       <>
         Click here to close!
