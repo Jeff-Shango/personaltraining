@@ -34,6 +34,6 @@ app.post("/payment", cors(), async (req, res) => {
     }
 })
 
-app.listen(process.env.PORT || 4300, () => {
-    console.log("Server running on port 4300")
+app.listen(process.env.PORT || 4000, () => {
+    console.log("Server running on port 4000")
 })

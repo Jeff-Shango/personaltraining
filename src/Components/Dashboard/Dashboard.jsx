@@ -1,42 +1,29 @@
 import React from 'react'
 import "./dashboard.css";
 import Carousel from 'react-bootstrap/Carousel';
-import slideA from "../assets/logoSolo.png";
 
 const Dashboard = () => {
   return (
     <>
     <Carousel className='carouselContainer'>
-      <Carousel.Item className='carItem'>
-        <img
-          className="d-block imageBackground  w-100"
-          src={slideA}
-          alt="First slide"
-        />
-        <Carousel.Caption className='captionText'>
+      {/* slide 1 */}
+      <Carousel.Item className='carItem carItemA'>
+        <Carousel.Caption className='captionText captionTextA'>
           <h3>Welcome</h3>
-          <p>Thank you for stopping by! Looking forward to working with you!</p>
+          <p>Thank you, I look forward to working with you on your fitness goals!</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className='carItem'>
-        <img
-          className="d-block imageBackground  w-100"
-          src={slideA}
-          alt="Second slide"
-        />
 
+      {/* slide 2 */}
+      <Carousel.Item className='carItem'>
         <Carousel.Caption className='captionText'>
-          <h3>Something for Everybody</h3>
-          <p>Look at the list of plans, and see if there is anything that fits. If not, we can create one!</p>
+          <h3>Videos Coming Soon!</h3>
+          <p>Video breakdowns of technique will be available! Send suggestions of what technical breakdowns you want to see.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className='carItem'>
-        <img
-          className="d-block imageBackground  w-100"
-          src={slideA}
-          alt="Third slide"
-        />
 
+      {/* slide 3 */}
+      <Carousel.Item className='carItem carItemB'>
         <Carousel.Caption className='captionText'>
           <h3>Events</h3>
           <p>

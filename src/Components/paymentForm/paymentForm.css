@@ -33,7 +33,7 @@
 	width: calc(100% - 30px);
 	height: 40px;
 	margin: 40px 15px 0;
-	background-color: #f6a4eb;
+	background-color: var(--primary-color);
 	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #ffb9f6;
 	border-radius: 4px;
 	color: #fff;
@@ -45,13 +45,61 @@
 }
 
 #paymentButton:active {
-	background-color: #d782d9;
+	background-color: var(--primary-color-variant);
 	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #e298d8;
 	transform: scale(0.99);
+	-webkit-transform: scale(0.99);
+	-moz-transform: scale(0.99);
+	-ms-transform: scale(0.99);
+	-o-transform: scale(0.99);
 }
 
 h1,
 h3 {
 	text-align: center;
+}
+
+.succesfulContainer {
+	color: white;
+	font-size: larger;
+	padding: 1rem;
+	position: relative;
+	height: 50vh;
+	text-align: center;
+}
+
+.succesfulContainer > h2 {
+	top: 50%;
+	width: fit-content;
+	position: relative;
+	animation: successfulPayment 2s ease-in-out infinite;
+	-webkit-animation: successfulPayment 2s ease-in-out infinite;
+	font-size: xx-large;
+}
+
+@keyframes successfulPayment {
+	0% {
+		top: 25%;
+	}
+	50% {
+		top: 50%;
+	}
+
+	100% {
+		top: 25%;
+	}
+}
+
+#successfulButton {
+	font-size: 2rem;
+	position: absolute;
+	bottom: 0;
+	right: 25%;
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-ms-border-radius: 12px;
+	-o-border-radius: 12px;
+	margin-bottom: 1rem;
 }
 }

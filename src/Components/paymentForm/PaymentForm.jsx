@@ -39,7 +39,7 @@ const PaymentForm = () => {
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:3000/payment", {
+            const response = await axios.post("http://localhost:4000/payment", {
                 amount: 1000,
                 id
             })
@@ -55,6 +55,11 @@ const PaymentForm = () => {
         console.log(error.message)
     }
 }
+
+const handleOnClick = () => {
+    window.location.href = 'http://localhost:3000';
+  };
+
   return (
     <>
         {!success ?
@@ -67,9 +72,12 @@ const PaymentForm = () => {
             <button id='paymentButton'>Pay</button>
         </form>
         :
-        <div>
-            <h2>Thanks for buying a session, See you soon!</h2>
-        </div>
+        <div className='succesfulContainer'>
+        <h2>Thanks for buying a session, See you soon!</h2>
+        <button id="successfulButton" onClick={handleOnClick}>
+          Go back home!
+        </button>
+      </div>
         }
     </>
   )
