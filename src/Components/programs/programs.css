@@ -5,7 +5,6 @@
 }
 
 #programsTitle {
-    border: 2px solid blue;
     font-size: 30px;
     color: white;
     text-align: center;
@@ -13,6 +12,8 @@
 
 #programPicContainer {
     height: 24rem;
+    position: relative;
+    margin-left: 2.5rem;
 }
 
 .navDropdown {
@@ -34,8 +35,16 @@
     clip-path: circle(44.6% at 45% 45%);
 }
 
+.programPicContainerC {
+    background-image: url("../assets/programPersonalImg.jpg");
+    background-position: center;
+    background-size: cover;
+    clip-path: circle(44.6% at 45% 45%);
+}
+
 .programDescription {
     color: white;
     padding: 15px;
-    font-size: 17px;
+    font-size: 20px;
+    text-align: center;
 }

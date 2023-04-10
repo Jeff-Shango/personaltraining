@@ -1,61 +1,65 @@
 @media screen and (max-width: 600px) {
-
-#sectionTitle {
-    color: white;
-    text-align: center;
-    font-size: xx-large;
-}
-
-.sectionText {
-    color: white;
-    border: 1px solid white;
-    /*display: inline-block;
-    */padding: 10px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    font-size: large;
-}
-
-.breakdownButton {
-    height: 3rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    position: relative;
-    left: 25%;
-    background-color: var(--primary-color-variant);
-    color: white;
-    font-weight: bold;
-}
-
-.picContainer {
-    background-image: url(../assets/breakdownImgA.jpg);
-    height: 20rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
-    border: 5px solid black;
-}
-
-.picInnerContainer {
-    background-image: url("../assets/imageB.jpg");
-    height: 10rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 10rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    border: 5px solid black;
-}
-
-}
+    .sectionText {
+      color: white;
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      font-size: large;
+    }
+    
+    .breakdownButton {
+      height: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      left: 25%;
+      background-color: var(--primary-color-variant);
+      color: white;
+      font-weight: bold;
+    }
+    
+    .picContainer {
+      background-image: url("../assets/breakdownImgA.jpg");
+      height: 20rem;
+      background-position: center;
+      background-size: 170px 300px;
+      background-repeat: no-repeat;
+      position: relative;
+      clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
+      border-radius:  50% 50% 0 0;
+      border: 5px solid black;
+      width: 50%; /* add this property */
+    }
+    
+    .picInnerContainer {
+      background-image: url("../assets/imageB.jpg");
+      height: 10rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 10rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
+      border-radius:  50% 50% 0 0;
+      border: 5px solid black;
+    }
+    
+    .picContainersWrapper {
+      display: flex;
+      flex-wrap: wrap; /* add this property */
+      position: relative;
+    }
+    
+    .sectionTitle {
+      margin-top: 5rem;
+      color: white;
+      text-align: center;
+      font-size: xx-large;
+    }
+  }
+  

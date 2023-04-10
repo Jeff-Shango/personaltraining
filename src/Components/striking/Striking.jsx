@@ -109,8 +109,8 @@ const Striking = () => {
 
     {/* weight lifting section */}
 
-    <div id='weightLiftingContainer'>
-        <h1 className="weightLiftingTitle">Weight Lifting Programs</h1>
+    <div className='weightLiftingContainer'>
+        <h1 id="weightLiftingTitle">Weight Lifting Programs</h1>
         <NavDropdown id='readMore'title={dropdownTextWeights} onClick={() => setShowFullText(!showFullText)}>
         Are you looking to build muscle, tone your body, trim down fat, and improve your mobility and flexibility? Let me help you achieve your fitness goals with a personalized workout plan tailored to your specific needs. With my expertise, I can introduce new exercises and techniques to keep your workouts fresh and effective, while also providing you with a clear understanding of the purpose behind each exercise. Whether you're a beginner or an experienced athlete, I can work with you to develop a plan that helps you achieve your fitness dreams. Let's work together to transform your body and improve your overall health and wellness.   
         </NavDropdown>
