@@ -7,14 +7,14 @@ const CARD_OPTIONS = {
     iconStyle: "solid",
     style: {
         base: {
-            iconColor: "#c4f0ff",
+            iconColor: "black",
             color: "#fff",
             fontWeight: 500,
             fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-            fontSize: "16px",
+            fontSize: "20px",
             fontSmoothing: "antialiased",
             ":-webkit-autofill": { color: "#fce883" },
-            "::placeholder": { color: "#87bbfd" }
+            "::placeholder": { color: "black" }
         },
         invalid: {
             iconColor: "#ffc7ee",
@@ -24,6 +24,17 @@ const CARD_OPTIONS = {
 }
 
 const PaymentForm = () => {
+    const [info, setInfo] = useState({
+        customer_id: "",
+        session_id: "",
+        payment_description: ""
+    })
+
+    const handleChange = (e) => {
+        setInfo(prev => ({...prev, [e.target.name]: e.target.value}))
+    };
+
+
     const [success, setSuccess] = useState(false)
     const stripe = useStripe()
     const elements = useElements()
@@ -33,13 +44,24 @@ const PaymentForm = () => {
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: "card",
             card: elements.getElement(CardElement)
-        })
-    
 
+        })
+
+        e.preventDefault()
+        try{
+            await axios.post("http://localhost:7500/paymentbreakdown", info)
+            console.log("sent to the database")
+        }catch(err){
+            console.log(err)
+        }
+        
+        // customer_id: "",
+        // session_id: "",
+        // payment_description: ""
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:4000/payment", {
+            const response = await axios.post("http://localhost:7500/payment", {
                 amount: 1000,
                 id
             })
@@ -56,6 +78,8 @@ const PaymentForm = () => {
     }
 }
 
+console.log(info)
+
 const handleOnClick = () => {
     window.location.href = 'http://localhost:3000';
   };
@@ -64,6 +88,22 @@ const handleOnClick = () => {
     <>
         {!success ?
         <form onSubmit={handleSubmit} id="formContainer">
+
+            <div className="inputBox">
+            <input onChange={handleChange} type="text" name='customer' id='formInput' required="required"/>
+            <span>Full Name</span>
+            </div>
+
+            <div className="inputBox">
+            <input onChange={handleChange} type="text" id="formInput" name='formInput' required="required"/>
+            <span>Session Type</span>
+            </div>
+
+            <div className="inputBox">
+            <input onChange={handleChange} type="text" id="formInput" name='description'/>
+            <span>Extra Info</span>
+            </div>
+ 
             <fieldset className="FormGroup">
                 <div className="FormRow">
                     <CardElement options={CARD_OPTIONS}/>

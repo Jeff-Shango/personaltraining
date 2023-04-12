@@ -59,49 +59,49 @@ const Striking = () => {
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
         </ul>
@@ -109,7 +109,7 @@ const Striking = () => {
 
     {/* weight lifting section */}
 
-    <div className='weightLiftingContainer'>
+    <div id='weightLiftingContainer'>
         <h1 id="weightLiftingTitle">Weight Lifting Programs</h1>
         <NavDropdown id='readMore'title={dropdownTextWeights} onClick={() => setShowFullText(!showFullText)}>
         Are you looking to build muscle, tone your body, trim down fat, and improve your mobility and flexibility? Let me help you achieve your fitness goals with a personalized workout plan tailored to your specific needs. With my expertise, I can introduce new exercises and techniques to keep your workouts fresh and effective, while also providing you with a clear understanding of the purpose behind each exercise. Whether you're a beginner or an experienced athlete, I can work with you to develop a plan that helps you achieve your fitness dreams. Let's work together to transform your body and improve your overall health and wellness.   
@@ -120,49 +120,49 @@ const Striking = () => {
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
         </ul>
@@ -183,26 +183,25 @@ const Striking = () => {
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $700 per month (Savings of $80)
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $1,050per month (savings of $100) 
                 <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button onClick={() => {}}><MdShoppingCartCheckout/></button>
+                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
                 </a>
             </li>
         </ul>
     </div>
-    <button id="checkoutButton" className='btn btn-primary'>Checkout</button>
         <p className="endingDescription">Please note that prices can change at the discretion of the trainor and the client, feel free to communicate what it is you're looking for for a fitness package!</p>
     </>
   )

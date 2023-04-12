@@ -3,13 +3,22 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentForm from '../paymentForm/PaymentForm';
 
-const PUBLIC_KEY = "(use the Pk.Test id)"
+const PUBLIC_KEY = "burp"
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const StripeContainer = () => {
   return (
     <Elements stripe={stripeTestPromise}>
+      <div id="paymentContainer">
+        <h1 id="paymentTitle">Your Cart</h1>
+
+        <ul id="itemContainer">
+          <li id="productItem">
+            
+          </li>
+        </ul>
+      </div>
         <PaymentForm/>
     </Elements>
   )
