@@ -90,17 +90,17 @@ const handleOnClick = () => {
         <form onSubmit={handleSubmit} id="formContainer">
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" name='customer' id='formInput' required="required"/>
+            <input onChange={handleChange} type="text" name='customer_id' id='formInput' required="required"/>
             <span>Full Name</span>
             </div>
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" id="formInput" name='formInput' required="required"/>
+            <input onChange={handleChange} type="text" id="formInput" name='session_id' required="required"/>
             <span>Session Type</span>
             </div>
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" id="formInput" name='description'/>
+            <input onChange={handleChange} type="text" id="formInput" name='payment_description'/>
             <span>Extra Info</span>
             </div>
  
