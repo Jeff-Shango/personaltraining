@@ -7,6 +7,16 @@ import "./striking.css";
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
     const [cartItem, setCartItem] = useState([]);
+    const [active, setActive] = useState(false);
+    const [checkoutInfo, setCheckoutInfo] = useState({
+        
+    })
+
+    const strikingA = active ? (
+       <>
+       </> 
+    )
+
     const dropdownTextStriking = showFullText ? (    
       <>
         Click here to close!

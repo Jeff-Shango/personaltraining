@@ -32,7 +32,6 @@ const Sessions = () => {
         className="calendarShit"
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={'dayGridWeek'}
-        dayCount={4}
         headerToolbar={{
           start: 'today prev,next',
           center: 'title',
@@ -40,9 +39,9 @@ const Sessions = () => {
         }}
       />
               {/* add button */}
-        <Link id='addText' to="/add" target='_self'>
+        <Link id='addText' to="/programs" target='_self'>
           <button id='addButton'>
-            Add New Event
+            See possible programs
           </button>
         </Link>
         <ul id='eventContainer'>
