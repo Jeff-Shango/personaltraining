@@ -26,9 +26,13 @@ const Sessions = () => {
   return (
     <div>
       <FullCalendar 
+        editable 
+        selectable
+        events={events}
         className="calendarShit"
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView={'dayGridMonth'}
+        initialView={'dayGridWeek'}
+        dayCount={4}
         headerToolbar={{
           start: 'today prev,next',
           center: 'title',

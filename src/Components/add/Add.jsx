@@ -5,10 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const Add = () => {
     const [info, setInfo] = useState({
         Name: "",
-        Event: "",
         Type: "",
         notes: "",
-        time: "",
         date: ""
     })
 
@@ -34,11 +32,9 @@ const Add = () => {
     <div className='form'>
         <h1>Add New Event</h1>
         <input type="text" placeholder='Name' onChange={handleChange} name='Name' />
-        <input type="text" placeholder='Event' onChange={handleChange} name='Event' />
         <input type="text" placeholder='Type' onChange={handleChange} name='Type' />
         <input type="text" placeholder='notes' onChange={handleChange} name='notes' />
-        <input type="text" placeholder='time' onChange={handleChange} name='time' />
-        <input type="text" placeholder='date' onChange={handleChange} name='date' />
+        <input type="date" placeholder='date' onChange={handleChange} name='date' />
         <button className='formButton' onClick={handleClick}>Add</button>
     </div>
   )

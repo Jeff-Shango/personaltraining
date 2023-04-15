@@ -6,6 +6,7 @@ import "./striking.css";
 
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
+    const [cartItem, setCartItem] = useState([]);
     const dropdownTextStriking = showFullText ? (    
       <>
         Click here to close!
@@ -41,6 +42,15 @@ const Striking = () => {
         </>
     )
 
+const handleSubmit = (program, duration, price, frequency) => {
+    const item = {
+        program,
+        duration,
+        price,
+        frequency
+    };
+    setCartItem([...cartItem, item]);
+};
 
   
   return (
@@ -58,51 +68,78 @@ const Striking = () => {
             <h3 id="strikingProgramTitle">Striking Programs</h3>
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Striking", "30 minutes", "$50 per session", "One Session")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Striking", "60 minutes", "$75 per session", "One Session")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() => 
+                        handleSubmit("Striking", "30 minutes", "$350 per session", "twice a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() => 
+                        handleSubmit("Striking", "30 minutes", "$525 per session", "three times a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() => 
+                        handleSubmit("Striking", "60 minutes", "$100 per session", "One session")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Striking", "60 minutes", "$600 per session", "Twice a week")}><MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Striking", "60 minutes", "$600 per session", "Three times a week")}><MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
@@ -119,51 +156,86 @@ const Striking = () => {
             <h3 id="weightLiftingProgramTitle">Weight Lifting Programs</h3>
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "30 minutes", "$50 per session", "Once a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "60 minutes", "$75 per session", "Once a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "30 minutes", "$350 per session", "twice a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "30 minutes", "$525 per session", "Three times a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "60 minutes", "$100 per session", "One session")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "60 minutes", "$600 per session", "Twice a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Weight Lifting", "60 minutes", "$900 per session", "Three times a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
         </ul>
     </div>
@@ -182,23 +254,38 @@ const Striking = () => {
             <h3 id="mixedProgramTitle">Mixed Programs</h3>
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Mixed Program", "60 minutes", "$125 per session", "One session")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
-                2x a week @ 30 minutes: $700 per month (Savings of $80)
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                2x a week @ 60 minutes: $700 per month (Savings of $80)
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Mixed Program", "60 minutes", "$700 per session", "Twice a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
-                3x a week @ 30 minutes: $1,050per month (savings of $100) 
-                <a href="http://localhost:3000/payment" id="paymentLink">
-                    <button id='checkoutButton'><MdShoppingCartCheckout/></button>
-                </a>
+                3x a week @ 60 minutes: $1,050per month (savings of $100) 
+                    <button 
+                        id='checkoutButton'
+                        onClick={() =>
+                        handleSubmit("Mixed Program", "60 minutes", "$1050 per session", "Three times a week")
+                        }
+                        >
+                            <MdShoppingCartCheckout/>
+                        </button>
             </li>
         </ul>
     </div>
