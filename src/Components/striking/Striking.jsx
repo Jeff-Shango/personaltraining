@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
-import Payment from "../striking/StripeContainer"
 
 
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
     const [cartItem, setCartItem] = useState([]);
     const [active, setActive] = useState(true);
+    const navigate = useNavigate()
     const [checkoutInfo, setCheckoutInfo] = useState({
         Name: "",
         Number: "",
@@ -74,29 +74,11 @@ const Striking = () => {
 const handleClick = async e => {
     e.preventDefault()
     try {
-        await axios.post("http://localhost:7500/list", checkoutInfo)
-
+        navigate("/payment", { state: { checkoutInfo }})
     }catch (err) {
         console.log(err)
     }
 }
-
-const strikingA = active ? (
-   <>
-        <div className='form'>
-           <h1>Add New Event</h1>
-           <input type="text" placeholder='Name' onChange={handleChange} name='Name' />
-           <input type="text" placeholder='Type' onChange={handleChange} name='Type' />
-           <input type="text" placeholder='notes' onChange={handleChange} name='notes' />
-           <input type="date" placeholder='date' onChange={handleChange} name='date' />
-           <button className='formButton' onClick={handleClick}>Add</button>
-        </div>
-   </> 
-) : (
-    <>
-     <MdShoppingCartCheckout/>
-    </>
-);
 
 return (
 <>
@@ -114,13 +96,8 @@ return (
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
                     <button 
-                        title={strikingA}
                         id='checkoutButton'
-                        onClick={() =>{
-                        handleSubmit("Striking", "30 minutes", "$50 per session", "One Session");
-                        handleClick()
-                        }
-                        }
+                        onClick={handleClick}
                         >
                             <MdShoppingCartCheckout/>
                         </button>
