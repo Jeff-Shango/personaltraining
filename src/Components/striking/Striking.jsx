@@ -1,35 +1,43 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
+import Payment from "../striking/StripeContainer"
 
 
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
     const [cartItem, setCartItem] = useState([]);
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
     const [checkoutInfo, setCheckoutInfo] = useState({
-        
+        Name: "",
+        Number: "",
+        Email: "",
+        Last_Four_Digit: "",
+        Card_Company: "",
+        Special_Notes: "",
+        Type_Of_Session: ""
     })
+    
+    const handleChange = (e) => {
+        setCheckoutInfo(prev => ({...prev, [e.target.name]: e.target.value}))
+    };
 
-    const strikingA = active ? (
-       <>
-       </> 
-    )
-
+    
     const dropdownTextStriking = showFullText ? (    
-      <>
+        <>
         Click here to close!
       </>
     ) : (
-      <>
+        <>
         Learning to strike is more than just throwing.<br/>
         Click here to read more...
       </>
     );
 
     
-
+    
     const dropdownTextWeights = showFullText ? (
         <>
           Click here to close!
@@ -40,8 +48,8 @@ const Striking = () => {
           Click here to read more...
         </>
       );
-
-    const dropdownTextMixed = showFullText ? (
+      
+      const dropdownTextMixed = showFullText ? (
         <>
             Click here to close!
         </>
@@ -51,8 +59,8 @@ const Striking = () => {
             Click here to read more...
         </>
     )
-
-const handleSubmit = (program, duration, price, frequency) => {
+    
+    const handleSubmit = (program, duration, price, frequency) => {
     const item = {
         program,
         duration,
@@ -62,8 +70,35 @@ const handleSubmit = (program, duration, price, frequency) => {
     setCartItem([...cartItem, item]);
 };
 
-  
-  return (
+
+const handleClick = async e => {
+    e.preventDefault()
+    try {
+        await axios.post("http://localhost:7500/list", checkoutInfo)
+
+    }catch (err) {
+        console.log(err)
+    }
+}
+
+const strikingA = active ? (
+   <>
+        <div className='form'>
+           <h1>Add New Event</h1>
+           <input type="text" placeholder='Name' onChange={handleChange} name='Name' />
+           <input type="text" placeholder='Type' onChange={handleChange} name='Type' />
+           <input type="text" placeholder='notes' onChange={handleChange} name='notes' />
+           <input type="date" placeholder='date' onChange={handleChange} name='date' />
+           <button className='formButton' onClick={handleClick}>Add</button>
+        </div>
+   </> 
+) : (
+    <>
+     <MdShoppingCartCheckout/>
+    </>
+);
+
+return (
 <>
     {/* striking section */}
     <div id='strikingContainer'>
@@ -79,9 +114,12 @@ const handleSubmit = (program, duration, price, frequency) => {
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
                     <button 
+                        title={strikingA}
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Striking", "30 minutes", "$50 per session", "One Session")
+                        onClick={() =>{
+                        handleSubmit("Striking", "30 minutes", "$50 per session", "One Session");
+                        handleClick()
+                        }
                         }
                         >
                             <MdShoppingCartCheckout/>

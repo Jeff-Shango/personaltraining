@@ -43,7 +43,7 @@ app.post("/payment", async (req, res) => {
   }
 });
 
-const dbA = mysql.createConnection({
+const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "baltimore",
@@ -53,8 +53,8 @@ const dbA = mysql.createConnection({
 
 
 app.get("/list", (req, res) => {
-  const q = "SELECT * FROM calendarapi.scheduler";
-  dbA.query(q, (err, data) => {
+  const q = "SELECT * FROM calendarapi.Scheduler_Notes";
+  db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
   });
@@ -62,17 +62,18 @@ app.get("/list", (req, res) => {
 
 app.post("/add", (req, res) => {
   const q =
-    "INSERT INTO calendarapi.scheduler (`Name`, `Event`, `Type`, `notes`, `time`, `date`) VALUES (?)";
+    "INSERT INTO calendarapi.Scheduler_Notes (`Name`, `Number`, `Email`, `Last_Four_Digit`, `Card_Company`, `Special_Notes`, `Type_Of_Session`) VALUES (?)";
   const values = [
     req.body.Name,
-    req.body.Event,
-    req.body.Type,
-    req.body.notes,
-    req.body.time,
-    req.body.date,
+    req.body.Number,
+    req.body.Email,
+    req.body.Last_Four_Digit,
+    req.body.Card_Company,
+    req.body.Special_Notes,
+    req.body.Type_Of_Session
   ];
 
-  dbA.query(q, [values], (err, data) => {
+  db.query(q, [values], (err, data) => {
     if (err) return res.json(err);
     return res.json("Shit has been posted");
   });
