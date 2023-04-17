@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
+
 import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import axios from 'axios';
 import "./paymentForm.css"
@@ -24,6 +26,8 @@ const CARD_OPTIONS = {
 }
 
 const PaymentForm = () => {
+    const location = useLocation();
+    const { item } = location.state;
     const [info, setInfo] = useState({
         customer_id: "",
         session_id: "",
@@ -88,6 +92,10 @@ const handleOnClick = () => {
     <>
         {!success ?
         <form onSubmit={handleSubmit} id="formContainer">
+
+            <div className="TypeOfSession">
+                {/* add in the previous selection */}
+            </div>
 
             <div className="inputBox">
             <input onChange={handleChange} type="text" name='customer_id' id='formInput' required="required"/>
