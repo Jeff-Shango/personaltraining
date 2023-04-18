@@ -71,14 +71,33 @@ const Striking = () => {
 };
 
 
-const handleClick = async e => {
+const handleClick = async (e, program, duration, price, frequency) => {
     e.preventDefault()
     try {
-        navigate("/payment", { state: { checkoutInfo }})
+        const checkoutData = {
+            Name: "",
+            Number: "",
+            Email: "",
+            Last_Four_Digit: "",
+            Card_Company: "",
+            Special_Notes: "",
+            Type_Of_Session: program,
+            Duration_Of_Session: duration,
+            Price_Of_Session: duration, 
+            frequency_Of_Session: frequency
+        };
+        setCheckoutInfo(checkoutData);
+        navigate("/payment", { state: { checkoutData }});
+        setSelectedLi(e.target.innerHTML)
     }catch (err) {
         console.log(err)
     }
 }
+
+const handleOnClick = (e) => {
+    setSelectedLi(e.target.innerHTML)
+}
+
 
 return (
 <>
@@ -97,7 +116,6 @@ return (
                 30 minutes: $50 per session
                     <button 
                         id='checkoutButton'
-                        onClick={handleClick}
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -107,9 +125,6 @@ return (
                 60 minutes: $75 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Striking", "60 minutes", "$75 per session", "One Session")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -119,9 +134,6 @@ return (
                 2x a week @ 30 minutes: $350 per session (Save $50)
                     <button 
                         id='checkoutButton'
-                        onClick={() => 
-                        handleSubmit("Striking", "30 minutes", "$350 per session", "twice a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -131,9 +143,6 @@ return (
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
                     <button 
                         id='checkoutButton'
-                        onClick={() => 
-                        handleSubmit("Striking", "30 minutes", "$525 per session", "three times a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -143,9 +152,6 @@ return (
                 60 minutes: $100 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() => 
-                        handleSubmit("Striking", "60 minutes", "$100 per session", "One session")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -155,16 +161,16 @@ return (
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Striking", "60 minutes", "$600 per session", "Twice a week")}><MdShoppingCartCheckout/></button>
+                        >
+                        <MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Striking", "60 minutes", "$600 per session", "Three times a week")}><MdShoppingCartCheckout/></button>
+                        >
+                        <MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
@@ -183,9 +189,6 @@ return (
                 30 minutes: $50 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "30 minutes", "$50 per session", "Once a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -195,9 +198,6 @@ return (
                 60 minutes: $75 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "60 minutes", "$75 per session", "Once a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -207,9 +207,6 @@ return (
                 2x a week @ 30 minutes: $350 per session (Save $50)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "30 minutes", "$350 per session", "twice a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -219,9 +216,6 @@ return (
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "30 minutes", "$525 per session", "Three times a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -231,9 +225,6 @@ return (
                 60 minutes: $100 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "60 minutes", "$100 per session", "One session")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -243,9 +234,6 @@ return (
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "60 minutes", "$600 per session", "Twice a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -255,9 +243,6 @@ return (
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Weight Lifting", "60 minutes", "$900 per session", "Three times a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -281,9 +266,6 @@ return (
                 60 minutes (30 minutes of each): $125 per session
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Mixed Program", "60 minutes", "$125 per session", "One session")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -293,9 +275,6 @@ return (
                 2x a week @ 60 minutes: $700 per month (Savings of $80)
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Mixed Program", "60 minutes", "$700 per session", "Twice a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
@@ -305,9 +284,6 @@ return (
                 3x a week @ 60 minutes: $1,050per month (savings of $100) 
                     <button 
                         id='checkoutButton'
-                        onClick={() =>
-                        handleSubmit("Mixed Program", "60 minutes", "$1050 per session", "Three times a week")
-                        }
                         >
                             <MdShoppingCartCheckout/>
                         </button>
