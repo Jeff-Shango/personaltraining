@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useHistory } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
@@ -8,7 +8,6 @@ import "./striking.css";
 const Striking = () => {
     const [showFullText, setShowFullText] = useState(false);
     const [cartItem, setCartItem] = useState([]);
-    const [active, setActive] = useState(true);
     const navigate = useNavigate()
     const [checkoutInfo, setCheckoutInfo] = useState({
         Name: "",
@@ -20,10 +19,31 @@ const Striking = () => {
         Type_Of_Session: ""
     })
     
+    
     const handleChange = (e) => {
         setCheckoutInfo(prev => ({...prev, [e.target.name]: e.target.value}))
     };
+    
+    const handleClick = async (program, duration, price, frequency) => {
+        const item = {
+            program,
+            duration,
+            price, 
+            frequency
+        };
+        setCartItem([...cartItem, item]);
+        navigate.push('/payment', { item: item });
 
+    };
+
+    const handleOnClick = (e) => {
+        const program = e.target.dataset.program;
+        const duration = e.target.dataset.duration;
+        const price = e.target.dataset.price;
+        const frequency = e.target.dataset.frequency;
+        handleClick(program, duration, price, frequency);
+
+    };
     
     const dropdownTextStriking = showFullText ? (    
         <>
@@ -60,45 +80,6 @@ const Striking = () => {
         </>
     )
     
-    const handleSubmit = (program, duration, price, frequency) => {
-    const item = {
-        program,
-        duration,
-        price,
-        frequency
-    };
-    setCartItem([...cartItem, item]);
-};
-
-
-const handleClick = async (e, program, duration, price, frequency) => {
-    e.preventDefault()
-    try {
-        const checkoutData = {
-            Name: "",
-            Number: "",
-            Email: "",
-            Last_Four_Digit: "",
-            Card_Company: "",
-            Special_Notes: "",
-            Type_Of_Session: program,
-            Duration_Of_Session: duration,
-            Price_Of_Session: duration, 
-            frequency_Of_Session: frequency
-        };
-        setCheckoutInfo(checkoutData);
-        navigate("/payment", { state: { checkoutData }});
-        setSelectedLi(e.target.innerHTML)
-    }catch (err) {
-        console.log(err)
-    }
-}
-
-const handleOnClick = (e) => {
-    setSelectedLi(e.target.innerHTML)
-}
-
-
 return (
 <>
     {/* striking section */}
@@ -114,11 +95,17 @@ return (
             <h3 id="strikingProgramTitle">Striking Programs</h3>
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to="/payment"
+                        onClick={handleOnClick}
+                        data-program='Striking 30 minutes'
+                        data-duration='30'
+                        data-price='50'
+                        data-frequency='single'
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">

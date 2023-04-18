@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -26,8 +26,9 @@ const CARD_OPTIONS = {
 }
 
 const PaymentForm = () => {
-    const location = useLocation();
-    const { item } = location.state;
+    const navigate = useNavigate();
+    const { item } = navigate.state;
+    console.log(item)
     const [info, setInfo] = useState({
         customer_id: "",
         session_id: "",
