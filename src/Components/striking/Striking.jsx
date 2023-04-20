@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link, useHistory } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
@@ -18,6 +18,13 @@ const Striking = () => {
         Special_Notes: "",
         Type_Of_Session: ""
     })
+
+    const sessionData = {
+        program: checkoutInfo.Type_Of_Session, 
+        duration: checkoutInfo.duration, 
+        price: checkoutInfo.price,
+        frequency: checkoutInfo.frequency
+    }
     
     
     const handleChange = (e) => {
@@ -32,16 +39,18 @@ const Striking = () => {
             frequency
         };
         setCartItem([...cartItem, item]);
-        navigate.push('/payment', { item: item });
-
+        navigate.push('/payment', { state: item });
     };
 
-    const handleOnClick = (e) => {
-        const program = e.target.dataset.program;
-        const duration = e.target.dataset.duration;
-        const price = e.target.dataset.price;
-        const frequency = e.target.dataset.frequency;
-        handleClick(program, duration, price, frequency);
+    const handleOnClick = () => {
+        const item = {
+        Type_Of_Session: 'Type_Of_Session',
+        duration: 'duration',
+        price: 'price',
+        frequency: 'frequency',}
+        const url = `/payment?checkoutInfo=${JSON.stringify(item)}`;
+        navigate(url)
+        // navigate.push('/payment', { state : { Type_Of_Session, duration, price, frequency } });
 
     };
     
@@ -98,11 +107,12 @@ return (
                     <Link 
                         id='checkoutButton'
                         to="/payment"
-                        onClick={handleOnClick}
-                        data-program='Striking 30 minutes'
-                        data-duration='30'
-                        data-price='50'
-                        data-frequency='single'
+                        onClick={() => handleOnClick({
+                            Type_Of_Session: 'Striking 30 minutes',
+                            duration: '30',
+                            price: '50',
+                            frequency: 'single'
+                        })}
                         >
                             <MdShoppingCartCheckout/>
                         </Link>

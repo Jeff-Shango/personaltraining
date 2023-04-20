@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -26,9 +26,12 @@ const CARD_OPTIONS = {
 }
 
 const PaymentForm = () => {
-    const navigate = useNavigate();
-    const { item } = navigate.state;
-    console.log(item)
+    const location = useLocation();
+    // const { program, duration, price, frequency } = navigate.state || {};
+    // const { item } = navigate.state || {};
+    // console.log(item);
+    const { item } = location.search ? JSON.parse(new URLSearchParams(location.search).get('item')) : {};
+    console.log(item.Type_Of_Session);
     const [info, setInfo] = useState({
         customer_id: "",
         session_id: "",
