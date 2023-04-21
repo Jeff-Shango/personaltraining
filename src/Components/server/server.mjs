@@ -62,7 +62,7 @@ app.get("/list", (req, res) => {
 
 app.post("/add", (req, res) => {
   const q =
-    "INSERT INTO calendarapi.Scheduler_Notes (`Name`, `Number`, `Email`, `Last_Four_Digit`, `Card_Company`, `Special_Notes`, `Type_Of_Session`, `Duration_Of_Session`, `Price_Of_Session`, `Frequency_Of_Session`) VALUES (?)";
+    "INSERT INTO calendarapi.Scheduler_Notes (`Name`, `Number`, `Email`, `Last_Four_Digit`, `Card_Company`, `Special_Notes`, `Type_Of_Session`, `Duration`, `Price`, `Frequency`) VALUES (?)";
   const values = [
     req.body.Name,
     req.body.Number,

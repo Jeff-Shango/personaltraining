@@ -16,15 +16,18 @@ const Striking = () => {
         Last_Four_Digit: "",
         Card_Company: "",
         Special_Notes: "",
-        Type_Of_Session: ""
+        Type_Of_Session: "",
+        duration: "",
+        price: "",
+        frequency: "",
     })
 
-    const sessionData = {
-        program: checkoutInfo.Type_Of_Session, 
+    const [sessionData, setSessionData] = useState({
+        Type_Of_Session: checkoutInfo.Type_Of_Session, 
         duration: checkoutInfo.duration, 
         price: checkoutInfo.price,
         frequency: checkoutInfo.frequency
-    }
+    })
     
     
     const handleChange = (e) => {
@@ -42,16 +45,37 @@ const Striking = () => {
         navigate.push('/payment', { state: item });
     };
 
-    const handleOnClick = () => {
-        const item = {
-        Type_Of_Session: 'Type_Of_Session',
-        duration: 'duration',
-        price: 'price',
-        frequency: 'frequency',}
-        const url = `/payment?checkoutInfo=${JSON.stringify(item)}`;
-        navigate(url)
-        // navigate.push('/payment', { state : { Type_Of_Session, duration, price, frequency } });
+    const handleOnClick = (type, duration, price, frequency) => {
+        // setSessionData({
+        //     Type_Of_Session: type,
+        //     duration: duration,
+        //     price: price,
+        //     frequency: frequency
+        // });
 
+        const item = {
+        Type_Of_Session: type,
+        duration: duration,
+        price: price,
+        frequency: frequency
+    };
+        console.log(item)
+        console.log(type)
+
+        console.log(duration)
+
+        console.log(price)
+
+        console.log(frequency)
+
+        // const url = `/payment?checkoutInfo=${JSON.stringify(item)}`;
+        // navigate(url)
+        // navigate.push('/payment', { state : { Type_Of_Session, duration, price, frequency } });
+        const urlSearchParams = new URLSearchParams();
+        urlSearchParams.append("item", JSON.stringify(item));
+        const url = `/payment?${urlSearchParams.toString()}`;
+        navigate(url);
+        
     };
     
     const dropdownTextStriking = showFullText ? (    
@@ -107,12 +131,12 @@ return (
                     <Link 
                         id='checkoutButton'
                         to="/payment"
-                        onClick={() => handleOnClick({
-                            Type_Of_Session: 'Striking 30 minutes',
-                            duration: '30',
-                            price: '50',
-                            frequency: 'single'
-                        })}
+                        onClick={() => handleOnClick(
+                            'Striking 30 minutes',
+                            '30',
+                            '50',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
                         </Link>
@@ -120,54 +144,75 @@ return (
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to="/payment"
+                        onClick={() => handleOnClick(
+                            'Striking 60 minutes',
+                            '60',
+                            '75',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to="/payment"
+                        onClick={() => handleOnClick(
+                            'Striking 30 minutes',
+                            '30',
+                            '350',
+                            'double'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to="/payment"
+                        onClick={() => handleOnClick(
+                            
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
-                        <MdShoppingCartCheckout/></button>
+                        <MdShoppingCartCheckout/></Link>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
-                        <MdShoppingCartCheckout/></button>
+                        <MdShoppingCartCheckout/></Link>
             </li>
         </ul>
     </div>
@@ -184,65 +229,72 @@ return (
             <h3 id="weightLiftingProgramTitle">Weight Lifting Programs</h3>
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
         </ul>
     </div>
@@ -261,29 +313,32 @@ return (
             <h3 id="mixedProgramTitle">Mixed Programs</h3>
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $700 per month (Savings of $80)
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $1,050per month (savings of $100) 
-                    <button 
+                    <Link 
                         id='checkoutButton'
+                        to=""
                         >
                             <MdShoppingCartCheckout/>
-                        </button>
+                        </Link>
             </li>
         </ul>
     </div>

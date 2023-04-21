@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 
 import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -27,11 +27,17 @@ const CARD_OPTIONS = {
 
 const PaymentForm = () => {
     const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const item = searchParams.has("item") ? JSON.parse(searchParams.get("item")) : null;
+    const sessionType = item ? item.Type_Of_Session : "";
+    // const { item } = location.search ? JSON.parse(new URLSearchParams(location.search).get('item')) : {};
+    // const { item } = location.search ? JSON.parse(location.search) : {};
+    // console.log(item);
+
     // const { program, duration, price, frequency } = navigate.state || {};
     // const { item } = navigate.state || {};
     // console.log(item);
-    const { item } = location.search ? JSON.parse(new URLSearchParams(location.search).get('item')) : {};
-    console.log(item.Type_Of_Session);
+    // console.log(item);
     const [info, setInfo] = useState({
         customer_id: "",
         session_id: "",
@@ -57,7 +63,7 @@ const PaymentForm = () => {
 
         e.preventDefault()
         try{
-            await axios.post("http://localhost:7500/paymentbreakdown", info)
+            await axios.post("http://localhost:7500/add", info)
             console.log("sent to the database")
         }catch(err){
             console.log(err)
@@ -69,7 +75,7 @@ const PaymentForm = () => {
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:7500/payment", {
+            const response = await axios.post("http://localhost:7500/add", {
                 amount: 1000,
                 id
             })
@@ -87,7 +93,7 @@ const PaymentForm = () => {
 }
 
 console.log(info)
-
+alert(item)
 const handleOnClick = () => {
     window.location.href = 'http://localhost:3000';
   };
@@ -98,7 +104,7 @@ const handleOnClick = () => {
         <form onSubmit={handleSubmit} id="formContainer">
 
             <div className="TypeOfSession">
-                {/* add in the previous selection */}
+                <h3 id="typeShit">{sessionType}</h3>
             </div>
 
             <div className="inputBox">

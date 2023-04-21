@@ -13,6 +13,7 @@ import Checkout from "./Components/checkout/Checkout";
 import StripeContainer from "./Components/striking/StripeContainer";
 
 import "./app.css";
+import TestSuccess from "./Components/TestSuccess";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/striking" element={<Striking/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
           <Route path="/payment" element={<StripeContainer/>}/>
+          <Route path="/paymentbreakdown" element={<TestSuccess/>}/>
         </Routes>
       </BrowserRouter>
       
