@@ -30,6 +30,9 @@ const PaymentForm = () => {
     const searchParams = new URLSearchParams(location.search);
     const item = searchParams.has("item") ? JSON.parse(searchParams.get("item")) : null;
     const sessionType = item ? item.Type_Of_Session : "";
+    const sessionDuration = item ? item.duration : "";
+    const sessionPrice = item ? item.price : "";
+    const sessionFrequency = item ? item.frequency : "";
     // const { item } = location.search ? JSON.parse(new URLSearchParams(location.search).get('item')) : {};
     // const { item } = location.search ? JSON.parse(location.search) : {};
     // console.log(item);
@@ -39,13 +42,36 @@ const PaymentForm = () => {
     // console.log(item);
     // console.log(item);
     const [info, setInfo] = useState({
-        customer_id: "",
-        session_id: "",
-        payment_description: ""
+        Type_Of_Session: {sessionType},
+        duration: {sessionDuration},
+        price: {sessionPrice},
+        frequency: {sessionFrequency},
+        Name: "",
+        Number: "",
+        Email: "",
+        Special_Notes: ""
     })
 
     const handleChange = (e) => {
-        setInfo(prev => ({...prev, [e.target.name]: e.target.value}))
+        setInfo(prev => ({...prev, [e.target.name]: e.target.value}));
+
+        if (e.elementType === 'card') {
+            const card = e.complete ? e.elements.getElement(CardElement) : null;
+            if (card) {
+                setInfo(prev => ({
+                    ...prev, 
+                    last_four_digits: card._frame.id.slice(-4),
+                    card_company: card._frame.id.includes('visa') ? 'visa' :
+                        card._frame.id.includes('mastercard') ? 'mastercard' :
+                        card._frame.id.includes('amex') ? 'amex' :
+                        card._frame.id.includes('discover') ? 'discover' :
+                        card._frame.id.includes('jcb') ? 'jcb' :
+                        card._frame.id.includes('diners') ? 'diners' :
+                        card._frame.id.includes('unionpay') ? 'unionpay' :
+                    ''
+                }))
+            }
+        }
     };
 
 
@@ -61,9 +87,8 @@ const PaymentForm = () => {
 
         })
 
-        e.preventDefault()
         try{
-            await axios.post("http://localhost:7500/add", info)
+            await axios.post("http://localhost:7500/payment", info)
             console.log("sent to the database")
         }catch(err){
             console.log(err)
@@ -93,32 +118,51 @@ const PaymentForm = () => {
 }
 
 console.log(info)
-alert(item)
 const handleOnClick = () => {
     window.location.href = 'http://localhost:3000';
   };
 
   return (
     <>
-        {!success ?
+
+        <stripe-pricing-table pricing-table-id="prctbl_1N08mwBsGKDDlKM96z4WXcVw"
+        publishable-key="pk_test_51MtGJLBsGKDDlKM9SgUxTGdJxn22eztx0KOWwNxrnhjJiJIveJ3kO70susEIAfINsSMguEpXXrHJh3V65JJXKdQE00tmxJXYPE">
+        </stripe-pricing-table>
+
+        {/* {!success ?
         <form onSubmit={handleSubmit} id="formContainer">
 
             <div className="TypeOfSession">
-                <h3 id="typeShit">{sessionType}</h3>
+                <label htmlFor="sessionType" id="paymentCheckList">Session Type:</label>
+                <h3 name="Type_Of_Session" id="typeShit">{sessionType}</h3>
+
+                <label htmlFor="sessionDuration" id="paymentCheckList">Session Duration Type:</label>
+                <h3 id="duration" name="duration">{sessionDuration}</h3>
+
+                <label htmlFor="sessionPrice" id="paymentCheckList">Session Price:</label>
+                <h3 name="price" id="price">{sessionPrice}</h3>
+
+                <label htmlFor="sessionFrequency" id="paymentCheckList">Session Frequency:</label>
+                <h3 name="frequency" id="frequency">{sessionFrequency}</h3>
             </div>
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" name='customer_id' id='formInput' required="required"/>
+            <input onChange={handleChange} type="text" name='Name' id='formInput' required="required"/>
             <span>Full Name</span>
             </div>
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" id="formInput" name='session_id' required="required"/>
-            <span>Session Type</span>
+            <input onChange={handleChange} type="tel" name='Number' id='formInput' required="required"/>
+            <span>Telephone</span>
             </div>
 
             <div className="inputBox">
-            <input onChange={handleChange} type="text" id="formInput" name='payment_description'/>
+            <input onChange={handleChange} type="email" name='Email' id='formInput' required="required"/>
+            <span>E-mail</span>
+            </div>
+
+            <div className="inputBox">
+            <input onChange={handleChange} type="text" id="formInput" name='Special_Notes'/>
             <span>Extra Info</span>
             </div>
  
@@ -136,7 +180,7 @@ const handleOnClick = () => {
           Go back home!
         </button>
       </div>
-        }
+        } */}
     </>
   )
 }

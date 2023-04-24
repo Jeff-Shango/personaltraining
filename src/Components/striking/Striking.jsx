@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, button, useHistory } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from'react-icons/md'; 
 import "./striking.css";
@@ -44,14 +44,18 @@ const Striking = () => {
         setCartItem([...cartItem, item]);
         navigate.push('/payment', { state: item });
     };
+    
+    
+    const createPaymentUrl = (item) => {
+        console.log("Creating payment Breakdown: ", item);
+        const urlSearchParams = new URLSearchParams();
+        urlSearchParams.append("item", JSON.stringify(item));
+        const url = `/payment?${urlSearchParams.toString()}`;
+        console.log('Generated URL:', url);
+        return url;
+    };
 
     const handleOnClick = (type, duration, price, frequency) => {
-        // setSessionData({
-        //     Type_Of_Session: type,
-        //     duration: duration,
-        //     price: price,
-        //     frequency: frequency
-        // });
 
         const item = {
         Type_Of_Session: type,
@@ -67,15 +71,8 @@ const Striking = () => {
         console.log(price)
 
         console.log(frequency)
-
-        // const url = `/payment?checkoutInfo=${JSON.stringify(item)}`;
-        // navigate(url)
-        // navigate.push('/payment', { state : { Type_Of_Session, duration, price, frequency } });
-        const urlSearchParams = new URLSearchParams();
-        urlSearchParams.append("item", JSON.stringify(item));
-        const url = `/payment?${urlSearchParams.toString()}`;
-        navigate(url);
         
+        navigate(createPaymentUrl(item))
     };
     
     const dropdownTextStriking = showFullText ? (    
@@ -128,25 +125,23 @@ return (
             <h3 id="strikingProgramTitle">Striking Programs</h3>
             <li id="strikingProgramItem">
                 30 minutes: $50 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to="/payment"
                         onClick={() => handleOnClick(
-                            'Striking 30 minutes',
+                            'Striking',
                             '30',
                             '50',
                             'single'
                         )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $75 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to="/payment"
                         onClick={() => handleOnClick(
                             'Striking 60 minutes',
                             '60',
@@ -155,64 +150,80 @@ return (
                         )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to="/payment"
                         onClick={() => handleOnClick(
-                            'Striking 30 minutes',
+                            'Striking',
                             '30',
                             '350',
                             'double'
                         )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to="/payment"
                         onClick={() => handleOnClick(
-                            
+                            'Striking',
+                            '30',
+                            '525',
+                            'triple'
                         )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 60 minutes: $100 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            'Striking 60 minutes',
+                            '60',
+                            '100',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Striking 60 minutes",
+                            "60",
+                            '600',
+                            'double'
+                        )}
                         >
-                        <MdShoppingCartCheckout/></Link>
+                        <MdShoppingCartCheckout/></button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Striking 60 minutes",
+                            "60",
+                            "900",
+                            'triple'
+                        )}
                         >
-                        <MdShoppingCartCheckout/></Link>
+                        <MdShoppingCartCheckout/></button>
             </li>
         </ul>
     </div>
@@ -229,72 +240,107 @@ return (
             <h3 id="weightLiftingProgramTitle">Weight Lifting Programs</h3>
             <li id="weightLiftingProgramItem">
                 30 minutes: $50 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            'Weight Lifting',
+                            '30',
+                            '50',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $75 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '60',
+                            '75',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 30 minutes: $350 per session (Save $50)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '30',
+                            '350',
+                            'double'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 30 minutes: $525 per session (Savings of $75)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '30',
+                            '525',
+                            'triple'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 60 minutes: $100 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '60',
+                            '100',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 2x a week @ 60 minutes: $600 per session (Savings of $100)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '60',
+                            '600',
+                            'double'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="weightLiftingProgramItem">
                 3x a week @ 60 minutes: $900 per month (Savings of $150)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Weight Lifting",
+                            '60',
+                            '75',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
         </ul>
     </div>
@@ -313,32 +359,47 @@ return (
             <h3 id="mixedProgramTitle">Mixed Programs</h3>
             <li id="mixedProgramItem">
                 60 minutes (30 minutes of each): $125 per session
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Mixed",
+                            '60',
+                            '125',
+                            'single'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 2x a week @ 60 minutes: $700 per month (Savings of $80)
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Mixed",
+                            '60',
+                            '700',
+                            'double'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
 
             <li id="strikingProgramItem">
                 3x a week @ 60 minutes: $1,050per month (savings of $100) 
-                    <Link 
+                    <button 
                         id='checkoutButton'
-                        to=""
+                        onClick={() => handleOnClick(
+                            "Mixed",
+                            '60',
+                            '1050',
+                            'triple'
+                        )}
                         >
                             <MdShoppingCartCheckout/>
-                        </Link>
+                        </button>
             </li>
         </ul>
     </div>

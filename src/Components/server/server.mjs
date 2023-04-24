@@ -7,6 +7,13 @@ import bodyParser from "body-parser";
 
 dotenv.config();
 
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "baltimore",
+  database: "calendarapi",
+});
+
 const stripeInstance = stripe(process.env.STRIPE_SECRET_TEST);
 
 const app = express();
@@ -17,6 +24,15 @@ app.use(jsonParser);
 app.use(express.json())
 app.use(urlEncodedParser);
 app.use(cors());
+
+// Stripe database 
+app.get("/payment", (req, res) => {
+  const q = "SELECT * FROM calendarapi.payment_breakdown";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
 
 // Stripe post
 app.post("/payment", async (req, res) => {
@@ -30,6 +46,15 @@ app.post("/payment", async (req, res) => {
       confirm: true,
     });
     console.log("Payment", payment);
+
+    // inserting payment
+    const q = "INSERT into calendarapi.payment_breakdown (currency, desription, payment_method) VALUES (?, ?, ?)";
+    const values = ["USD", "Jeff Bozier, Personal Training", id];
+    db.query(q, values, (err, result) => {
+      if (err) throw err;
+      console.log("Payment put in the payment_breakdown database");
+    });
+
     res.json({
       message: "Payment successful",
       success: true,
@@ -43,12 +68,6 @@ app.post("/payment", async (req, res) => {
   }
 });
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "baltimore",
-  database: "calendarapi",
-});
 
 
 
@@ -71,9 +90,9 @@ app.post("/add", (req, res) => {
     req.body.Card_Company,
     req.body.Special_Notes,
     req.body.Type_Of_Session,
-    req.body.Duration_Of_Session,
-    req.body.Price_Of_Session,
-    req.body.Frequency_Of_session
+    req.body.Duration,
+    req.body.Price,
+    req.body.Frequency
   ];
 
   db.query(q, [values], (err, data) => {
