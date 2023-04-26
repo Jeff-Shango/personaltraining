@@ -13,9 +13,6 @@
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-.captionTextA {
-    border: 2px solid white;
-}
 
 .carItem {
     height: 20rem;
@@ -30,6 +27,7 @@
 }
 
 #dashboardText {
+    background-color: rgba(205, 92, 92, 0.5);
     color: white;
     border: 1px solid white;
     /*display: inline-block;
@@ -53,7 +51,12 @@
     height: 20rem;
     background-repeat: no-repeat;
     opacity: 0.5;
-
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: 5px 10px ;
 }
 
 .bottomDashboard::before {

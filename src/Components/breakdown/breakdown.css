@@ -25,14 +25,14 @@
     .picContainer {
       background-image: url("../assets/breakdownImgA.jpg");
       height: 20rem;
+      width: 50%;
       background-position: center;
       background-size: 170px 300px;
       background-repeat: no-repeat;
       position: relative;
       clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
-      border-radius:  50% 50% 0 0;
-      border: 5px solid black;
-      width: 50%; /* add this property */
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
     }
     
     .picInnerContainer {
@@ -45,8 +45,8 @@
       bottom: 0;
       right: 0;
       clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
-      border-radius:  50% 50% 0 0;
-      border: 5px solid black;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
     }
     
     .picContainersWrapper {
