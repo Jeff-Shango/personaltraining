@@ -17,9 +17,7 @@
       padding-right: 2rem;
       position: relative;
       left: 25%;
-      background-color: var(--primary-color-variant);
-      color: white;
-      font-weight: bold;
+      outline: 2px solid black;
     }
     
     .picContainer {

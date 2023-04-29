@@ -1,5 +1,6 @@
 import React from 'react';
 import "./breakdown.css";
+import "../../../src/app.css"
 
 const Breakdown = () => {
   return (

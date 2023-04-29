@@ -1,5 +1,6 @@
 import React from 'react'
 import "./dashboard.css";
+import "../../../src/app.css"
 import Carousel from 'react-bootstrap/Carousel';
 
 const Dashboard = () => {
@@ -36,6 +37,7 @@ const Dashboard = () => {
     <div className="bottomDashboard">
       <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions striking">Program Breakdown</button>
       <button type='button' onClick={() => {window.location.href='http://localhost:3000/termsCondition';}} className="sessions packages">Terms and Condition</button>
+      <button type='button' onClick={() => {window.location.href='http://localhost:3000/payment';}} className="sessions signUp">Buy a Session</button>
     </div>
     </>
   );
