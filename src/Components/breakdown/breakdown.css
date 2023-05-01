@@ -1,4 +1,33 @@
 @media screen and (max-width: 600px) {
+
+/* animate feature  */
+
+.in-view {
+  opacity: 1;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(-300px);
+  -webkit-transform: translateX(-300px);
+  -moz-transform: translateX(-300px);
+  -ms-transform: translateX(-300px);
+  -o-transform: translateX(-300px);
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition-delay: 0.2s;
+}
+
+/* end feature */
+
     .sectionText {
       color: white;
       border: 1px solid white;
@@ -21,16 +50,19 @@
     }
     
     .picContainer {
-      background-image: url("../assets/breakdownImgA.jpg");
       height: 20rem;
       width: 50rem;
       border: 2px solid white;
-      background-size: cover;
-      background-repeat: no-repeat;
       position: relative;
     }
+
+    #breakdownGif {
+      width: 100%;
+      height: auto;
+      background-color: black;
+    }
     
-    .picInnerContainer {
+    /* .picInnerContainer {
       background-image: url("../assets/imageB.jpg");
       height: 10rem;
       background-size: cover;
@@ -42,7 +74,7 @@
       clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
       border-top-right-radius: 50%;
       border-top-left-radius: 50%;
-    }
+    } */
     
     .picContainersWrapper {
       display: flex;

@@ -11,7 +11,7 @@ import Programs from "./Components/programs/Programs";
 import Striking from "./Components/striking/Striking";
 import Checkout from "./Components/checkout/Checkout";
 import StripeContainer from "./Components/striking/StripeContainer";
-
+import "./animateOnScrollFunction"
 import "./app.css";
 import TestSuccess from "./Components/TestSuccess";
 
