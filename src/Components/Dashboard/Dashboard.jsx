@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect} from 'react'
 import "./dashboard.css";
 import "../../../src/app.css"
 import Carousel from 'react-bootstrap/Carousel';
 
+
 function animateOnScroll() {
   const animateElements = document.querySelectorAll(".animate-on-scroll");
 
+  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -16,28 +18,26 @@ function animateOnScroll() {
         entry.target.classList.remove("in-view");
       }
     });
-  }, {
-    threshold: 0.10
   });
-
+  
   animateElements.forEach((element) => {
     // Add the element to the IntersectionObserver
     observer.observe(element);
-
+    
     // Set initial CSS values for animation
     element.style.transform = "translateX(-100%)";
     element.style.opacity = 0;
-
+    
     // Add CSS transition property to animate the element
     element.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-
+    
     // Add a class to indicate that the element has been initialized
     element.classList.add("animate-on-scroll-init");
   });
-
+  
   document.addEventListener("scroll", () => {
     const initElements = document.querySelectorAll(".animate-on-scroll-init");
-
+    
     initElements.forEach((element) => {
       // If the element is in view and not yet animated, animate it
       if (element.classList.contains("in-view") && !element.classList.contains("animated")) {
@@ -55,21 +55,65 @@ function animateOnScroll() {
   });
 }
 
-animateOnScroll();
-
 
 const Dashboard = () => {
+  
+  const [isVisible, setIsVisible] = useState(true);
+  const [isVisibleRight, setVisibleRight] = useState(false);
+
+  
+  const handleScroll = () => {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition > 200) {
+    setIsVisible(false);
+    console.log('it is above');
+  } else {
+    setIsVisible(true);
+  }
+};
+
+
+
+const handleScrollRight = () => {
+  const scrollPosition = window.pageYOffset;
+  if (scrollPosition < 1700) {
+    setVisibleRight(false);
+    console.log('it is below')
+  } else {
+    setVisibleRight(true);
+  }
+};
+
+  useEffect(() => {
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollRight);
+    return () => {
+      window.removeEventListener('scroll', handleScrollRight);
+    };
+  }, []);
 
   useEffect(() => {
     animateOnScroll()
-    console.log(animateOnScroll())
   }, [])
-
+  
   return (
     <>
+    {/* quick link buttons */}
+    <button className={`custom-button ${isVisible ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/programs';}} id="floatingButton" style={{opacity: isVisible ? 1 : 0.2, zIndex:9999, display: isVisible ? "block" : "none"}}>
+      Order a Class
+    </button>
 
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000#theTop';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+      Go to Top
+    </button>
     {/* carousel section: used for identifying most important news based aspects */}
-    <Carousel className='carouselContainer animate-on-scroll'>
+    <Carousel className='carouselContainer' id='theTop'>
       {/* slide 1 */}
       <Carousel.Item className='carItem carItemA'>
         <Carousel.Caption className='captionText captionTextA'>
@@ -100,14 +144,16 @@ const Dashboard = () => {
 
 
 {/* lower half of the top half of the landing page */}
-    <p id='dashboardText'>
-      Get in fighting shape with my personalized coaching and training for boxing and Muay Thai. I offer customized packages to work on technique, strength, and conditioning. Contact me now to get started!
+      <p id='dashboardText'>
+        Get in fighting shape with my personalized coaching and training for boxing and Muay Thai. I offer customized packages to work on technique, strength, and conditioning. Contact me now to get started!
       </p>
     <div className="bottomDashboard">
       <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions striking">Program Breakdown</button>
       <button type='button' onClick={() => {window.location.href='http://localhost:3000/termsCondition';}} className="sessions packages">Terms and Condition</button>
       <button type='button' onClick={() => {window.location.href='http://localhost:3000/payment';}} className="sessions signUp">Buy a Session</button>
     </div>
+
+
     </>
   );
 }

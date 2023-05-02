@@ -1,4 +1,65 @@
 @media only screen and (max-width: 600px) {
+#floatingButton {
+    position: fixed;
+    left: 20px;
+    top: 60vh;
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    opacity: 1;
+    transition: opacity 0.5s   ;
+    -webkit-transition: opacity 0.5s   ;
+    -moz-transition: opacity 0.5s   ;
+    -ms-transition: opacity 0.5s   ;
+    -o-transition: opacity 0.5s   ;
+}
+
+#floatingButton::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#floatingButtonRight {
+    position: fixed;
+    right: 20px;
+    top: 60vh;
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    opacity: 1;
+    transition: opacity 0.5s   ;
+    -webkit-transition: opacity 0.5s   ;
+    -moz-transition: opacity 0.5s   ;
+    -ms-transition: opacity 0.5s   ;
+    -o-transition: opacity 0.5s   ;
+}
+
+#floatingButtonRight::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: black;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 
 .carouselContainer {
     height: 20rem;
@@ -31,13 +92,15 @@
     color: white;
     border: 1px solid white;
     /*display: inline-block;
-    */padding: 10px;
+    */
+    padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     font-size: large;
+    z-index: 2;
 }
 
 .bottomDashboard {
@@ -57,6 +120,8 @@
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
     box-shadow: 5px 10px ;
+    margin-bottom: var(--spacer);
+    z-index: 2;
 }
 
 .bottomDashboard::before {
@@ -70,6 +135,7 @@
     background-size: cover; 
     background-position: center;
     opacity: 0.5;
+    z-index: 2;
 }
 
 .sessions {
