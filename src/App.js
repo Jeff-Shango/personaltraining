@@ -52,7 +52,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       
-      <footer>
+      <footer id="footerSection">
         <div className="container">
           <div className="row">
             <div className="col-md-4">
@@ -66,7 +66,7 @@ function App() {
             <div className="col-md-4">
               <h4>Follow Us</h4>
               <ul>
-                <li><TiSocialInstagram/><a href="https://www.instagram.com/Tao_of_Jeff/">@Tao_of_Jeff</a></li>
+                <li><TiSocialInstagram id="instagramLogo"/><a href="https://www.instagram.com/Tao_of_Jeff/">@Tao_of_Jeff</a></li>
               </ul>
             </div>
             <div className="col-md-4">
