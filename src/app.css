@@ -131,13 +131,4 @@ a:hover {
         color: black;
         outline: 2px solid black;
 }
-
-#footerSection {
-    border: 1px solid white;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-}
 }

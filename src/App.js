@@ -1,6 +1,7 @@
 import React from "react";
+import { AiFillLinkedin } from "react-icons/ai";
 import {TiSocialInstagram} from "react-icons/ti"
-import { BsMap, BsPhone, BsEnvelope } from "react-icons/bs"
+import { BsGithub } from "react-icons/bs"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
@@ -52,35 +53,28 @@ function App() {
         </Routes>
       </BrowserRouter>
       
-      <footer id="footerSection">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <h4>Contact Us</h4>
-              <ul>
-                <li>123 Main St, Anytown USA</li>
-                <li>555-555-5555</li>
-                <li><a href="mailto:jeff.bozierjr@gmail.com">jeff.bozierjr@gmail.com</a></li>
-              </ul>
-            </div>
-            <div className="col-md-4">
-              <h4>Follow Us</h4>
-              <ul>
-                <li><TiSocialInstagram id="instagramLogo"/><a href="https://www.instagram.com/Tao_of_Jeff/">@Tao_of_Jeff</a></li>
-              </ul>
-            </div>
-            <div className="col-md-4">
-              <h4>Legal</h4>
-              <ul>
-                <li><a href="localhost:3000/#sectionTitle">About Us</a></li>
-                <li><a href="localhost:3000/#termscondition">Terms of Service</a></li>
-                <li>&copy; 2023 Jeff Bozier Jr.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <footer className='animate-on-scroll'>
+      <a href="#" className="footer_logo">Jeff B</a>
 
+      <ul className="permalinks">
+        <li><a href="#theTop">Home</a></li>
+        <li><a href="/termscondition">Terms & Conditions</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/striking">Order Now</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/#formContainer">Contact</a></li>
+      </ul>
+
+      <div className="footer_socials">
+        <a href="https://www.linkedin.com/in/jeff-bozier-jr/"><AiFillLinkedin /></a>
+        <a href="https://github.com/jeff-shango"><BsGithub/></a>
+      </div>
+
+      <div className="footer_socials">
+        <small>&copy; Jeff Bozier. 2023</small>
+      </div>
+    </footer>
 
     </div>
   );

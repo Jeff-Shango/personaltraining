@@ -137,10 +137,6 @@ const Breakdown = () => {
           <button type='submit' className='btn btn-primary'>Send Message</button>
         </form>
 
-        {/* footer section */}
-        <footer id="footerContainer">
-
-        </footer>
 
     </div>
   )
