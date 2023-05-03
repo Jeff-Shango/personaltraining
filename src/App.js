@@ -1,4 +1,6 @@
 import React from "react";
+import {TiSocialInstagram} from "react-icons/ti"
+import { BsMap, BsPhone, BsEnvelope } from "react-icons/bs"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
@@ -50,6 +52,36 @@ function App() {
         </Routes>
       </BrowserRouter>
       
+      <footer>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <h4>Contact Us</h4>
+              <ul>
+                <li>123 Main St, Anytown USA</li>
+                <li>555-555-5555</li>
+                <li><a href="mailto:jeff.bozierjr@gmail.com">jeff.bozierjr@gmail.com</a></li>
+              </ul>
+            </div>
+            <div className="col-md-4">
+              <h4>Follow Us</h4>
+              <ul>
+                <li><TiSocialInstagram/><a href="https://www.instagram.com/Tao_of_Jeff/">@Tao_of_Jeff</a></li>
+              </ul>
+            </div>
+            <div className="col-md-4">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="localhost:3000/#sectionTitle">About Us</a></li>
+                <li><a href="localhost:3000/#termscondition">Terms of Service</a></li>
+                <li>&copy; 2023 Jeff Bozier Jr.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
     </div>
   );
 }

@@ -113,13 +113,13 @@ const Breakdown = () => {
 
     {/* lower section for breaking down that services are for everyone */}
     <div className="breakdownSection animate-on-scroll">
-      <h2 class='sectionTitle'>What I Do!</h2>
+      <h2 class='sectionTitle' id='sectionTitle'>What I Do!</h2>
       <p class="sectionText">Working with you wherever you are at, creating personalized plans for your budget and your experience. You are working within a space that is welcoming and has a growth-mindset.</p>
       <button class='breakdownButton' onClick={() => {window.location.href='http://localhost:3000/programs';}}>View Programs</button>
     </div>
 
         {/* contact info */}
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} id='formContainer'>
           <div className="inputBox">
             <input type="text" name='name' required />
             <span>Your Name</span>
@@ -136,6 +136,11 @@ const Breakdown = () => {
           </div>
           <button type='submit' className='btn btn-primary'>Send Message</button>
         </form>
+
+        {/* footer section */}
+        <footer id="footerContainer">
+
+        </footer>
 
     </div>
   )
