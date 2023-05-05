@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import "./programs.css";
+import fightVideo from '../assets/fightVideoA.mp4';
+import strengthVideo from '../assets/strengthVideo.mp4';
+import nunchuk from '../assets/nunchukVideo.mp4'
 
 const Programs = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,6 +20,10 @@ const Programs = () => {
         </p>
       </div>   
 
+      <div className="videoContainer">
+        <video id='strengthVideo' src={strengthVideo} muted autoPlay controls/>
+      </div>
+
       <div className="programsContainer">
         <h2 id="programsTitle">Strength & Conditioning</h2>
         <p className="programDescription">
@@ -25,6 +32,11 @@ const Programs = () => {
         </p>
         <div id='programPicContainer' className='programPicContainerA' onClick={() => {window.location.href='http://localhost:3000/striking';}}/>
       </div>
+
+      <div className="videoContainer">
+        <video id='videoFight' src={fightVideo} autoPlay controls/>
+      </div>
+
 
       <div className="programsContainer">
         <h2 id="programsTitle">Striking</h2>
@@ -35,6 +47,10 @@ const Programs = () => {
         <div id='programPicContainer' className='programPicContainerB' onClick={() => {window.location.href='http://localhost:3000/striking';}}/>
       </div>
 
+      <div className="videoContainer">
+        <video id='videoFight' src={nunchuk} autoPlay controls/>
+      </div>
+      
       <div className="programsContainer">
         <h2 id="programsTitle">Personalize</h2>
         <p className="programDescription">

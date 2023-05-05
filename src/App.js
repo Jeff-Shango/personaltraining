@@ -17,6 +17,9 @@ import StripeContainer from "./Components/striking/StripeContainer";
 import "./animateOnScrollFunction"
 import "./app.css";
 import TestSuccess from "./Components/TestSuccess";
+import "../src/Components/footer/footerStyling.css";
+import {logo} from "./Components/assets/logoSolo.png";
+
 
 function App() {
   return (
@@ -54,7 +57,12 @@ function App() {
       </BrowserRouter>
       
       <footer className='animate-on-scroll'>
-      <a href="#" className="footer_logo">Jeff B</a>
+      
+      <button id="logoButton">
+        <a href="#" className="footer_logo">
+          {logo}
+        </a>
+      </button>
 
       <ul className="permalinks">
         <li><a href="#theTop">Home</a></li>
@@ -69,6 +77,7 @@ function App() {
       <div className="footer_socials">
         <a href="https://www.linkedin.com/in/jeff-bozier-jr/"><AiFillLinkedin /></a>
         <a href="https://github.com/jeff-shango"><BsGithub/></a>
+        <a href="https://instagram.com/the_tao_of_jeff?igshid=YmMyMTA2M2Y="><TiSocialInstagram/></a>
       </div>
 
       <div className="footer_socials">

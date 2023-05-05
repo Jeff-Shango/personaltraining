@@ -1,3 +1,44 @@
+@media screen and (max-width: 600px) {
+
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoFight {
+    height: 10rem;
+    width: var(--container-width-sm);
+}
+
+#strengthVideo {
+    height: 10rem;
+    width: var(--container-width-sm);
+}
+
+.videoContainer #strengthVideo {
+    background-color: var(--primary-color-variant);
+    outline: 2px solid gray;
+    box-shadow: 10px 10px 10px rgba(104, 13, 13, 0.774);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    margin-bottom: var(--spacer);
+}
+
+.videoContainer #videoFight {
+    background-color: darkgray;
+    outline: 2px solid gray;
+    box-shadow: 10px 10px 10px rgba(104, 13, 13, 0.774);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    margin-bottom: var(--spacer);
+}
 .programsContainer {
     position: relative;
     height: fit-content;
@@ -47,4 +88,5 @@
     padding: 15px;
     font-size: 20px;
     text-align: center;
+}
 }
