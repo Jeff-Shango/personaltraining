@@ -57,6 +57,10 @@
     margin-left: 2.5rem;
 }
 
+#programPicContainer:active {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
 .navDropdown {
     border: 2px solid white;
 }
