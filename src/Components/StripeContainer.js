@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import PaymentForm from "./paymentForm/PaymentForm";
 
-const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9SgUxTGdJxn22eztx0KOWwNxrnhjJiJIveJ3kO70susEIAfINsSMguEpXXrHJh3V65JJXKdQE00tmxJXYPE"
+const PUBLIC_KEY = "pk_live_51MtGJLBsGKDDlKM9WhKAIMEJhlElBL2PeT297ZL1oLzVH6Ivzpc41jpYo9MHn6c7RurxBds06rcUCENpSctnZNGJ00prHakZA6"
 
 const stripetestPromise = loadStripe(PUBLIC_KEY)
 
