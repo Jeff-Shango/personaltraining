@@ -13,10 +13,11 @@ import ParQForm from "./Components/parq/ParQForm";
 import Programs from "./Components/programs/Programs";
 import Striking from "./Components/striking/Striking";
 import Checkout from "./Components/checkout/Checkout";
-import StripeContainer from "./Components/striking/StripeContainer";
+import Products from "./Components/Products/Products"
+// import StripeContainer from "./Components/striking/StripeContainer";
 import "./animateOnScrollFunction"
 import "./app.css";
-import TestSuccess from "./Components/TestSuccess";
+// import TestSuccess from "./Components/TestSuccess";
 import "../src/Components/footer/footerStyling.css";
 import {logo} from "./Components/assets/logoSolo.png";
 
@@ -51,8 +52,9 @@ function App() {
           <Route path="/programs" element={<Programs/>}/>
           <Route path="/striking" element={<Striking/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/payment" element={<StripeContainer/>}/>
-          <Route path="/paymentbreakdown" element={<TestSuccess/>}/>
+          <Route path="/products" element={<Products/>}/>
+          {/* <Route path="/payment" element={<StripeContainer/>}/> */}
+          {/* <Route path="/paymentbreakdown" element={<TestSuccess/>}/> */}
         </Routes>
       </BrowserRouter>
       
