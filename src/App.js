@@ -50,7 +50,7 @@ function App() {
           <Route path="/termscondition" element={<TermsCondition/>}/>
           <Route path="/parq" element={<ParQForm/>}/>
           <Route path="/programs" element={<Programs/>}/>
-          <Route path="/striking" element={<Striking/>}/>
+          {/* <Route path="/striking" element={<Striking/>}/> */}
           <Route path="/checkout" element={<Checkout/>}/>
           <Route path="/products" element={<Products/>}/>
           {/* <Route path="/payment" element={<StripeContainer/>}/> */}
