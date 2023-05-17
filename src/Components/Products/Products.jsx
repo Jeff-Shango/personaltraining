@@ -5,6 +5,12 @@ import { MdShoppingCartCheckout } from 'react-icons/md';
 import "../striking/striking.css";
 import StripeContainer from '../StripeContainer';
 import logo from "../assets/logoSolo.png";
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js'
+
+
+const PUBLIC_KEY = "codey"
+const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const Products = () => {
   const [showFullText, setShowFullText] = useState(false);
@@ -66,7 +72,7 @@ const dropdownTextWeights = showFullText ? (
   return (
     <div className='App'>
       <h1>Personal Training</h1>
-      {showItem ? <StripeContainer checkoutInfo={checkoutInfo}/> 
+      {showItem ? <Elements stripe={stripeTestPromise}><StripeContainer checkoutInfo={checkoutInfo}/></Elements> 
       : 
       <>
     {/* striking section */}

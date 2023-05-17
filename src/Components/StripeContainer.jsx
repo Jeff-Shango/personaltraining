@@ -1,8 +1,8 @@
-import { loadStripe } from '@stripe/stripe-js'
 import axios from "axios"
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import "./stripeContainer.css"
-import { Elements, CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import emailjs from "emailjs-com";
 
 const CARD_OPTIONS = {
 	iconStyle: "solid",
@@ -23,16 +23,26 @@ const CARD_OPTIONS = {
 		}
 	}
 }
-const PUBLIC_KEY = "code"
-const stripeTestPromise = loadStripe(PUBLIC_KEY)
+
 
 const StripeContainer = ({ checkoutInfo }) => {
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
+  const form = useRef();
   // const [telephone, setTelephone] = useState(checkoutInfo.Number);
   // const [email, setEmail] = useState(checkoutInfo.Email);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_4dfcr2e', 'template_cbdgzvt', form.current, '_NpdWJ5iCT6lmb6Un')
+      .then((result) => {
+          console.log(result.text);
+      }).catch( (error) => {
+          console.log("email error which is:", error);
+          console.log(error.text);
+      });
+
+    // e.target.reset()
     // Handle the form submission
     // You can access the entered data using the name, telephone, and email state variables
   };
@@ -69,13 +79,12 @@ const StripeContainer = ({ checkoutInfo }) => {
 
   return (
     <>
-    <Elements stripe={stripeTestPromise}>
+    
     {!success ? 
-      <div>
+      <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e)}}>
         <h3>Selected Session Details</h3>
         <p>Type of Session: {checkoutInfo.Type_Of_Session}</p>
         <p>Duration: {checkoutInfo.Duration}</p>
-        <form onSubmit={() => {handleSubmit(); handleStripeSubmit()}}>
           <div className="inputBox">
             <input type="text" name='name'  required />
             <span>Your Name</span>
@@ -96,7 +105,6 @@ const StripeContainer = ({ checkoutInfo }) => {
             <span>Extra Info</span>
           </div>
 
-          <input type="submit" value="Submit" />
 
           {/* payment form */}
 
@@ -106,13 +114,12 @@ const StripeContainer = ({ checkoutInfo }) => {
             </div>
         </fieldset>
         <button>Pay</button>
-     </form>
-      </div>
+      </form>
      :
      <div>
         <h2>Thanks for booking a session!</h2>
-    </div>}
-    </Elements>
+    </div>
+    }
     </>
   )
 }
