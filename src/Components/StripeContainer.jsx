@@ -27,6 +27,13 @@ const CARD_OPTIONS = {
 
 const StripeContainer = ({ checkoutInfo }) => {
   const [success, setSuccess] = useState(false);
+  const [info, setInfo] = useState({
+    Name: "",
+    Number: "",
+    Email: "",
+    Special_Notes: "",
+    Type_Of_Session: ""
+  })
   const form = useRef();
   // const [telephone, setTelephone] = useState(checkoutInfo.Number);
   // const [email, setEmail] = useState(checkoutInfo.Email);
@@ -34,7 +41,17 @@ const StripeContainer = ({ checkoutInfo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_4dfcr2e', 'template_cbdgzvt', form.current, '_NpdWJ5iCT6lmb6Un')
+    const sessionType = checkoutInfo.Type_Of_Session;
+    const duration = checkoutInfo.Duration;
+
+    const formData = new FormData(form.current);
+
+    formData.append("session_type", sessionType);
+    formData.append("duration", duration);
+
+    const templateParams = Object.fromEntries(formData);
+
+    emailjs.sendForm('service_4dfcr2e', 'template_v2ypy6e', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {
           console.log(result.text);
       }).catch( (error) => {
@@ -62,10 +79,27 @@ const StripeContainer = ({ checkoutInfo }) => {
             const response = await axios.post("http://localhost:4000/payment", {
                 amount: 5000,
                 id
-            })
+            }
+            )
+
+            // const dataShit = await axios.post("http://localhost:4000/calendar", info)
 
             if(response.data.success) {
-                console.log("Successful payment, mane")
+                console.log("Successful payment, mane");
+                const calendarData = {
+                  Name: info.name,
+                  Number: info.telephone,
+                  Email: info.email,
+                  Special_Notes: info.message,
+                  Type_Of_Session: checkoutInfo.Type_Of_Session
+                };
+
+                const calendarResponse = await axios.post("http://localhost:4000/calendar", calendarData);
+
+                if (calendarResponse.data) {
+                  console.log("it went over to the calendar successfully ");
+                }
+                
                 setSuccess(true)
             }
 
@@ -83,8 +117,14 @@ const StripeContainer = ({ checkoutInfo }) => {
     {!success ? 
       <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e)}}>
         <h3>Selected Session Details</h3>
-        <p>Type of Session: {checkoutInfo.Type_Of_Session}</p>
-        <p>Duration: {checkoutInfo.Duration}</p>
+        <p name="session_type">Type of Session: {checkoutInfo.Type_Of_Session}</p>
+        <p name="duration">Duration: {checkoutInfo.Duration}</p>
+
+        <input type="hidden" name="session_type" value={checkoutInfo.Type_Of_Session} />
+        <input type="hidden" name="duration" value={checkoutInfo.Duration} />
+
+
+
           <div className="inputBox">
             <input type="text" name='name'  required />
             <span>Your Name</span>
@@ -101,19 +141,21 @@ const StripeContainer = ({ checkoutInfo }) => {
           </div>
 
           <div className="inputBox">
-            <input type="text" name='Special_Notes' />
+            <input type="text" name='message' />
             <span>Extra Info</span>
           </div>
 
 
           {/* payment form */}
 
-        <fieldset className='FormGroup'>
-            <div className="FormRow">
-                <CardElement options={CARD_OPTIONS}/>
-            </div>
-        </fieldset>
-        <button>Pay</button>
+          <div className="inputBox">
+            <fieldset className='FormGroup'>
+                <div className="FormRow">
+                    <CardElement options={CARD_OPTIONS}/>
+                </div>
+            </fieldset>
+          </div>
+        <button type="submit">Pay</button>
       </form>
      :
      <div>

@@ -1,0 +1,89 @@
+Date : 2023-05-17 21:28:02
+Directory : /home/jeff/Desktop/personaltraining
+Total : 40 files,  27024 codes, 344 comments, 469 blanks, all 27837 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          4 |     24,507 |          0 |          4 |     24,511 |
+| JavaScript JSX |         13 |      1,405 |        159 |        248 |      1,812 |
+| CSS            |         15 |        909 |        163 |        154 |      1,226 |
+| JavaScript     |          5 |        144 |         22 |         25 |        191 |
+| Markdown       |          1 |         38 |          0 |         33 |         71 |
+| HTML           |          1 |         20 |          0 |          5 |         25 |
+| Properties     |          1 |          1 |          0 |          0 |          1 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                               |         40 |     27,024 |        344 |        469 |     27,837 |
+| . (Files)                                                                       |          3 |     23,847 |          0 |         35 |     23,882 |
+| public                                                                          |          1 |         20 |          0 |          5 |         25 |
+| server                                                                          |          4 |        737 |          0 |          6 |        743 |
+| src                                                                             |         32 |      2,420 |        344 |        423 |      3,187 |
+| src (Files)                                                                     |          5 |        204 |         19 |         41 |        264 |
+| src/Components                                                                  |         25 |      2,144 |        319 |        372 |      2,835 |
+| src/Components (Files)                                                          |          3 |        181 |         61 |         37 |        279 |
+| src/Components/Dashboard                                                        |          2 |        253 |         17 |         45 |        315 |
+| src/Components/Navlinks                                                         |          2 |         96 |         23 |         17 |        136 |
+| src/Components/Products                                                         |          2 |        146 |         94 |         31 |        271 |
+| src/Components/add                                                              |          2 |         36 |          0 |          8 |         44 |
+| src/Components/breakdown                                                        |          2 |        233 |         44 |         56 |        333 |
+| src/Components/checkout                                                         |          2 |         11 |          0 |          4 |         15 |
+| src/Components/footer                                                           |          1 |         61 |         11 |         12 |         84 |
+| src/Components/parq                                                             |          2 |        375 |         48 |         62 |        485 |
+| src/Components/programs                                                         |          2 |        133 |          0 |         24 |        157 |
+| src/Components/sessions                                                         |          2 |        155 |          2 |         18 |        175 |
+| src/Components/striking                                                         |          3 |        464 |         19 |         58 |        541 |
+| src/terms                                                                       |          2 |         72 |          6 |         10 |         88 |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                        | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /home/jeff/Desktop/personaltraining/README.md                                   | Markdown       |         38 |          0 |         33 |         71 |
+| /home/jeff/Desktop/personaltraining/package-lock.json                           | JSON           |     23,746 |          0 |          1 |     23,747 |
+| /home/jeff/Desktop/personaltraining/package.json                                | JSON           |         63 |          0 |          1 |         64 |
+| /home/jeff/Desktop/personaltraining/public/index.html                           | HTML           |         20 |          0 |          5 |         25 |
+| /home/jeff/Desktop/personaltraining/server/.env                                 | Properties     |          1 |          0 |          0 |          1 |
+| /home/jeff/Desktop/personaltraining/server/index.js                             | JavaScript     |         38 |          0 |          4 |         42 |
+| /home/jeff/Desktop/personaltraining/server/package-lock.json                    | JSON           |        678 |          0 |          1 |        679 |
+| /home/jeff/Desktop/personaltraining/server/package.json                         | JSON           |         20 |          0 |          1 |         21 |
+| /home/jeff/Desktop/personaltraining/src/App.js                                  | JavaScript     |         80 |          2 |         13 |         95 |
+| /home/jeff/Desktop/personaltraining/src/Components/Dashboard/Dashboard.jsx      | JavaScript JSX |        116 |         14 |         31 |        161 |
+| /home/jeff/Desktop/personaltraining/src/Components/Dashboard/dashboard.css      | CSS            |        137 |          3 |         14 |        154 |
+| /home/jeff/Desktop/personaltraining/src/Components/Navlinks/Navlinks.jsx        | JavaScript JSX |         52 |         20 |          6 |         78 |
+| /home/jeff/Desktop/personaltraining/src/Components/Navlinks/navlinks.css        | CSS            |         44 |          3 |         11 |         58 |
+| /home/jeff/Desktop/personaltraining/src/Components/PaymentForm.jsx              | JavaScript JSX |         69 |          0 |          9 |         78 |
+| /home/jeff/Desktop/personaltraining/src/Components/Products/Products.jsx        | JavaScript JSX |        146 |         94 |         30 |        270 |
+| /home/jeff/Desktop/personaltraining/src/Components/Products/products.css        | CSS            |          0 |          0 |          1 |          1 |
+| /home/jeff/Desktop/personaltraining/src/Components/StripeContainer.jsx          | JavaScript JSX |        112 |          6 |         28 |        146 |
+| /home/jeff/Desktop/personaltraining/src/Components/add/Add.jsx                  | JavaScript JSX |         36 |          0 |          7 |         43 |
+| /home/jeff/Desktop/personaltraining/src/Components/add/add.css                  | CSS            |          0 |          0 |          1 |          1 |
+| /home/jeff/Desktop/personaltraining/src/Components/breakdown/Breakdown.jsx      | JavaScript JSX |         99 |         14 |         32 |        145 |
+| /home/jeff/Desktop/personaltraining/src/Components/breakdown/breakdown.css      | CSS            |        134 |         30 |         24 |        188 |
+| /home/jeff/Desktop/personaltraining/src/Components/checkout/Checkout.jsx        | JavaScript JSX |         11 |          0 |          3 |         14 |
+| /home/jeff/Desktop/personaltraining/src/Components/checkout/checkout.css        | CSS            |          0 |          0 |          1 |          1 |
+| /home/jeff/Desktop/personaltraining/src/Components/footer/footerStyling.css     | CSS            |         61 |         11 |         12 |         84 |
+| /home/jeff/Desktop/personaltraining/src/Components/parq/ParQForm.jsx            | JavaScript JSX |        234 |          2 |         36 |        272 |
+| /home/jeff/Desktop/personaltraining/src/Components/parq/parqStyling.css         | CSS            |        141 |         46 |         26 |        213 |
+| /home/jeff/Desktop/personaltraining/src/Components/programs/Programs.jsx        | JavaScript JSX |         51 |          0 |         10 |         61 |
+| /home/jeff/Desktop/personaltraining/src/Components/programs/programs.css        | CSS            |         82 |          0 |         14 |         96 |
+| /home/jeff/Desktop/personaltraining/src/Components/sessions/Sessions.jsx        | JavaScript JSX |         68 |          1 |          7 |         76 |
+| /home/jeff/Desktop/personaltraining/src/Components/sessions/sessions.css        | CSS            |         87 |          1 |         11 |         99 |
+| /home/jeff/Desktop/personaltraining/src/Components/striking/Striking.jsx        | JavaScript JSX |        366 |          3 |         42 |        411 |
+| /home/jeff/Desktop/personaltraining/src/Components/striking/programFunctions.js | JavaScript     |          0 |         15 |          5 |         20 |
+| /home/jeff/Desktop/personaltraining/src/Components/striking/striking.css        | CSS            |         98 |          1 |         11 |        110 |
+| /home/jeff/Desktop/personaltraining/src/Components/stripeContainer.css          | CSS            |          0 |         55 |          0 |         55 |
+| /home/jeff/Desktop/personaltraining/src/animateOnScrollFunction.js              | JavaScript     |         17 |          5 |          3 |         25 |
+| /home/jeff/Desktop/personaltraining/src/app.css                                 | CSS            |         98 |         12 |         24 |        134 |
+| /home/jeff/Desktop/personaltraining/src/index.css                               | CSS            |          0 |          0 |          1 |          1 |
+| /home/jeff/Desktop/personaltraining/src/index.js                                | JavaScript     |          9 |          0 |          0 |          9 |
+| /home/jeff/Desktop/personaltraining/src/terms/TermsCondition.jsx                | JavaScript JSX |         45 |          5 |          7 |         57 |
+| /home/jeff/Desktop/personaltraining/src/terms/termsCondition.css                | CSS            |         27 |          1 |          3 |         31 |
+| Total                                                                           |                |     27,024 |        344 |        469 |     27,837 |
++---------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
