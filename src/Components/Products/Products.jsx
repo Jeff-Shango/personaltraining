@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import logo from "../assets/logoSolo.png";
+import { AiFillLinkedin } from "react-icons/ai";
+import {TiSocialInstagram} from "react-icons/ti"
+import { BsGithub } from "react-icons/bs"
 import { NavDropdown } from 'react-bootstrap';
 import { MdShoppingCartCheckout } from 'react-icons/md';
 import "../striking/striking.css";
 import StripeContainer from '../StripeContainer';
-import logo from "../assets/logoSolo.png";
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js'
+import "./products.css"
+import "../footer/footerStyling.css"
 
-
-const PUBLIC_KEY = "codey"
+const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9wCqrIYKODUGE9jtCQoDLriv8h3AfWD6BrVuyFeXwgr0vBilxRK6bSd1qbyuBKqhHu2v599j300iZ0lp6IL"
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const Products = () => {
   const [showFullText, setShowFullText] = useState(false);
-  const [cartItem, setCartItem] = useState([]);
-  const navigate = useNavigate();
   const [showItem, setShowItem] = useState(false);
   const [checkoutInfo, setCheckoutInfo] = useState({
     Duration: "",
@@ -65,13 +66,10 @@ const dropdownTextWeights = showFullText ? (
         Click here to read more...
     </>
 )
-{/* <button onClick={() => handleOnClick()}>
-  Purchase a session
-</button> */}
 
   return (
     <div className='App'>
-      <h1>Personal Training</h1>
+      <h1 id='theTop'>Personal Training</h1>
       {showItem ? <Elements stripe={stripeTestPromise}><StripeContainer checkoutInfo={checkoutInfo}/></Elements> 
       : 
       <>
@@ -261,9 +259,41 @@ const dropdownTextWeights = showFullText ? (
             </li> */}
         </ul>
     </div>
-        <p className="endingDescription">Please note that prices can change at the discretion of the trainor and the client, feel free to communicate what it is you're looking for for a fitness package!</p>
+        <p className="endingDescription">Please note that prices can change at the discretion of the trainer and the client, feel free to communicate what it is you're looking for a fitness package!
+        </p>
+
       </>}
+
+      <footer>
+      
+      <button id="logoButton">
+        <a href="/products#theTop" className="footer_logo">
+        </a>
+      </button>
+
+      <ul className="permalinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/termscondition">Terms & Conditions</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/products">Order Now</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/#formContainer">Contact</a></li>
+      </ul>
+
+      <div className="footer_socials">
+        <a href="https://www.linkedin.com/in/jeff-bozier-jr/"><AiFillLinkedin /></a>
+        <a href="https://github.com/jeff-shango"><BsGithub/></a>
+        <a href="https://instagram.com/the_tao_of_jeff?igshid=YmMyMTA2M2Y="><TiSocialInstagram/></a>
+      </div>
+
+      <div className="footer_socials">
+        <small>&copy; Jeff Bozier. 2023</small>
+      </div>
+    </footer>
     </div>
+
+    
   )
 }
 

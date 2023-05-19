@@ -7,11 +7,11 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
 import Breakdown from "./Components/breakdown/Breakdown";
 import Sessions from "./Components/sessions/Sessions.jsx"
-import Add from "./Components/add/Add"
+// import Add from "./Components/add/Add"
 import TermsCondition from "./terms/TermsCondition";
 import ParQForm from "./Components/parq/ParQForm";
 import Programs from "./Components/programs/Programs";
-import Striking from "./Components/striking/Striking";
+// import Striking from "./Components/striking/Striking";
 import Checkout from "./Components/checkout/Checkout";
 import Products from "./Components/Products/Products"
 // import StripeContainer from "./Components/striking/StripeContainer";
@@ -42,11 +42,11 @@ function App() {
           
         }/>
 
-          <Route path="/add" element={
+          {/* <Route path="/add" element={
             <div className="add">
               <Add/>
             </div>
-          } />
+          } /> */}
           <Route path="/termscondition" element={<TermsCondition/>}/>
           <Route path="/parq" element={<ParQForm/>}/>
           <Route path="/programs" element={<Programs/>}/>
@@ -61,7 +61,7 @@ function App() {
       <footer className='animate-on-scroll'>
       
       <button id="logoButton">
-        <a href="#" className="footer_logo">
+        <a href="#theTop" className="footer_logo">
           {logo}
         </a>
       </button>

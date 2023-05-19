@@ -27,7 +27,7 @@ const CARD_OPTIONS = {
 
 const StripeContainer = ({ checkoutInfo }) => {
   const [success, setSuccess] = useState(false);
-  const [info, setInfo] = useState({
+  const [info] = useState({
     Name: "",
     Number: "",
     Email: "",
@@ -49,7 +49,7 @@ const StripeContainer = ({ checkoutInfo }) => {
     formData.append("session_type", sessionType);
     formData.append("duration", duration);
 
-    const templateParams = Object.fromEntries(formData);
+    // const templateParams = Object.fromEntries(formData);
 
     emailjs.sendForm('service_4dfcr2e', 'template_v2ypy6e', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {

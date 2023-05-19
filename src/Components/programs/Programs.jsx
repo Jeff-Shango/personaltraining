@@ -1,4 +1,7 @@
 import React from 'react';
+import { AiFillLinkedin } from "react-icons/ai";
+import {TiSocialInstagram} from "react-icons/ti"
+import { BsGithub } from "react-icons/bs"
 import "./programs.css";
 import fightVideo from '../assets/fightVideoA.mp4';
 import strengthVideo from '../assets/strengthVideo.mp4';
@@ -53,6 +56,34 @@ const Programs = () => {
         </p>
         <div id='programPicContainer' className='programPicContainerC' onClick={() => {window.location.href='http://localhost:3000/products';}}/>
       </div>
+
+      <footer>
+      
+      <button id="logoButton">
+        <a href="/products#theTop" className="footer_logo">
+        </a>
+      </button>
+
+      <ul className="permalinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/termscondition">Terms & Conditions</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/products">Order Now</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/#formContainer">Contact</a></li>
+      </ul>
+
+      <div className="footer_socials">
+        <a href="https://www.linkedin.com/in/jeff-bozier-jr/"><AiFillLinkedin /></a>
+        <a href="https://github.com/jeff-shango"><BsGithub/></a>
+        <a href="https://instagram.com/the_tao_of_jeff?igshid=YmMyMTA2M2Y="><TiSocialInstagram/></a>
+      </div>
+
+      <div className="footer_socials">
+        <small>&copy; Jeff Bozier. 2023</small>
+      </div>
+    </footer>
     </>
   )
 }

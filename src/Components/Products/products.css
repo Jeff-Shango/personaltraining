@@ -1,0 +1,8 @@
+@media only screen and (max-width: 600px) {
+    .endingDescription{
+        border-bottom: 2px solid white;
+        width: var(--container-width-sm);
+        text-align: center;
+        margin-left: 20px;
+    }
+}

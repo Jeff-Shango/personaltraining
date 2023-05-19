@@ -1,12 +1,11 @@
-
-.bellIcon {
-    color: white;
-}
-
 @media only screen and (max-width: 428px){
     /* .navbarContainer {
         height: 20vh;
     } */
+    
+    .bellIcon {
+        color: white;
+    }
 
     nav {
         display: flex;
@@ -21,16 +20,42 @@
     }
 
     #navLink {
-        font-size: 18px;
-        padding: 8px;
+        /* font-size: 11px; */
+        /* padding: 2px; */
         color: var(--primary-color);
-        background-color: ;
+        background-color: transparent;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        margin-right: .5rem;
+        width: fit-content;
+        height: fit-content;
+        font-weight: bold;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+}
+
+    #navLink:active {
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        background-color: transparent;
+        cursor: progress;
+        border-right: none;
+        border-bottom: none;
         border-radius: 12px;
         -webkit-border-radius: 12px;
         -moz-border-radius: 12px;
         -ms-border-radius: 12px;
         -o-border-radius: 12px;
 }
+
+    #linkItem {
+        color: #CCCCCC;
+        font-size: medium;
+    }
+
     .outerContainer {
         position: absolute;
         left: 0;
