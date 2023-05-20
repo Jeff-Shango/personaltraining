@@ -1,20 +1,38 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import emailjs from "emailjs-com"
 import "./parqStyling.css";
 
 const ParQForm = () => {
+  const form = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_4dfcr2e', 'template_v2ypy6e', form.current, '_NpdWJ5iCT6lmb6Un')
+      .then((result) => {
+          console.log(result.text);
+      }).catch( (error) => {
+          console.log("email error which is:", error);
+          console.log(error.text);
+      });
+
+    // e.target.reset()
+    // Handle the form submission
+    // You can access the entered data using the name, telephone, and email state variables
+  };
+  
   return (
     <div id='parQContainer'>
         <h1 id="parQTitle">Pre-Activity Readiness Questionnaire Form (PAR-Q-Form)</h1>
-        <form action="https://formsubmit.co/jeff.bozierjr@gmail.com" id='parqForm' method='POST' encType='multipart/form-data'>
+        <form id='parqForm' ref={form} onSubmit={handleSubmit}>
         <section className="parqSection personDetailsContainer">
             <h2 id='sectionTitle'>Personal Details</h2>
 
           <div className="inputContainer">
-            <input name='First Name' id='parqInput' type="text" />
-            <span aria-required="true" id='parqLabel' name="firstName">First Name</span>
+            <input name='name' id='parqInput' type="text"/>
+            <span aria-required="true" id='parqLabel' name="name">Name</span>
           </div>
 
-          <div className="inputContainer">
+          {/* <div className="inputContainer">
             <input name='Middle Name' id='parqInput' type="text" />
             <span  id='parqLabel' name="middleName">Middle Name</span>
           </div>
@@ -22,15 +40,15 @@ const ParQForm = () => {
           <div className="inputContainer">
             <input name='Last Name' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="lastName">Last Name</span>
-          </div>
+          </div> */}
 
           <div className="inputContainer">
             <input name='birthdate' id='parqInput' type="date" />
-            <span aria-required="true" id='parqLabel' name="dob">Date of Birth</span>
+            <span aria-required="true" id='parqLabel' name="birthdate">Date of Birth</span>
           </div>
 
           <div className="inputContainer">
-            <input name='Age' id='parqInput' type="number" />
+            <input name='age' id='parqInput' type="number" />
             <span aria-required="true" id='parqLabel' name="age">Age</span>
           </div>
 
@@ -40,17 +58,12 @@ const ParQForm = () => {
           </div>
 
           <div className="inputContainer">
-            <input name='address' id='parqInput' type="text" />            
-            <span id='parqLabel' name="address">Address</span>
-          </div>
-
-          <div className="inputContainer">
             <input name='city' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="city">City</span>
           </div>
 
           <div className="inputContainer">
-            <input name='zip code' id='parqInput' type="number" />
+            <input name='zipCode' id='parqInput' type="number" />
             <span aria-required="true" id='parqLabel' name="zipCode">Zip Code</span>
           </div>
 
@@ -60,18 +73,18 @@ const ParQForm = () => {
           </div>
 
           <div className="inputContainer">
-            <input name='Contact Number' id='parqInput' type="tel" />
-            <span aria-required="true" id='parqLabel' name="contactNumber">Contact Number</span>
+            <input name='telephone' id='parqInput' type="tel" />
+            <span aria-required="true" id='parqLabel' name="telephone">Contact Number</span>
           </div>
 
         <div className="emergencyContact">
         <div className="inputContainer">
-            <input name='Emergency Contact' id='parqInput' type="text" />
+            <input name='emergencyContact' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="emergencyContact">Emergency Contact</span>
         </div>
 
         <div className="inputContainer">
-            <input name='Emergency Contact Number' id='parqInput' type="tel" />
+            <input name='emergencyContactNumber' id='parqInput' type="tel" />
             <span aria-required="true" id='parqLabel' name="emergencyContactTel">telephone</span>
         </div>
         </div>
@@ -82,7 +95,7 @@ const ParQForm = () => {
             <h2 id='sectionTitle'>Medical Questions</h2>
             <p>Answer the following questions as honestly as you can and provide as much relevant additional information. Answer the following questions by placing a tick in either the <strong>Yes</strong> or <strong>No</strong> boxes (if you should answer <strong>Yes</strong> to any of the questions please provide further information in the space provided)</p>
             <h3 className="descriptionA"><em>Do you currently or have you ever suffered from any of the following conditions?</em></h3>
-            <aside className='innerInput'>if <strong>Yes</strong>, please provide details below <input type="text"/></aside>
+            <aside className='innerInput'>if <strong>Yes</strong>, please provide details below <input name='extraInfo' type="text"/></aside>
             <ol type='I' className="medicalChecklist">
                 <li>
                     <div class="question">
@@ -98,16 +111,6 @@ const ParQForm = () => {
                     </div>
                 </li>
                 
-                <li>
-                    <div class="question">
-                      <label for="heart-problems">Heart Problems</label>
-                    </div>
-                    <div class="checkboxes">
-                      <label><input type="checkbox" className='checkbox' name="heart-problems" value="yes"/> Yes</label>
-                      <label><input type="checkbox" className='checkbox' name="heart-problems" value="no"/> No</label>
-                    </div>
-                </li>
-
                 <li>
                     <div class="question">
                       <label for="circulatory-problems">Circulatory problems</label>
@@ -150,8 +153,8 @@ const ParQForm = () => {
             </ol>
 
         {/* health checklist */}
-            <aside className='innerInput'>if <strong>Yes</strong>, please provide details below <input type="text" placeholder='enter Here'/></aside>
-            <ol type='I' className="healthChecklist">
+           
+            <ol type='I' className="healthChecklist parQSection">
                 <li>
                     <div class="question">
                       <label for="spine">Back/spinal pain?</label>
@@ -222,8 +225,8 @@ const ParQForm = () => {
                     </div>
                 </li>
             </ol>
-        <input placeholder='enter' type="text" />
-        <label htmlFor="">Is there any other reason that you believe may prevent you from participating</label>
+        
+        <aside htmlFor="">Is there any other reason that you believe may prevent you from participating<input type="text" /></aside>
         </section>
 
         <section className='parqSection' id="declaration">
@@ -238,27 +241,12 @@ const ParQForm = () => {
             
             <div className="inputContainer">
                 <label htmlFor="">Print Name:</label>
-                <input name='print Name' type="text" />
+                <input name='printName' type="text" />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="">Date:</label>
                 <input name='date' type="date" />
-            </div>
-
-            <div className="inputContainer">
-                <label htmlFor="">Instructor:</label>
-                <input name='instructor' type="text" />
-            </div>
-
-            <div className="inputContainer">
-                <label htmlFor="">Print Name:</label>
-                <input name='namePrint' type="text" />
-            </div>
-
-            <div className="inputContainer">
-                <label htmlFor="">Date</label>
-                <input name='signed date' type="date" />
             </div>
             </div>
         </section>

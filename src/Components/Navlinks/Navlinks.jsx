@@ -13,7 +13,9 @@ const Navlinks = () => {
     <Navbar collapseOnSelect expand="lg" bg='dark' variant='dark' className='navbarContainer'>
     <Container>
         <Navbar.Brand>
+            <a href="/" id="logoLink">
              <Image src={navBrand} fluid/>
+            </a>
          </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
              <Navbar.Collapse id='responsive-navbar-nav'>

@@ -78,5 +78,7 @@
 
     .navbarContainer {
         background-color: black;
+        position: fixed;
+        top: 0;
     }
 }

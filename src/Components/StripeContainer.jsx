@@ -51,7 +51,7 @@ const StripeContainer = ({ checkoutInfo }) => {
 
     // const templateParams = Object.fromEntries(formData);
 
-    emailjs.sendForm('service_4dfcr2e', 'template_v2ypy6e', form.current, '_NpdWJ5iCT6lmb6Un')
+    emailjs.sendForm('service_4dfcr2e', 'template_cbdgzvt', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {
           console.log(result.text);
       }).catch( (error) => {
