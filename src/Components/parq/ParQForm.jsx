@@ -4,12 +4,39 @@ import "./parqStyling.css";
 
 const ParQForm = () => {
   const form = useRef();
+
+  const showAlert = (message) => {
+      // Display the dialog box
+    document.getElementById("dialogBox").style.display = "block";
+  
+  // Set the message
+  document.getElementById("dialogMessage").textContent = message;
+  
+  // Add event listener to close the dialog box when OK button is clicked
+  document.getElementById("dialogButton").addEventListener("click", function() {
+    document.getElementById("dialogBox").style.display = "none";
+  });
+  }
+
+  let i = 0;
+    let txt = "Thank ya Thank ya";
+    let speed = 50;
+  
+    const typeWriter = () => {
+      if (i < txt.length) {
+        document.getElementById("dialogMessage").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_4dfcr2e', 'template_v2ypy6e', form.current, '_NpdWJ5iCT6lmb6Un')
+    emailjs.sendForm('service_4dfcr2e', 'template_b3n46iq', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {
           console.log(result.text);
+          showAlert()
       }).catch( (error) => {
           console.log("email error which is:", error);
           console.log(error.text);
@@ -18,10 +45,22 @@ const ParQForm = () => {
     // e.target.reset()
     // Handle the form submission
     // You can access the entered data using the name, telephone, and email state variables
+
+    
   };
+  
   
   return (
     <div id='parQContainer'>
+
+<div id="dialogBox">
+  <div id="dialogContent">
+    <div id="dialogMessage">Thank you for completing the form! It has successfully been sent!</div>
+    <button id="dialogButton">OK</button>
+  </div>
+</div>
+
+
         <h1 id="parQTitle">Pre-Activity Readiness Questionnaire Form (PAR-Q-Form)</h1>
         <form id='parqForm' ref={form} onSubmit={handleSubmit}>
         <section className="parqSection personDetailsContainer">
@@ -40,7 +79,7 @@ const ParQForm = () => {
           <div className="inputContainer">
             <input name='Last Name' id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="lastName">Last Name</span>
-          </div> */}
+          </div> */} 
 
           <div className="inputContainer">
             <input name='birthdate' id='parqInput' type="date" />
@@ -48,7 +87,7 @@ const ParQForm = () => {
           </div>
 
           <div className="inputContainer">
-            <input name='age' id='parqInput' type="number" />
+            <input name="age" id='parqInput' type="text" />
             <span aria-required="true" id='parqLabel' name="age">Age</span>
           </div>
 
@@ -251,7 +290,7 @@ const ParQForm = () => {
             </div>
         </section>
 
-        <button type="submit" id="submitButton">Send</button> 
+        <button type="submit" id="submitButton" onClick={typeWriter()}>Send</button> 
         </form>
     </div>
   )
