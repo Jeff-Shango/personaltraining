@@ -1,8 +1,40 @@
 /* Media Queries (Small Devices) */
 @media screen and (max-width: 600px) {
+    /* go to top button */
+    #floatingButtonRight {
+        position: fixed;
+        right: 20px;
+        top: 60vh;
+        background-color: var(--primary-color);
+        color: black;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        opacity: 1;
+        transition: opacity 0.5s   ;
+        -webkit-transition: opacity 0.5s   ;
+        -moz-transition: opacity 0.5s   ;
+        -ms-transition: opacity 0.5s   ;
+        -o-transition: opacity 0.5s   ;
+    }
+    
+    #floatingButtonRight::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: black;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
  /* Dialog Box Styles */
 #dialogBox {
     display: none;
+    color: white;
     position: fixed;
     top: 0;
     left: 0;

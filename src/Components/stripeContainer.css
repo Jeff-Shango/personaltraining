@@ -1,55 +1,31 @@
-/* @media screen and (max-width: 600px) {
-    .inputBox {
-        position: relative;
+@media screen and (max-width: 600px) {
+    #selectedSessionContainer {
+        color: whitesmoke;
+        padding: 20px;
+        text-align: center;
+        border-top: 2px solid whitesmoke;
+        border-bottom: 2px solid whitesmoke;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
         width: var(--container-width-sm);
-        height: 100px;
-        border: 2px solid yellow;
-        margin-left: 1.2rem;
-    }
-
-    .inputBox input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        background: #552583;
-        border-radius: 5px;
-        outline: none;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        color: red;
-        font-size: 20px;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 1rem;
 }
 
-.inputBox span {
+#selectedSessionContainer > h3 {
+    position: relative;
+}
+
+#selectedSessionContainer > h3:after {
+    content: "";
+    width: 11.5rem;
     position: absolute;
-    left: 0;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.25);
-    text-transform: uppercase;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+    bottom: 0;
+    border-bottom: 2px solid whitesmoke;
+    left: 22%;
 }
-
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span {
-    color: #FDB927;
-    transform: translateX(10px) translateY(-7px);
-    -webkit-transform: translateX(10px) translateY(-7px);
-    -moz-transform: translateX(10px) translateY(-7px);
-    -ms-transform: translateX(10px) translateY(-7px);
-    -o-transform: translateX(10px) translateY(-7px);
-    font-size: 0.65em;
-    padding: 0 10px;
-    background: #552583;
-    border-left: 1px solid #FDB927;
-    border-right: 1px solid #FDB927;
-    letter-spacing: 0.2em;
 }
-} */

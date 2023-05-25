@@ -1,9 +1,28 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import emailjs from "emailjs-com"
 import "./parqStyling.css";
 
 const ParQForm = () => {
   const form = useRef();
+  const [isVisibleRight, setVisibleRight] = useState(false);
+
+  const handleScrollRight = () => {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition < 1700) {
+      setVisibleRight(false);
+      console.log('it is below')
+    } else {
+      setVisibleRight(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollRight);
+    return () => {
+      window.removeEventListener('scroll', handleScrollRight);
+    };
+  }, []);
+
 
   const showAlert = (message) => {
       // Display the dialog box
@@ -18,21 +37,8 @@ const ParQForm = () => {
   });
   }
 
-  let i = 0;
-    let txt = "Thank ya Thank ya";
-    let speed = 50;
-  
-    const typeWriter = () => {
-      if (i < txt.length) {
-        document.getElementById("dialogMessage").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-    
   const handleSubmit = (e) => {
     e.preventDefault();
-
     emailjs.sendForm('service_4dfcr2e', 'template_b3n46iq', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {
           console.log(result.text);
@@ -52,6 +58,10 @@ const ParQForm = () => {
   
   return (
     <div id='parQContainer'>
+    {/* quick link buttons */}
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/parq#parQTitle';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+      Go to Top
+    </button>
 
 <div id="dialogBox">
   <div id="dialogContent">
@@ -290,7 +300,7 @@ const ParQForm = () => {
             </div>
         </section>
 
-        <button type="submit" id="submitButton" onClick={typeWriter()}>Send</button> 
+        <button type="submit" id="submitButton">Send</button> 
         </form>
     </div>
   )

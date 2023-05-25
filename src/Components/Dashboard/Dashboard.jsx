@@ -104,6 +104,8 @@ const handleScrollRight = () => {
   
   return (
     <>
+
+    
     {/* quick link buttons */}
     <button className={`custom-button ${isVisible ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/programs';}} id="floatingButton" style={{opacity: isVisible ? 1 : 0.2, zIndex:9999, display: isVisible ? "block" : "none"}}>
       Order a Class

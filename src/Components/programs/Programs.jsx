@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiFillLinkedin } from "react-icons/ai";
 import {TiSocialInstagram} from "react-icons/ti"
 import { BsGithub } from "react-icons/bs"
@@ -8,9 +8,34 @@ import strengthVideo from '../assets/strengthVideo.mp4';
 import nunchuk from '../assets/nunchukVideo.mp4'
 
 const Programs = () => {
+
+  const [isVisibleRight, setVisibleRight] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollRight);
+    return () => {
+      window.removeEventListener('scroll', handleScrollRight);
+    };
+  }, []);
+
+  const handleScrollRight = () => {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition < 1700) {
+      setVisibleRight(false);
+      console.log('it is below')
+    } else {
+      setVisibleRight(true);
+    }
+  };
+
   return (
     <>
       <div className="programTitleContainer">
+
+        {/* quick link buttons */}
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/programs#programsTitle';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+      Go to Top
+    </button>
+
         <h2 id="programsTitle">Programs</h2>
         <p className="programDescription">
             Among Strength & Conditioning and Striking based personal training, these programs can be mixed match and incorporate the other. Contact me today to gather more information and how your individualized packages can look.

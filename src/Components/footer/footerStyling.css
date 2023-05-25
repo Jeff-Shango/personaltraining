@@ -1,5 +1,75 @@
 @media screen and (max-width: 600px) {
     footer {
+      background: var(--color-primary);
+      padding: 3rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  
+    #logoButton {
+      border: 2px solid transparent;
+      outline: none;
+      padding: 5rem;
+      height: 10rem;
+      width: 10rem;
+      background: url("../assets/logoSolo.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      -ms-border-radius: 12px;
+      -o-border-radius: 12px;
+    }
+  
+    .permalinks {
+      font-size: larger;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .permalinks a {
+      color: white;
+      font-weight: bold;
+    }
+  
+    .footer_socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      font-size: 2.3rem;
+    }
+  
+    .footer_socials a {
+      background: var(--color-bg);
+      color: var(--color-white);
+      padding: 0.8rem;
+      border-radius: 0.7rem;
+      -webkit-border-radius: 0.7rem;
+      -moz-border-radius: 0.7rem;
+      -ms-border-radius: 0.7rem;
+      -o-border-radius: 0.7rem;
+      display: flex;
+      border: 1px solid transparent;
+    }
+  
+    .footer_socials a:hover {
+      background: transparent;
+      color: var(--color-bg);
+      border-color: var(--color-bg);
+    }
+  
+    .footer_copyright {
+      color: var(--color-bg);
+    }
+  }
+  
+
+@media screen and (max-width: 600px) {
+    footer {
         background: var(--color-primary);
         padding: 3rem 0;
         text-align: center;

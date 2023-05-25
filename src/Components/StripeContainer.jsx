@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react'
 import "./stripeContainer.css"
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import emailjs from "emailjs-com";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const CARD_OPTIONS = {
 	iconStyle: "solid",
@@ -27,13 +28,15 @@ const CARD_OPTIONS = {
 
 const StripeContainer = ({ checkoutInfo }) => {
   const [success, setSuccess] = useState(false);
-  const [info] = useState({
+  const [info, setInfo] = useState({
     Name: "",
     Number: "",
     Email: "",
     Special_Notes: "",
     Type_Of_Session: ""
   })
+  const navigate = useNavigate()
+
   const form = useRef();
   // const [telephone, setTelephone] = useState(checkoutInfo.Number);
   // const [email, setEmail] = useState(checkoutInfo.Email);
@@ -87,7 +90,7 @@ const StripeContainer = ({ checkoutInfo }) => {
             if(response.data.success) {
                 console.log("Successful payment, mane");
                 const calendarData = {
-                  Name: info.name,
+                  name: info.name,
                   Number: info.telephone,
                   Email: info.email,
                   Special_Notes: info.message,
@@ -111,37 +114,64 @@ const StripeContainer = ({ checkoutInfo }) => {
     }
 }
 
+const handleChange = (e) => {
+  setInfo(prev=>({...prev, [e.target.name]: e.target.value}))
+};
+
+const paymentInfo = async e => {
+    e.preventDefault()
+    try {
+      await axios.post("http://localhost:4000/calendar", info)
+      Navigate("/")
+    }catch(err){
+      console.log(err)
+    }
+} 
+
+console.log(info)
+
   return (
     <>
     
     {!success ? 
       <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e)}}>
-        <h3>Selected Session Details</h3>
-        <p name="session_type">Type of Session: {checkoutInfo.Type_Of_Session}</p>
-        <p name="duration">Duration: {checkoutInfo.Duration}</p>
+        <div id="selectedSessionContainer">
+          <h3 id="programsTitle">
+            Selected Session Details
+          </h3>
+          
+          <p id="programsTitle" name="session_type">
+            Type of Session: {checkoutInfo.Type_Of_Session}
+          </p>
+          
+          <p id="programsTitle" name="duration">
+            Duration: {checkoutInfo.Duration}
+          </p>
+        
+        </div>
 
-        <input type="hidden" name="session_type" value={checkoutInfo.Type_Of_Session} />
-        <input type="hidden" name="duration" value={checkoutInfo.Duration} />
+        <input onChange={handleChange} type="hidden" name="session_type" value={checkoutInfo.Type_Of_Session} />
+        <input onChange={handleChange} type="hidden" name="duration" value={checkoutInfo.Duration} />
 
 
 
           <div className="inputBox">
-            <input type="text" name='name'  required />
+            <input type="text" onChange={handleChange} name='name'  required />
             <span>Your Name</span>
           </div>
 
           <div className="inputBox">
-            <input type="tel" name='telephone'  required />
+            <input type="tel" onChange={handleChange} name='telephone'  required />
             <span>Your Number</span>
           </div>
 
           <div className="inputBox">
-            <input type="email" name='email'  required />
+            <input type="email" onChange={handleChange} name='email'  required />
             <span>Your Email</span>
           </div>
 
           <div className="inputBox">
-            <input type="text" name='message' />
+            <input type="text" onChange={handleChange} name='message' />
             <span>Extra Info</span>
           </div>
 
@@ -155,7 +185,7 @@ const StripeContainer = ({ checkoutInfo }) => {
                 </div>
             </fieldset>
           </div>
-        <button type="submit">Pay</button>
+        <button onClick={paymentInfo} type="submit">Pay</button>
       </form>
      :
      <div>

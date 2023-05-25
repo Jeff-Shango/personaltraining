@@ -17,19 +17,19 @@
     --spacer: 15vh;
 }
 
-/* .App {
+.App {
     height: 80vh;
     margin-top: 20vh;
     background-color: var(--color-bg-variant);
 }
 
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
 } */
 
 body {
-    background: var(--color-bg);
+    /* background: var(--color-bg); */
     color: var(--white);
     line-height: 1.7;
     font-family: 'Oswald', sans-serif;
@@ -50,6 +50,7 @@ body {
 html {
     scroll-behavior: smooth;
     height: 500rem;
+    background-color: black;
 }
 
 ::-webkit-scrollbar {
@@ -104,6 +105,11 @@ a:hover {
 @media screen and (max-width: 1024px) {
     .container {
         width: var(--container-width-md);
+        /* background-color: #000000; */
+    }
+
+    body {
+        background-color: var(--color-bg);
     }
 
     section {

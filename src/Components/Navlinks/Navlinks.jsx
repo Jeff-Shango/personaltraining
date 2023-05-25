@@ -25,10 +25,10 @@ const Navlinks = () => {
             <p id='linkItem'>Home</p>
         </a>
 
-        <a id='navLink' href="/sessions" onClick={() => setActiveNav('/')} className={activeNav === '/' ? 'active' : ''}>
+        {/* <a id='navLink' href="/sessions" onClick={() => setActiveNav('/')} className={activeNav === '/' ? 'active' : ''}>
             <BsFillCalendarRangeFill/>
             <p id='linkItem'>sessions</p>
-        </a>
+        </a> */}
 
         <a id='navLink' href="/programs" onClick={() => setActiveNav('/programs')} className={activeNav === '/programs' ? 'active' : ''}>
             <RiBoxingFill/>

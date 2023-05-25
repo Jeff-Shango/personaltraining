@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from "../assets/logoSolo.png";
 import { AiFillLinkedin } from "react-icons/ai";
 import {TiSocialInstagram} from "react-icons/ti"
@@ -12,7 +12,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import "./products.css"
 import "../footer/footerStyling.css"
 
-const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9wCqrIYKODUGE9jtCQoDLriv8h3AfWD6BrVuyFeXwgr0vBilxRK6bSd1qbyuBKqhHu2v599j300iZ0lp6IL"
+const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9j68ODTlGhgUhy6gS7HZKQ9QPP4LNzDeRYGEchBVKxQJWGL16dajs6OkEF30jSE3NCTIMbObJ00VWUNEN7l"
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const Products = () => {
@@ -22,6 +22,24 @@ const Products = () => {
     Duration: "",
     Type_Of_Session: ""
   })
+
+  const [isVisibleRight, setVisibleRight] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollRight);
+    return () => {
+      window.removeEventListener('scroll', handleScrollRight);
+    };
+  }, []);
+
+  const handleScrollRight = () => {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition < 1200) {
+      setVisibleRight(false);
+      console.log('it is below')
+    } else {
+      setVisibleRight(true);
+    }
+  };
 
   const handleOnClick = (type, duration) => {
     const item = {
@@ -69,7 +87,14 @@ const dropdownTextWeights = showFullText ? (
 
   return (
     <div className='App'>
-      <h1 id='theTop'>Personal Training</h1>
+
+          {/* quick link buttons */}
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/products#programsTitle';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+      Go to Top
+    </button>
+
+
+      <h2 id='programsTitle'>Personal Training</h2>
       {showItem ? <Elements stripe={stripeTestPromise}><StripeContainer checkoutInfo={checkoutInfo}/></Elements> 
       : 
       <>
@@ -267,7 +292,7 @@ const dropdownTextWeights = showFullText ? (
       <footer>
       
       <button id="logoButton">
-        <a href="/products#theTop" className="footer_logo">
+        <a href="/products#programsTitle" className="footer_logo">
         </a>
       </button>
 

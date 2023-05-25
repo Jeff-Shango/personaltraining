@@ -34,13 +34,13 @@ function App() {
             <Breakdown/>
           </div>
         }/>    
-
+{/* 
           <Route path="/sessions" element={
           <div className="sessions">
             <Sessions/>
           </div>
           
-        }/>
+        }/> */}
 
           {/* <Route path="/add" element={
             <div className="add">
