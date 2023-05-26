@@ -1,3 +1,177 @@
+/* laptop */
+@media only screen and (max-width: 1024px){
+    /* .navbarContainer {
+        height: 20vh;
+    } */
+    
+    .bellIcon {
+        color: white;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    html {
+        background-color: var(--color-bg);
+    }
+
+    .App {
+        background-color: var(--color-bg);
+    }
+
+    #navLink {
+        /* font-size: 11px; */
+        /* padding: 2px; */
+        color: var(--primary-color);
+        background-color: transparent;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        margin-right: 4.5rem;
+        width: fit-content;
+        height: fit-content;
+        font-weight: bold;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+}
+
+    #navLink:active {
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        background-color: transparent;
+        cursor: progress;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+}
+
+    #linkItem {
+        color: #CCCCCC;
+        font-size: large;
+    }
+
+    .outerContainer {
+        position: absolute;
+        left: 0;
+    }
+
+    .bellIcon {
+        width: max-content;
+        margin-bottom: 2rem;
+    }
+
+    .bellIcon, .joinButton {
+        height: 3rem;
+    }
+
+    .navItems {
+        font-size: 7;
+        float: right;
+        font-weight: bolder;
+    }
+
+    .navbarContainer {
+        background-color: var(--color-bg);
+        position: fixed;
+        top: 0;
+    }
+}
+
+/* Medium */
+
+@media only screen and (max-width: 768px){
+    /* .navbarContainer {
+        height: 20vh;
+    } */
+    
+    .bellIcon {
+        color: white;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    html {
+        background-color: var(--color-bg);
+    }
+
+    .App {
+        background-color: var(--color-bg);
+    }
+
+    #navLink {
+        /* font-size: 11px; */
+        /* padding: 2px; */
+        color: var(--primary-color);
+        background-color: transparent;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        margin-right: 4.5rem;
+        width: fit-content;
+        height: fit-content;
+        font-weight: bold;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+}
+
+    #navLink:active {
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        background-color: transparent;
+        cursor: progress;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+}
+
+    #linkItem {
+        color: #CCCCCC;
+        font-size: large;
+    }
+
+    .outerContainer {
+        position: absolute;
+        left: 0;
+    }
+
+    .bellIcon {
+        width: max-content;
+        margin-bottom: 2rem;
+    }
+
+    .bellIcon, .joinButton {
+        height: 3rem;
+    }
+
+    .navItems {
+        font-size: 7;
+        float: right;
+        font-weight: bolder;
+    }
+
+    .navbarContainer {
+        background-color: var(--color-bg);
+        position: fixed;
+        top: 0;
+    }
+}
+
+
 @media only screen and (max-width: 428px){
     /* .navbarContainer {
         height: 20vh;

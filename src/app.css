@@ -20,7 +20,7 @@
 .App {
     height: 80vh;
     margin-top: 20vh;
-    background-color: var(--color-bg-variant);
+    background-color: var(--color-bg);
 }
 
 /* .container {
@@ -50,7 +50,7 @@ body {
 html {
     scroll-behavior: smooth;
     height: 500rem;
-    background-color: black;
+    background-color: var(--color-bg);
 }
 
 ::-webkit-scrollbar {
@@ -103,6 +103,15 @@ a:hover {
 
 /* Media Queries (Medium Devices) */
 @media screen and (max-width: 1024px) {
+    button {
+        font-size: x-large;
+        font-weight: bolder;
+        height: fit-content;
+        background-color: var(--primary-color);
+        color: black;
+        outline: 2px solid black;
+}
+
     .container {
         width: var(--container-width-md);
         /* background-color: #000000; */
@@ -115,6 +124,10 @@ a:hover {
     section {
         margin-top: 6rem;
         height: 100vh;
+    }
+
+    section > h2 {
+        margin-bottom: 2rem;
     }
 }
 

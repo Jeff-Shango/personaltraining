@@ -1,3 +1,25 @@
+@media only screen and (max-width: 1024px) {
+    .endingDescription{
+        border-bottom: 2px solid white;
+        width: var(--container-width-lg);
+        text-align: center;
+        margin-left: 20px;
+    }
+}
+
+/* medium devices */
+
+@media only screen and (max-width: 768px) {
+    .endingDescription{
+        border-bottom: 2px solid white;
+        width: var(--container-width-md);
+        text-align: center;
+        margin-left: 20px;
+    }
+}
+
+/* small devices */
+
 @media only screen and (max-width: 600px) {
     .endingDescription{
         border-bottom: 2px solid white;
