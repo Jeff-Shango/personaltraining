@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
 import Breakdown from "./Components/breakdown/Breakdown";
-import Sessions from "./Components/sessions/Sessions.jsx"
+// import Sessions from "./Components/sessions/Sessions.jsx"
 // import Add from "./Components/add/Add"
 import TermsCondition from "./terms/TermsCondition";
 import ParQForm from "./Components/parq/ParQForm";

@@ -21,21 +21,23 @@
     }
 
     #navLink {
-        /* font-size: 11px; */
-        /* padding: 2px; */
-        color: var(--primary-color);
+        /*font-size: 11px;
+        *//*padding: 2px;
+        */color: var(--primary-color);
         background-color: transparent;
         border-radius: 12px;
         -webkit-border-radius: 12px;
         -moz-border-radius: 12px;
         -ms-border-radius: 12px;
         -o-border-radius: 12px;
-        margin-right: 4.5rem;
-        width: fit-content;
+        /*margin-right: 4.5rem;
+        */width: fit-content;
         height: fit-content;
         font-weight: bold;
-        border-right: 1px solid white;
-        border-bottom: 1px solid white;
+        font-size: x-large;
+        margin: auto;
+        border: 1px solid white;
+        margin-right: 50px;
 }
 
     #navLink:active {
@@ -54,7 +56,8 @@
 
     #linkItem {
         color: #CCCCCC;
-        font-size: large;
+        font-size: x-large;
+        text-decoration: none;
     }
 
     .outerContainer {
@@ -108,9 +111,9 @@
     }
 
     #navLink {
-        /* font-size: 11px; */
-        /* padding: 2px; */
-        color: var(--primary-color);
+        /*font-size: 11px;
+        *//*padding: 2px;
+        */color: var(--primary-color);
         background-color: transparent;
         border-radius: 12px;
         -webkit-border-radius: 12px;
@@ -121,8 +124,6 @@
         width: fit-content;
         height: fit-content;
         font-weight: bold;
-        border-right: 1px solid white;
-        border-bottom: 1px solid white;
 }
 
     #navLink:active {
@@ -142,6 +143,10 @@
     #linkItem {
         color: #CCCCCC;
         font-size: large;
+    }
+
+    #navLink #linkItem {
+        border: 4px solid pink;
     }
 
     .outerContainer {
@@ -207,8 +212,7 @@
         width: fit-content;
         height: fit-content;
         font-weight: bold;
-        border-right: 1px solid white;
-        border-bottom: 1px solid white;
+        
 }
 
     #navLink:active {

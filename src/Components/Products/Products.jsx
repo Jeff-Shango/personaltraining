@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../assets/logoSolo.png";
 import { AiFillLinkedin } from "react-icons/ai";
 import {TiSocialInstagram} from "react-icons/ti"
 import { BsGithub } from "react-icons/bs"
@@ -12,7 +11,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import "./products.css"
 import "../footer/footerStyling.css"
 
-const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9j68ODTlGhgUhy6gS7HZKQ9QPP4LNzDeRYGEchBVKxQJWGL16dajs6OkEF30jSE3NCTIMbObJ00VWUNEN7l"
+const PUBLIC_KEY = "codey"
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const Products = () => {

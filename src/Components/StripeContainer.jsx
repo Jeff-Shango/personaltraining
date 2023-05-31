@@ -33,15 +33,16 @@ const StripeContainer = ({ checkoutInfo }) => {
     Number: "",
     Email: "",
     Special_Notes: "",
-    Type_Of_Session: ""
+    Type_Of_Session: "",
+    Duration: ""
   })
-  const navigate = useNavigate()
 
+  const navigate = useNavigate()  
   const form = useRef();
   // const [telephone, setTelephone] = useState(checkoutInfo.Number);
   // const [email, setEmail] = useState(checkoutInfo.Email);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const sessionType = checkoutInfo.Type_Of_Session;
@@ -62,10 +63,22 @@ const StripeContainer = ({ checkoutInfo }) => {
           console.log(error.text);
       });
 
+      try {
+        const response = await axios.post("http://localhost:4000/calendar", {
+          formData: Object.fromEntries(formData),
+        });
+        if (response.data.success) {
+          console.log("that has been stored successfully");
+          setSuccess(true);
+        }
+      } catch (error) {
+        console.log("Error storing form data:", error);
+      }
+    }
     // e.target.reset()
     // Handle the form submission
     // You can access the entered data using the name, telephone, and email state variables
-  };
+  ;
     const stripe = useStripe()
     const elements = useElements()
 
@@ -89,19 +102,20 @@ const StripeContainer = ({ checkoutInfo }) => {
 
             if(response.data.success) {
                 console.log("Successful payment, mane");
-                const calendarData = {
-                  name: info.name,
-                  Number: info.telephone,
-                  Email: info.email,
-                  Special_Notes: info.message,
-                  Type_Of_Session: checkoutInfo.Type_Of_Session
-                };
+                // const calendarData = {
+                //   name: info.name,
+                //   Number: info.telephone,
+                //   Email: info.email,
+                //   Special_Notes: info.message,
+                //   Type_Of_Session: checkoutInfo.Type_Of_Session,
+                //   Duration: checkoutInfo.Duration
+                // };
 
-                const calendarResponse = await axios.post("http://localhost:4000/calendar", calendarData);
+                // const calendarResponse = await axios.post("http://localhost:4000/calendar", calendarData);
 
-                if (calendarResponse.data) {
-                  console.log("it went over to the calendar successfully ");
-                }
+                // if (calendarResponse.data) {
+                //   console.log("it went over to the calendar successfully ");
+                // }
                 
                 setSuccess(true)
             }
@@ -122,7 +136,7 @@ const paymentInfo = async e => {
     e.preventDefault()
     try {
       await axios.post("http://localhost:4000/calendar", info)
-      Navigate("/")
+      // navigate("/")
     }catch(err){
       console.log(err)
     }
@@ -132,46 +146,46 @@ console.log(info)
 
   return (
     <>
-    
-    {!success ? 
-      <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e)}}>
+    {!success ? (
+      
+      <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e); paymentInfo(e)}}>
         <div id="selectedSessionContainer">
           <h3 id="programsTitle">
             Selected Session Details
           </h3>
           
-          <p id="programsTitle" name="session_type">
+          <p id="programsTitle" name="Type_Of_Session">
             Type of Session: {checkoutInfo.Type_Of_Session}
           </p>
           
-          <p id="programsTitle" name="duration">
+          <p id="programsTitle" name="Duration">
             Duration: {checkoutInfo.Duration}
           </p>
         
         </div>
 
-        <input onChange={handleChange} type="hidden" name="session_type" value={checkoutInfo.Type_Of_Session} />
-        <input onChange={handleChange} type="hidden" name="duration" value={checkoutInfo.Duration} />
+        <input onChange={handleChange} type="hidden" name="Type_Of_Session" value={checkoutInfo.Type_Of_Session} />
+        <input onChange={handleChange} type="hidden" name="Duration" value={checkoutInfo.Duration} />
 
 
 
           <div className="inputBox">
-            <input type="text" onChange={handleChange} name='name'  required />
+            <input type="text" onChange={handleChange} name='Name'  required />
             <span>Your Name</span>
           </div>
 
           <div className="inputBox">
-            <input type="tel" onChange={handleChange} name='telephone'  required />
+            <input type="tel" onChange={handleChange} name='Number'  required />
             <span>Your Number</span>
           </div>
 
           <div className="inputBox">
-            <input type="email" onChange={handleChange} name='email'  required />
+            <input type="email" onChange={handleChange} name='Email'  required />
             <span>Your Email</span>
           </div>
 
           <div className="inputBox">
-            <input type="text" onChange={handleChange} name='message' />
+            <input type="text" onChange={handleChange} name='Special_Notes' />
             <span>Extra Info</span>
           </div>
 
@@ -185,15 +199,16 @@ console.log(info)
                 </div>
             </fieldset>
           </div>
-        <button onClick={paymentInfo} type="submit">Pay</button>
+        <button type="submit">Pay</button>
       </form>
-     :
+      
+     ) : ( 
      <div>
-        <h2>Thanks for booking a session!</h2>
+        <h2 id="confirmationTxt">Thanks for booking a session!</h2>
     </div>
-    }
+    )}
     </>
-  )
-}
+  );
+};
 
 export default StripeContainer

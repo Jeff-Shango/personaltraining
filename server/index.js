@@ -24,19 +24,25 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post("/calendar", (req, res) => {
-    const q = "INSERT INTO calendarapi_Scheduler_Notes (`Name`, `Number`, `Email`, `Special_Notes`, `Type_Of_Session`) VALUES (?)"
+    const q = "INSERT INTO Scheduler_Notes (`Name`, `Number`, `Email`, `Special_Notes`, `Type_Of_Session`, `Duration`) VALUES (?, ?, ?, ?, ?, ?)";
     const values = [
         req.body.Name,
         req.body.Number,
         req.body.Email,
         req.body.Special_Notes,
-        req.body.Type_Of_Session
-    ]
+        req.body.Type_Of_Session,
+        req.body.Duration
+    ];
 
-    db.query(q,[values], (err, data) => {
-        if(err) return res.json(err)
-        return res.json("in there like swim wear")
-    })
+    db.query(q,values, (err, data) => {
+        if(err) {
+            // return res.json(err)
+            console.log("Error with storing that thing: ", err);
+            return res.json({ success: false });
+    }
+    console.log("Data stored propery and securely");
+    return res.json({ success: true });
+});
 })
 
 

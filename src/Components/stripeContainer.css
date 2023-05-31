@@ -1,3 +1,145 @@
+/* desktop devices */
+@media screen and (max-width: 1024px) {
+    #selectedSessionContainer {
+        color: whitesmoke;
+        padding: 20px;
+        text-align: center;
+        border-top: 2px solid whitesmoke;
+        border-bottom: 2px solid whitesmoke;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        width: var(--container-width-lg);
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 1rem;
+}
+
+#selectedSessionContainer > h3 {
+    position: relative;
+}
+
+#selectedSessionContainer > h3:after {
+    content: "";
+    width: 11.5rem;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid whitesmoke;
+    left: 22%;
+}
+
+@keyframes thankYou {
+    0% {
+        font-size: x-large;
+    }
+
+    50% {
+        font-size: xx-large;
+    }
+
+    100% {
+        font-size: x-large;
+    }
+}
+
+#confirmationTxt {
+    color: white;
+    width: var(--container-width-sm);
+    margin: auto;
+    text-align: center;
+    border: 2px solid white;
+    font-size: x-large;
+    padding: 50px 10px;
+    animation: thankYou 3s infinite linear ease-in-out ;
+    -webkit-animation: thankYou 3s infinite linear ease-in-out ;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+}
+
+
+
+/* tablet devices */
+@media screen and (max-width: 768px) {
+    #selectedSessionContainer {
+        color: whitesmoke;
+        margin: auto;
+        width: var(--container-width-md);
+        padding: 20px;
+        text-align: center;
+        border-top: 2px solid whitesmoke;
+        border-bottom: 2px solid whitesmoke;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        width: var(--container-width-sm);
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 1rem;
+}
+
+#selectedSessionContainer > h3 {
+    position: relative;
+}
+
+#selectedSessionContainer > h3:after {
+    content: "";
+    width: 11.5rem;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid whitesmoke;
+    left: 22%;
+}
+
+@keyframes thankYou {
+    0% {
+        font-size: x-large;
+    }
+
+    50% {
+        font-size: xx-large;
+    }
+
+    100% {
+        font-size: x-large;
+    }
+}
+
+#confirmationTxt {
+    color: white;
+    width: var(--container-width-sm);
+    margin: auto;
+    text-align: center;
+    border: 2px solid white;
+    font-size: x-large;
+    padding: 50px 10px;
+    animation: thankYou 3s infinite linear ease-in-out ;
+    -webkit-animation: thankYou 3s infinite linear ease-in-out ;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+}
+
+
+/* mobile devices */
 @media screen and (max-width: 600px) {
     #selectedSessionContainer {
         color: whitesmoke;
@@ -28,4 +170,39 @@
     border-bottom: 2px solid whitesmoke;
     left: 22%;
 }
+
+@keyframes thankYou {
+    0% {
+        font-size: x-large;
+    }
+
+    50% {
+        font-size: xx-large;
+    }
+
+    100% {
+        font-size: x-large;
+    }
+}
+
+#confirmationTxt {
+    color: white;
+    width: var(--container-width-sm);
+    margin: auto;
+    text-align: center;
+    border: 2px solid white;
+    font-size: x-large;
+    padding: 50px 10px;
+    animation: thankYou 3s infinite linear ease-in-out ;
+    -webkit-animation: thankYou 3s infinite linear ease-in-out ;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
 }

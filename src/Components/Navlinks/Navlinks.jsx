@@ -5,7 +5,7 @@ import "./navlinks.css";
 import {AiOutlineHome} from 'react-icons/ai';
 import {FaFileMedical} from 'react-icons/fa'
 import {RiBoxingFill} from 'react-icons/ri'
-import {BsPersonFillAdd, BsFillCalendarRangeFill} from 'react-icons/bs'
+import {BsPersonFillAdd} from 'react-icons/bs'
 import {GiPapers} from 'react-icons/gi'
 const Navlinks = () => {
     const [activeNav, setActiveNav] = useState('#')
