@@ -19,7 +19,7 @@ import "./animateOnScrollFunction"
 import "./app.css";
 // import TestSuccess from "./Components/TestSuccess";
 import "../src/Components/footer/footerStyling.css";
-// import {logo} from "./Components/assets/logoSolo.png";
+import {logo} from "./Components/assets/logoSolo.png";
 
 
 function App() {
@@ -28,33 +28,33 @@ function App() {
       <Navlinks/>
       <BrowserRouter>
         <Routes>
-          <Route path="https://jeffbozierfitness.netlify.app/" element={
+          <Route path="/" element={
           <div className="container">
             <Dashboard/>
             <Breakdown/>
           </div>
         }/>    
 {/* 
-          <Route path="https://jeffbozierfitness.netlify.app/sessions" element={
+          <Route path="/sessions" element={
           <div className="sessions">
             <Sessions/>
           </div>
           
         }/> */}
 
-          {/* <Route path="https://jeffbozierfitness.netlify.app/add" element={
+          {/* <Route path="/add" element={
             <div className="add">
               <Add/>
             </div>
           } /> */}
-          <Route path="https://jeffbozierfitness.netlify.app/termscondition" element={<TermsCondition/>}/>
-          <Route path="https://jeffbozierfitness.netlify.app/parq" element={<ParQForm/>}/>
-          <Route path="https://jeffbozierfitness.netlify.app/programs" element={<Programs/>}/>
-          {/* <Route path="https://jeffbozierfitness.netlify.app/striking" element={<Striking/>}/> */}
-          <Route path="https://jeffbozierfitness.netlify.app/checkout" element={<Checkout/>}/>
-          <Route path="https://jeffbozierfitness.netlify.app/products" element={<Products/>}/>
-          {/* <Route path="https://jeffbozierfitness.netlify.app/payment" element={<StripeContainer/>}/> */}
-          {/* <Route path="https://jeffbozierfitness.netlify.app/paymentbreakdown" element={<TestSuccess/>}/> */}
+          <Route path="/termscondition" element={<TermsCondition/>}/>
+          <Route path="/parq" element={<ParQForm/>}/>
+          <Route path="/programs" element={<Programs/>}/>
+          {/* <Route path="/striking" element={<Striking/>}/> */}
+          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/products" element={<Products/>}/>
+          {/* <Route path="/payment" element={<StripeContainer/>}/> */}
+          {/* <Route path="/paymentbreakdown" element={<TestSuccess/>}/> */}
         </Routes>
       </BrowserRouter>
       
@@ -62,18 +62,18 @@ function App() {
       
       <button id="logoButton">
         <a href="#theTop" className="footer_logo">
-          {/* {logo} */}
+          {logo}
         </a>
       </button>
 
       <ul className="permalinks">
         <li><a href="#theTop">Home</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/termscondition">Terms & Conditions</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/experience">Experience</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/programs">Programs</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/striking">Order Now</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/videos">Videos</a></li>
-        <li><a href="https://jeffbozierfitness.netlify.app/#formContainer">Contact</a></li>
+        <li><a href="/termscondition">Terms & Conditions</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/striking">Order Now</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/#formContainer">Contact</a></li>
       </ul>
 
       <div className="footer_socials">
