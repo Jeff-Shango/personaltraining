@@ -3,7 +3,6 @@ import React, { useState, useRef } from 'react'
 import "./stripeContainer.css"
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import emailjs from "emailjs-com";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const CARD_OPTIONS = {
 	iconStyle: "solid",
@@ -37,7 +36,6 @@ const StripeContainer = ({ checkoutInfo }) => {
     Duration: ""
   })
 
-  const navigate = useNavigate()  
   const form = useRef();
   // const [telephone, setTelephone] = useState(checkoutInfo.Number);
   // const [email, setEmail] = useState(checkoutInfo.Email);
