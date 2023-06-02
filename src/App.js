@@ -20,43 +20,37 @@ import "./app.css";
 // import TestSuccess from "./Components/TestSuccess";
 import "../src/Components/footer/footerStyling.css";
 import logo from "./Components/assets/logoSolo.png";
-
+import { Link } from "gatsby"
 
 function App() {
   return (
     <div className="App">
       <Navlinks/>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={
+      {/* <BrowserRouter> */}
+        {/* <Routes> */}
+          {/* <Route path="/" element={ */}
+          <Link to="/">
           <div className="container">
             <Dashboard/>
             <Breakdown/>
           </div>
-        }/>    
-{/* 
-          <Route path="/sessions" element={
-          <div className="sessions">
-            <Sessions/>
-          </div>
-          
-        }/> */}
+          </Link>
+        {/* }/>     */}
 
-          {/* <Route path="/add" element={
-            <div className="add">
-              <Add/>
-            </div>
-          } /> */}
-          <Route path="/termscondition" element={<TermsCondition/>}/>
+        <Link to="/termscondition">{<Termscondition/>}</Link>
+        <Link to="/parq">{<ParQForm/>}</Link>
+        <Link to="/programs">{<Programs/>}</Link>
+        <Link to="/checkout">{<Checkout/>}</Link>
+        <Link to="/products">{<Products/>}</Link>
+
+          {/* <Route p
+          ath="/termscondition" element={<TermsCondition/>}/>
           <Route path="/parq" element={<ParQForm/>}/>
           <Route path="/programs" element={<Programs/>}/>
-          {/* <Route path="/striking" element={<Striking/>}/> */}
           <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/products" element={<Products/>}/>
-          {/* <Route path="/payment" element={<StripeContainer/>}/> */}
-          {/* <Route path="/paymentbreakdown" element={<TestSuccess/>}/> */}
-        </Routes>
-      </BrowserRouter>
+          <Route path="/products" element={<Products/>}/> */}
+        {/* </Routes> */}
+      {/* </BrowserRouter> */}
       
       <footer className='animate-on-scroll'>
       
