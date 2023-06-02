@@ -19,7 +19,7 @@ import "./animateOnScrollFunction"
 import "./app.css";
 // import TestSuccess from "./Components/TestSuccess";
 import "../src/Components/footer/footerStyling.css";
-import {logo} from "./Components/assets/logoSolo.png";
+import logo from "./Components/assets/logoSolo.png";
 
 
 function App() {
