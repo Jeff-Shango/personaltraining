@@ -13,39 +13,39 @@ const Navlinks = () => {
     <Navbar collapseOnSelect expand="lg" bg='dark' variant='dark' className='navbarContainer'>
     <Container>
         <Navbar.Brand>
-            <a href="/" id="logoLink">
+            <a href="https://jeffbozierfitness.netlify.app/" id="logoLink">
              <Image src={navBrand} fluid/>
             </a>
          </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
              <Navbar.Collapse id='responsive-navbar-nav'>
     <nav >
-        <a id='navLink' href="/"onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}>
+        <a id='navLink' href="https://jeffbozierfitness.netlify.app/"onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}>
             <AiOutlineHome/>
             <p id='linkItem'>Home</p>
         </a>
 
-        {/* <a id='navLink' href="/sessions" onClick={() => setActiveNav('/')} className={activeNav === '/' ? 'active' : ''}>
+        {/* <a id='navLink' href="https://jeffbozierfitness.netlify.app/sessions" onClick={() => setActiveNav('/')} className={activeNav === '/' ? 'active' : ''}>
             <BsFillCalendarRangeFill/>
             <p id='linkItem'>sessions</p>
         </a> */}
 
-        <a id='navLink' href="/programs" onClick={() => setActiveNav('/programs')} className={activeNav === '/programs' ? 'active' : ''}>
+        <a id='navLink' href="https://jeffbozierfitness.netlify.app/programs" onClick={() => setActiveNav('/programs')} className={activeNav === '/programs' ? 'active' : ''}>
             <RiBoxingFill/>
             <p id='linkItem'>programs</p>
         </a>
 
-        <a id='navLink' href="/products"  onClick={() => setActiveNav('add')} className={activeNav === 'add' ? 'active' : ''}>
+        <a id='navLink' href="https://jeffbozierfitness.netlify.app/products"  onClick={() => setActiveNav('add')} className={activeNav === 'add' ? 'active' : ''}>
             <BsPersonFillAdd/>
             <p id='linkItem'>Buy A Session</p>
         </a>
 
-        <a id='navLink' href="/termscondition"  onClick={() => setActiveNav('termscondition')} className={activeNav === 'termscondition' ? 'active' : ''}>
+        <a id='navLink' href="https://jeffbozierfitness.netlify.app/termscondition"  onClick={() => setActiveNav('termscondition')} className={activeNav === 'termscondition' ? 'active' : ''}>
             <GiPapers/>
             <p id='linkItem'>terms and conditon</p>
         </a>
 
-        <a id='navLink' href="/parq"  onClick={() => setActiveNav('parq')} className={activeNav === 'parq' ? 'active' : ''}>
+        <a id='navLink' href="https://jeffbozierfitness.netlify.app/parq"  onClick={() => setActiveNav('parq')} className={activeNav === 'parq' ? 'active' : ''}>
             <FaFileMedical/>
             <p id='linkItem'>Par-Q</p>
         </a>
