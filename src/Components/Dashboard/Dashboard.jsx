@@ -150,10 +150,10 @@ const handleScrollRight = () => {
         Get in fighting shape with my personalized coaching and training for boxing and Muay Thai. I offer customized packages to work on technique, strength, and conditioning. Contact me now to get started!
       </p>
     <div className="bottomDashboard">
-      <button type='button' onClick={() => {window.location.href='http://localhost:3000/programs';}} className="sessions striking">Program Breakdown</button>
-      <button type='button' onClick={() => {window.location.href='http://localhost:3000/products';}} className="sessions signUp">Buy a Session</button>
-      <button type='button' onClick={() => {window.location.href='http://localhost:3000/termsCondition';}} className="sessions packages">Terms and Condition</button>
-      <button type='button' onClick={() => {window.location.href='http://localhost:3000/parq';}} className="sessions parQ">Par-Q form</button>
+      <button type='button' onClick={() => {window.location.href='/programs';}} className="sessions striking">Program Breakdown</button>
+      <button type='button' onClick={() => {window.location.href='/products';}} className="sessions signUp">Buy a Session</button>
+      <button type='button' onClick={() => {window.location.href='/termsCondition';}} className="sessions packages">Terms and Condition</button>
+      <button type='button' onClick={() => {window.location.href='/parq';}} className="sessions parQ">Par-Q form</button>
     </div>
 
 
