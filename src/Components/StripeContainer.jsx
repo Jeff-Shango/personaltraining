@@ -62,7 +62,7 @@ const StripeContainer = ({ checkoutInfo }) => {
       });
 
       try {
-        const response = await axios.post("http://localhost:4000/calendar", {
+        const response = await axios.post("https://jeffbozierfitness.netlify.app/calendar", {
           formData: Object.fromEntries(formData),
         });
         if (response.data.success) {
@@ -90,13 +90,13 @@ const StripeContainer = ({ checkoutInfo }) => {
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:4000/payment", {
+            const response = await axios.post("http://jeffbozierfitness.netlify.app/payment", {
                 amount: 5000,
                 id
             }
             )
 
-            // const dataShit = await axios.post("http://localhost:4000/calendar", info)
+            // const dataShit = await axios.post("https://jeffbozierfitness.netlify.app/calendar", info)
 
             if(response.data.success) {
                 console.log("Successful payment, mane");
@@ -109,7 +109,7 @@ const StripeContainer = ({ checkoutInfo }) => {
                 //   Duration: checkoutInfo.Duration
                 // };
 
-                // const calendarResponse = await axios.post("http://localhost:4000/calendar", calendarData);
+                // const calendarResponse = await axios.post("https://jeffbozierfitness.netlify.app/calendar", calendarData);
 
                 // if (calendarResponse.data) {
                 //   console.log("it went over to the calendar successfully ");
@@ -133,7 +133,7 @@ const handleChange = (e) => {
 const paymentInfo = async e => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:4000/calendar", info)
+      await axios.post("https://jeffbozierfitness.netlify.app/calendar", info)
       // navigate("/")
     }catch(err){
       console.log(err)
