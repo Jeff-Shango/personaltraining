@@ -11,7 +11,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import "./products.css"
 import "../footer/footerStyling.css"
 
-const PUBLIC_KEY = "codey"
+const PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9Rgn43IIez80bKwxosmwkqX3n0Cw9Hv6wmUObF64vl1InX3RzDDTFgrOkg87HeEaKcWrjeTLA00kR1ZvE2Q"
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const Products = () => {
