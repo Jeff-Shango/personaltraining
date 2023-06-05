@@ -28,33 +28,33 @@ function App() {
       <Navlinks/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
+          <Route path="jeffbozierfitness.netlify.app/" element={
           <div className="container">
             <Dashboard/>
             <Breakdown/>
           </div>
         }/>    
 {/* 
-          <Route path="/sessions" element={
+          <Route path="jeffbozierfitness.netlify.app/sessions" element={
           <div className="sessions">
             <Sessions/>
           </div>
           
         }/> */}
 
-          {/* <Route path="/add" element={
+          {/* <Route path="jeffbozierfitness.netlify.app/add" element={
             <div className="add">
               <Add/>
             </div>
           } /> */}
-          <Route path="/termscondition" element={<TermsCondition/>}/>
-          <Route path="/parq" element={<ParQForm/>}/>
-          <Route path="/programs" element={<Programs/>}/>
-          {/* <Route path="/striking" element={<Striking/>}/> */}
-          <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/products" element={<Products/>}/>
-          {/* <Route path="/payment" element={<StripeContainer/>}/> */}
-          {/* <Route path="/paymentbreakdown" element={<TestSuccess/>}/> */}
+          <Route path="jeffbozierfitness.netlify.app/termscondition" element={<TermsCondition/>}/>
+          <Route path="jeffbozierfitness.netlify.app/parq" element={<ParQForm/>}/>
+          <Route path="jeffbozierfitness.netlify.app/programs" element={<Programs/>}/>
+          {/* <Route path="jeffbozierfitness.netlify.app/striking" element={<Striking/>}/> */}
+          <Route path="jeffbozierfitness.netlify.app/checkout" element={<Checkout/>}/>
+          <Route path="jeffbozierfitness.netlify.app/products" element={<Products/>}/>
+          {/* <Route path="jeffbozierfitness.netlify.app/payment" element={<StripeContainer/>}/> */}
+          {/* <Route path="jeffbozierfitness.netlify.app/paymentbreakdown" element={<TestSuccess/>}/> */}
         </Routes>
       </BrowserRouter>
       
