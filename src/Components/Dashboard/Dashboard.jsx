@@ -107,11 +107,11 @@ const handleScrollRight = () => {
 
     
     {/* quick link buttons */}
-    <button className={`custom-button ${isVisible ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/programs';}} id="floatingButton" style={{opacity: isVisible ? 1 : 0.2, zIndex:9999, display: isVisible ? "block" : "none"}}>
+    <button className={`custom-button ${isVisible ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='/programs';}} id="floatingButton" style={{opacity: isVisible ? 1 : 0.2, zIndex:9999, display: isVisible ? "block" : "none"}}>
       Order a Class
     </button>
 
-    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000#theTop';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='#theTop';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
       Go to Top
     </button>
     {/* carousel section: used for identifying most important news based aspects */}
