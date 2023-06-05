@@ -2,13 +2,3 @@
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[redirects]]
-  from = "/payment"
-  to = "/payment"
-  status = 200
-
-[[redirects]]
-  from = "/calendar"
-  to = "/calendar"
-  status = 200
