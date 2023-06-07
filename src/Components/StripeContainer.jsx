@@ -152,38 +152,38 @@ console.log(info)
             Selected Session Details
           </h3>
           
-          <p id="programsTitle" name="Type_Of_Session">
+          <p id="programsTitle" name="session_type">
             Type of Session: {checkoutInfo.Type_Of_Session}
           </p>
           
-          <p id="programsTitle" name="Duration">
+          <p id="programsTitle" name="duration">
             Duration: {checkoutInfo.Duration}
           </p>
         
         </div>
 
-        <input onChange={handleChange} type="hidden" name="Type_Of_Session" value={checkoutInfo.Type_Of_Session} />
-        <input onChange={handleChange} type="hidden" name="Duration" value={checkoutInfo.Duration} />
+        <input onChange={handleChange} type="hidden" name="session_type" value={checkoutInfo.Type_Of_Session} />
+        <input onChange={handleChange} type="hidden" name="duration" value={checkoutInfo.Duration} />
 
 
 
           <div className="inputBox">
-            <input type="text" onChange={handleChange} name='Name'  required />
+            <input type="text" onChange={handleChange} name='name'  required />
             <span>Your Name</span>
           </div>
 
           <div className="inputBox">
-            <input type="tel" onChange={handleChange} name='Number'  required />
+            <input type="tel" onChange={handleChange} name='telephone'  required />
             <span>Your Number</span>
           </div>
 
           <div className="inputBox">
-            <input type="email" onChange={handleChange} name='Email'  required />
+            <input type="email" onChange={handleChange} name='email'  required />
             <span>Your Email</span>
           </div>
 
           <div className="inputBox">
-            <input type="text" onChange={handleChange} name='Special_Notes' />
+            <input type="text" onChange={handleChange} name='message' />
             <span>Extra Info</span>
           </div>
 
