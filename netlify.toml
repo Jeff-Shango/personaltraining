@@ -1,3 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  PUBLIC_KEY = "pk_test_51MtGJLBsGKDDlKM9Rgn43IIez80bKwxosmwkqX3n0Cw9Hv6wmUObF64vl1InX3RzDDTFgrOkg87HeEaKcWrjeTLA00kR1ZvE2Q"
+  
+  STRIPE_SECRET_TEST="sk_test_51MtGJLBsGKDDlKM9E7BpOPMQDqSBao99cu7apMzgaJH1Vpbgu6nnbESr4tlLbX1pIvOe58WwhKCdR3zP3gmU7QSx00dfTdavxu"
+
 [[redirects]]
 from = "/*"
 to = "/index.html"
