@@ -146,7 +146,7 @@ console.log(info)
     <>
     {!success ? (
       
-      <form ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e); paymentInfo(e)}}>
+      <form id="formStripeContainer" ref={form} onSubmit={(e) => {handleSubmit(e); handleStripeSubmit(e); paymentInfo(e)}}>
         <div id="selectedSessionContainer">
           <h3 id="programsTitle">
             Selected Session Details
@@ -197,7 +197,7 @@ console.log(info)
                 </div>
             </fieldset>
           </div>
-        <button type="submit">Pay</button>
+        <button type="submit" id="submitBtn">Pay</button>
       </form>
       
      ) : ( 
