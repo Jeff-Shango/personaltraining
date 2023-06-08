@@ -58,15 +58,15 @@ function App() {
         </Routes>
       </BrowserRouter>
       
-      <footer className='animate-on-scroll'>
+      {/* <footer className='animate-on-scroll'>
       
       <button id="logoButton">
         <a href="#theTop" className="footer_logo">
           {logo}
         </a>
-      </button>
+      </button> */}
 
-      <ul className="permalinks">
+      {/* <ul className="permalinks">
         <li><a href="#theTop">Home</a></li>
         <li><a href="/termscondition">Terms & Conditions</a></li>
         <li><a href="/experience">Experience</a></li>
@@ -74,18 +74,18 @@ function App() {
         <li><a href="/striking">Order Now</a></li>
         <li><a href="/videos">Videos</a></li>
         <li><a href="/#formContainer">Contact</a></li>
-      </ul>
+      </ul> */}
 
-      <div className="footer_socials">
+      {/* <div className="footer_socials">
         <a href="https://www.linkedin.com/in/jeff-bozier-jr/"><AiFillLinkedin /></a>
         <a href="https://github.com/jeff-shango"><BsGithub/></a>
         <a href="https://instagram.com/the_tao_of_jeff?igshid=YmMyMTA2M2Y="><TiSocialInstagram/></a>
-      </div>
+      </div> */}
 
-      <div className="footer_socials">
+      {/* <div className="footer_socials">
         <small>&copy; Jeff Bozier. 2023</small>
       </div>
-    </footer>
+    </footer> */}
 
     </div>
   );
