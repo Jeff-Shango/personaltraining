@@ -1,7 +1,7 @@
 import React from "react";
-import { AiFillLinkedin } from "react-icons/ai";
-import {TiSocialInstagram} from "react-icons/ti"
-import { BsGithub } from "react-icons/bs"
+// import { AiFillLinkedin } from "react-icons/ai";
+// import {TiSocialInstagram} from "react-icons/ti"
+// import { BsGithub } from "react-icons/bs"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Navlinks from "./Components/Navlinks/Navlinks";
@@ -19,7 +19,7 @@ import "./animateOnScrollFunction"
 import "./app.css";
 // import TestSuccess from "./Components/TestSuccess";
 import "../src/Components/footer/footerStyling.css";
-import logo from "./Components/assets/logoSolo.png";
+// import logo from "./Components/assets/logoSolo.png";
 
 
 function App() {
