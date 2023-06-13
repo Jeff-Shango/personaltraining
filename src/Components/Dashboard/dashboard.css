@@ -16,11 +16,11 @@
       border-bottom-right-radius: 20px;
       opacity: 1;
       transition: opacity 0.5s   ;
-      -webkit-transition:;
-      -moz-transition:;
-      -ms-transition:;
-      -o-transition:;
-  }
+      -webkit-transition: opacity 0.5s   ;
+      -moz-transition: opacity 0.5s   ;
+      -ms-transition: opacity 0.5s   ;
+      -o-transition: opacity 0.5s   ;
+}
   
   #floatingButton::before{
       content: "";
