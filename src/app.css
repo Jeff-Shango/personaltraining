@@ -11,7 +11,7 @@
     --container-width-lg: 75%;
     --container-width-md: 86%;
     --container-width-sm: 90%;
-    --container-width-xlg: 55%;
+    --container-width-xlg: 100%;
 
     --transition: all 400ms ease;
 
@@ -107,6 +107,17 @@ a:hover {
     .container {
         border: 2px solid yellow;
     }
+
+    .App {
+        position: relative;
+        margin: 0 10%;
+        width: var(--container-width-xlg);
+        background-color: var(--color-bg);
+      }
+
+      #root {
+        background-color: var(--color-bg);
+      }
 }
 
 
