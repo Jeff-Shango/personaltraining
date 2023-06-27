@@ -91,7 +91,7 @@
         display: flex;
         flex-wrap: wrap; /* add this property */
         position: relative;
-        margin-bottom: var(--spacer);
+        margin-bottom: 60vh;
         height: 40rem;
       }
       
@@ -282,7 +282,7 @@
         display: flex;
         flex-wrap: wrap; /* add this property */
         position: relative;
-        margin-bottom: var(--spacer);
+        margin-bottom: 18vh;
         height: 40rem;
       }
       
