@@ -1,3 +1,302 @@
+/* bigger laptop devices */
+@media screen and (max-width: 1500px) {
+    /* go to top button */
+    #floatingButtonRight {
+        position: fixed;
+        right: 20px;
+        top: 60vh;
+        background-color: var(--primary-color);
+        color: black;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        opacity: 1;
+        transition: opacity 0.5s   ;
+        -webkit-transition: opacity 0.5s   ;
+        -moz-transition: opacity 0.5s   ;
+        -ms-transition: opacity 0.5s   ;
+        -o-transition: opacity 0.5s   ;
+    }
+    
+    #floatingButtonRight::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: black;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+ /* Dialog Box Styles */
+#dialogBox {
+    display: none;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  #dialogContent {
+    background-color: var(--primary-color-variant);
+    max-width: 400px;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-align: center;
+}
+  
+  #dialogMessage {
+    margin-bottom: 10px;
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    /* color: white; */
+    font-size: larger;
+    padding: 10px;
+}
+  
+  #dialogButton {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 10rem;
+}
+  
+  
+#parQContainer {
+    width: var(--container-width-sm);
+    margin: auto;
+}
+
+.parqSection {
+    border-radius: 12px;
+    background-color: var(--color-bg-variant);
+    border: 2px solid red;
+    height: fit-content;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: white;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.innerInput {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.innerInput input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: #1d2b3a;
+        border-radius: 5px;
+        outline: none;
+        -webkit-border-radius:;
+        -moz-border-radius:;
+        -ms-border-radius:;
+        -o-border-radius:;
+        color: var(--light);
+        font-size: 1em;
+}
+
+.innerInput input:focus ~ span,
+.innerInput input:valid ~ span {
+    color: var(--primary-color);
+    transform: translateX(10px) translateY(-12px);
+    -webkit-transform: translateX(10px) translateY(-12px);
+    -moz-transform: translateX(10px) translateY(-12px);
+    -ms-transform: translateX(10px) translateY(-12px);
+    -o-transform: translateX(10px) translateY(-12px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+    letter-spacing: 0.2em;
+}
+
+
+
+.inputContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.inputContainer input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: #1d2b3a;
+        border-radius: 5px;
+        outline: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+}
+
+.inputContainer span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.inputContainer input:focus ~ span,
+.inputContainer input:valid ~ span {
+    color: var(--primary-color);
+    transform: translateX(10px) translateY(-12px);
+    -webkit-transform: translateX(10px) translateY(-12px);
+    -moz-transform: translateX(10px) translateY(-12px);
+    -ms-transform: translateX(10px) translateY(-12px);
+    -o-transform: translateX(10px) translateY(-12px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+    letter-spacing: 0.2em;
+}
+
+
+
+#parQTitle {
+    text-align: center;
+    color: white;
+}
+
+aside {
+    padding-bottom: 5px;
+    border-bottom: 2px solid green;
+}
+
+#parqForm {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+.personDetailsContainer {
+    padding: 20px;
+    margin-bottom: 20px;
+} */
+
+#sectionTitle {
+    margin-top: 0;
+}
+
+#declaration > p {
+    border-bottom: var(--color-bg-variant) 2px solid;
+    padding-bottom: 5px;
+}
+
+.checkboxes > label{
+    margin-right: 10px;
+    font-size: 3rem;
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+ /* submit Button */
+
+ #submitButton {
+    margin-top: 5vh;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: #1d2b3a;
+    color: white;
+    padding: 5vh;
+    font-size: 5vh;
+}
+/* #parqLabel {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+} */
+
+/* #parqInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+} */
+
+/* input[type='num'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type='submit'] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #45a049;
+} */
+
+/* medical condition questions  */
+
+}
+
 /* Media Queries (Small Devices) */
 @media screen and (max-width: 600px) {
     /* go to top button */
