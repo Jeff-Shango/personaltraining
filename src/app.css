@@ -104,6 +104,8 @@ a:hover {
 
 /* media queries (larger devices) */
 @media screen and (max-width: 1500px){
+
+    
     .App {
         position: relative;
         margin: 0 10%;

@@ -88,7 +88,7 @@ const dropdownTextWeights = showFullText ? (
     <div className='App'>
 
           {/* quick link buttons */}
-    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='http://localhost:3000/products#programsTitle';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
+    <button className={`custom-button ${isVisibleRight ? 'visible' : 'hidden'}`} onClick={() => {window.location.href='/products#programsTitle';}} id="floatingButtonRight" style={{opacity: isVisibleRight ? 1 : 0.2, zIndex:9999, display: isVisibleRight ? "block" : "none"}}>
       Go to Top
     </button>
 

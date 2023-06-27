@@ -1,3 +1,115 @@
+/* Media Queries (bigger laptop Devices) */
+@media screen and (max-width: 1500px) {
+    #stripeContainer {
+        border: 2px solid white;
+    }
+
+
+    #checkoutImg {
+        height: 80px;
+    }
+    #programs {
+        text-align: center;
+    }
+
+    #programs > h3 {
+        margin-top: 1rem;
+        font-weight: bolder;
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        position: relative;
+}
+    #programs > li {
+        border-bottom: 2px solid white;
+        margin-bottom: 1rem;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        padding-right: 50px;
+        padding-bottom: 25px;
+        padding-top: 25px;
+        position: relative;
+    }
+
+    #programs > li > button {
+        background-color: var(--primary-color-variant);
+        color: var(--light);
+        height: 4rem;
+        width: 3rem;
+        padding: .5rem;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        
+}
+    #strikingContainer, #weightLiftingContainer, #mixedProgramContainer {
+    border: 2px solid white;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#strikingContainer > h1, #weightLiftingContainer > h1, #mixedProgramContainer > h1 {
+    text-align: center;
+} 
+
+#readMore {
+    font-size: 17px;
+    text-align: center;
+}
+
+.dropdown-menu.show {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    font-size: large;
+    height: 25rem;
+    overflow-y: scroll;
+}   
+
+#checkoutButton {
+    padding: .2rem;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    color: var(--primary-color);
+    background-color: var(--primary-color-variant);
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.endingDescription {
+    color: white;
+    font-size: x-large;
+}
+
+}
+
+
 /* Media Queries (Small Devices) */
 @media screen and (max-width: 1024px) {
     #stripeContainer {
