@@ -104,10 +104,6 @@ a:hover {
 
 /* media queries (larger devices) */
 @media screen and (max-width: 1500px){
-    .container {
-        border: 2px solid yellow;
-    }
-
     .App {
         position: relative;
         margin: 0 10%;

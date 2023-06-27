@@ -1,3 +1,194 @@
+/* bigger laptop devices */
+@media screen and (max-width: 1500px) {
+
+  /* animate feature  */
+  
+  .in-view {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition-delay: 0.2s;
+    z-index: 2;
+  }
+  
+  /* end feature */
+  
+      .breakdownSection {
+        height: fit-content;
+        background-color: var(--color-bg);
+        z-index: 2;
+        margin-bottom: var(--spacer);
+      }
+  
+      .sectionText {
+        color: white;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        font-size: large;
+      }
+      
+      .breakdownButton {
+        height: 3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        position: relative;
+        left: 35%;
+        outline: 2px solid black;
+      }
+      
+      .picContainer {
+        height: 20rem;
+        width: 50rem;
+        border: 2px solid white;
+        position: relative;
+      }
+  
+  
+      #breakdownGif {
+        width: 100%;
+        height: auto;
+        background-color: black;
+        z-index: 2;
+      }
+      
+      /* .picInnerContainer {
+        background-image: url("../assets/imageB.jpg");
+        height: 10rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 10rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 83% 100%, 50% 100%, 17% 100%, 0 100%, 0% 35%, 20% 10%);
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+      } */
+      
+      .picContainersWrapper {
+        display: flex;
+        flex-wrap: wrap; /* add this property */
+        position: relative;
+        margin-bottom: var(--spacer);
+        height: 40rem;
+      }
+      
+      .sectionTitle {
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+      }
+  
+      #formContainer{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        position: relative;
+    }
+    
+    #formContainer button{
+        font-size: 1.5rem;
+    }
+    
+    /* input, textarea {
+        width: 100%;
+        font-size: 1em;
+        background-color: var(--color-primary);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+        border: 2px solid var(--color-primary-variant);
+        resize: none;
+        color: var(--color-white);
+    } */
+    
+    
+    /* copied code */
+    .inputBox {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+        
+    .inputBox input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: var(--color-primary);
+        outline: none;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        color: white;
+        font-size: 1.5em;
+        height: 5em;
+    }
+    
+    .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color: #FDB927;
+        text-transform: uppercase;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span,
+    .inputBox textarea:valid ~ span,
+    .inputBox textarea:focus ~ span {
+        color: rgba(170, 255, 153, 1.0);
+        transform: translateX(10px) translateY(-7px);
+        -webkit-transform: translateX(10px) translateY(-7px);
+        -moz-transform: translateX(10px) translateY(-7px);
+        -ms-transform: translateX(10px) translateY(-7px);
+        -o-transform: translateX(10px) translateY(-7px);
+        font-size: 0.65em;
+        padding: 0 10px;
+        background: var(--color-primary);
+        border-left: 1px solid #FDB927;
+        border-right: 1px solid #FDB927;
+        letter-spacing: 0.2em;
+    }
+  
+      
+    }
+
+
+
 /* laptop devices */
 @media screen and (max-width: 1024px) {
 
