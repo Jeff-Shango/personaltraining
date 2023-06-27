@@ -233,10 +233,6 @@
         font-size: large;
     }
 
-    #navLink #linkItem {
-        border: 4px solid pink;
-    }
-
     .outerContainer {
         position: absolute;
         left: 0;
