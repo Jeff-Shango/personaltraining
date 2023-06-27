@@ -1,3 +1,106 @@
+/* bigger laptop devices */
+
+@media screen and (max-width: 1500px) {
+
+    .videoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #videoFight {
+        height: 20rem;
+        width: var(--container-width-lg);
+    }
+    
+    #strengthVideo {
+        height: 20rem;
+        width: var(--container-width-lg);
+    }
+    
+    .videoContainer #strengthVideo {
+        background-color: var(--primary-color-variant);
+        outline: 2px solid gray;
+        box-shadow: 10px 10px 10px rgba(104, 13, 13, 0.774);
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        margin-bottom: var(--spacer);
+    }
+    
+    .videoContainer #videoFight {
+        background-color: darkgray;
+        outline: 2px solid gray;
+        box-shadow: 10px 10px 10px rgba(104, 13, 13, 0.774);
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        margin-bottom: var(--spacer);
+    }
+    .programsContainer {
+        position: relative;
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+    
+    #programsTitle {
+        font-size: 30px;
+        color: white;
+        text-align: center;
+    }
+    
+    #programPicContainer {
+        height: 20rem;
+        position: relative;
+        margin-left: 2.5rem;
+        background-size: 100vh;
+        background-position: center;
+    }
+    
+    #programPicContainer:active {
+        background-color: rgb(0, 0, 0, 0.5 );
+    }
+    
+    .navDropdown {
+        border: 2px solid white;
+    }
+    .programPicContainerA {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../assets/programSCImg.jpg");
+        clip-path: circle(44.6% at 45% 45%);
+    
+    
+    }
+    
+    .programPicContainerB {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../assets/programStrikingImg.jpg");
+        clip-path: circle(44.6% at 45% 45%);
+    }
+    
+    .programPicContainerC {
+        background-image: url("../assets/programPersonalImg.jpg");
+        background-position: center;
+        background-size: cover;
+        clip-path: circle(44.6% at 45% 45%);
+    }
+    
+    .programDescription {
+        color: white;
+        padding: 15px;
+        font-size: 20px;
+        text-align: center;
+    }
+    }
+
+
+
 /* laptop devices */
 
 @media screen and (max-width: 1024px) {
