@@ -91,7 +91,7 @@ const Breakdown = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_4dfcr2e', 'template_cbdgzvt', form.current, '_NpdWJ5iCT6lmb6Un')
+    emailjs.sendForm('service_4dfcr2e', 'StripeForm', form.current, '_NpdWJ5iCT6lmb6Un')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -121,17 +121,17 @@ const Breakdown = () => {
         {/* contact info */}
         <form ref={form} onSubmit={sendEmail} id='formContainer'>
           <div className="inputBox">
-            <input type="text" name='name' required />
+            <input type="text" name='dashboardName' required />
             <span>Your Name</span>
           </div>
 
           <div className="inputBox">
-            <input type="text" name='email'  required />
+            <input type="text" name='dashboardEmail'  required />
             <span>Your Email</span>
           </div>
 
           <div className="inputBox">
-            <textarea name="message" rows="7"  required></textarea>
+            <textarea name="dashboardMessage" rows="7"  required></textarea>
             <span>Your Message</span>
           </div>
           <button type='submit' className='btn btn-primary'>Send Message</button>
