@@ -96,6 +96,10 @@
         padding: 15px;
         font-size: 20px;
         text-align: center;
+        border: 2px solid red;
+        width: 100vh;
+        margin: auto;
+        margin-bottom: var(--spacer);
     }
     }
 

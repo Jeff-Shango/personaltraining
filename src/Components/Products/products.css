@@ -3,9 +3,10 @@
     .endingDescription{
         color: white;
         border-bottom: 2px solid white;
-        width: var(--container-width-lg);
+        width: 100vh;
         text-align: center;
-        margin-left: 20px;
+        margin-left: 6rem;
+        
     }
 }
 

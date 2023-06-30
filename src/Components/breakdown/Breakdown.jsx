@@ -115,7 +115,7 @@ const Breakdown = () => {
     <div className="breakdownSection animate-on-scroll">
       <h2 className='sectionTitle' id='sectionTitle'>What I Do!</h2>
       <p className="sectionText">Working with you wherever you are at, creating personalized plans for your budget and your experience. You are working within a space that is welcoming and has a growth-mindset.</p>
-      <button className='breakdownButton' onClick={() => {window.location.href='/programs';}}>View Programs</button>
+      <button className='breakdownButton btn btn-primary' onClick={() => {window.location.href='/programs';}}>View Programs</button>
     </div>
 
         {/* contact info */}
